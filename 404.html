@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Page Not Found — AcademyKit School Sportswear"/>
+  <title>404 — Page Not Found | AcademyKit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <style>
+    body { overflow: hidden; }
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.15;
+      animation: float 6s ease-in-out infinite;
+    }
+    .search-404 {
+      max-width: 440px;
+      margin: 0 auto 36px;
+      display: flex;
+      gap: 10px;
+    }
+    .search-404 input {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      padding: 12px 20px;
+      font-size: .95rem;
+      color: var(--text-primary);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Particle background -->
+<div class="particles" aria-hidden="true">
+  <div class="particle" style="width:100px;height:100px;background:var(--royal-violet);top:10%;left:5%;animation-delay:0s;animation-duration:8s"></div>
+  <div class="particle" style="width:60px;height:60px;background:var(--electric-coral);top:20%;right:10%;animation-delay:1s;animation-duration:6s"></div>
+  <div class="particle" style="width:80px;height:80px;background:var(--champagne);bottom:15%;left:20%;animation-delay:2s;animation-duration:7s"></div>
+  <div class="particle" style="width:40px;height:40px;background:var(--royal-violet);bottom:30%;right:15%;animation-delay:0.5s;animation-duration:5s"></div>
+  <div class="particle" style="width:120px;height:120px;background:var(--electric-coral);top:50%;left:80%;animation-delay:1.5s;animation-duration:9s;opacity:.08"></div>
+</div>
+
+<!-- Minimal nav -->
+<header class="navbar scrolled" style="background:rgba(16,26,51,.6);backdrop-filter:blur(20px)">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">🏆</div>
+      <div class="logo-text"><span class="logo-name">AcademyKit</span><span class="logo-tagline">Elite Sportswear</span></div>
+    </a>
+    <div style="flex:1"></div>
+    <div class="nav-controls">
+      <button class="nav-control-btn" data-theme-toggle><span data-theme-icon>☀️</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- 404 Content -->
+<div class="error-page" style="position:relative;z-index:1">
+  <div class="error-bg-text" aria-hidden="true">404</div>
+
+  <div data-reveal="scale">
+    <div class="error-number">404</div>
+    <h1 class="error-title">Oops! Page Not Found</h1>
+    <p class="error-desc">
+      The page you're looking for has been substituted off the field. It may have moved, been removed, or never existed in the first place.
+    </p>
+
+    <!-- Search bar -->
+    <div class="search-404">
+      <input type="text" placeholder="Search for kits, sports or pages..." aria-label="Search"/>
+      <button class="btn btn-primary" onclick="Toast.show({type:'info',title:'Searching...',message:'Search functionality coming soon.'})">🔍</button>
+    </div>
+
+    <!-- Quick links -->
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:48px">
+      <a href="index.html" class="btn btn-primary btn-lg">🏠 Go Home</a>
+      <a href="services.html" class="btn btn-secondary btn-lg">🎽 Explore Kits</a>
+      <a href="contact.html" class="btn btn-outline btn-lg">📞 Contact Us</a>
+    </div>
+
+    <!-- Suggested pages -->
+    <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:32px 40px;max-width:640px;margin:0 auto">
+      <h3 style="font-family:var(--font-heading);font-weight:700;margin-bottom:20px;font-size:1rem">🔗 Popular Pages</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:left">
+        <a href="services.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg-surface);border-radius:var(--radius-sm);font-size:.875rem;font-weight:600;transition:all .2s;color:var(--text-secondary)">
+          <span>⚽</span> Football Kits
+        </a>
+        <a href="services.html#cricket" style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg-surface);border-radius:var(--radius-sm);font-size:.875rem;font-weight:600;transition:all .2s;color:var(--text-secondary)">
+          <span>🏏</span> Cricket Kits
+        </a>
+        <a href="pricing.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg-surface);border-radius:var(--radius-sm);font-size:.875rem;font-weight:600;transition:all .2s;color:var(--text-secondary)">
+          <span>💰</span> Pricing
+        </a>
+        <a href="about.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg-surface);border-radius:var(--radius-sm);font-size:.875rem;font-weight:600;transition:all .2s;color:var(--text-secondary)">
+          <span>ℹ️</span> About Us
+        </a>
+        <a href="blog.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg-surface);border-radius:var(--radius-sm);font-size:.875rem;font-weight:600;transition:all .2s;color:var(--text-secondary)">
+          <span>📝</span> Blog
+        </a>
+        <a href="contact.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg-surface);border-radius:var(--radius-sm);font-size:.875rem;font-weight:600;transition:all .2s;color:var(--text-secondary)">
+          <span>📞</span> Contact
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="About AcademyKit — India's premier school sports uniform supplier. Our story, team, values and 15+ years of excellence in school sportswear."/>
+  <title>About Us — AcademyKit Elite School Sportswear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+</head>
+<body>
+
+<div class="page-transition"></div>
+<button class="back-to-top">↑</button>
+<div class="lightbox" id="lightbox"><div class="lightbox-content"><button class="lightbox-close">✕</button><img src="" alt=""/></div></div>
+<div class="toast-container"></div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">🏆</div>
+      <div class="logo-text"><span class="logo-name">AcademyKit</span><span class="logo-tagline">Elite Sportswear</span></div>
+    </a>
+    <nav class="nav-links">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item"><a href="about.html" class="nav-link active">About</a></div>
+      <div class="nav-item">
+        <a href="services.html" class="nav-link">Services <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 6l4 4 4-4"/></svg></a>
+        <div class="dropdown">
+          <a href="services.html" class="dropdown-link"><span>⚽</span> Football Kits</a>
+          <a href="services.html#cricket" class="dropdown-link"><span>🏏</span> Cricket Kits</a>
+          <a href="services.html#basketball" class="dropdown-link"><span>🏀</span> Basketball Kits</a>
+          <a href="service-details.html" class="dropdown-link"><span>🎨</span> Custom Branding</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></div>
+      <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    </nav>
+    <div class="nav-controls">
+      <button class="nav-control-btn" data-theme-toggle><span data-theme-icon>☀️</span></button>
+      <button class="nav-control-btn" data-rtl-toggle><span data-dir-icon>RTL</span></button>
+      <a href="login.html" class="btn btn-sm btn-outline nav-cta">Sign In</a>
+      <a href="contact.html#quote" class="btn btn-sm btn-primary">Get Quote</a>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-nav-links">
+    <li><a href="index.html" class="mobile-nav-link">🏠 Home</a></li>
+    <li><a href="about.html" class="mobile-nav-link">ℹ️ About Us</a></li>
+    <li><a href="services.html" class="mobile-nav-link">🎽 Services</a></li>
+    <li><a href="pricing.html" class="mobile-nav-link">💰 Pricing</a></li>
+    <li><a href="blog.html" class="mobile-nav-link">📝 Blog</a></li>
+    <li><a href="contact.html" class="mobile-nav-link">📞 Contact</a></li>
+    <li><a href="login.html" class="mobile-nav-link">🔐 Login</a></li>
+  </ul>
+</div>
+
+<!-- ═══ SECTION 1: PAGE HERO ═══ -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1600&q=80')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <nav class="breadcrumb" style="justify-content:center;margin-bottom:20px">
+        <a href="index.html" class="breadcrumb-item">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-active">About Us</span>
+      </nav>
+      <span class="section-tag">Our Story</span>
+      <h1 class="page-hero-title">Built for the <span class="highlight">Love of Sport</span></h1>
+      <p class="page-hero-desc">15+ years of dressing India's school champions — from local tournaments to national championships.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 2: OUR STORY ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="about-split">
+      <div class="about-image-stack" data-reveal="left">
+        <div class="about-image-main">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" alt="School sports team" loading="lazy"/>
+        </div>
+        <div class="about-image-accent">
+          <img src="https://images.unsplash.com/photo-1529904099918-e20dafb2ef97?w=500&q=80" alt="Football training" loading="lazy"/>
+        </div>
+        <div class="about-badge-float">
+          <div class="about-badge-value">15+</div>
+          <div class="about-badge-label">Years of Excellence</div>
+        </div>
+      </div>
+
+      <div data-reveal="right">
+        <span class="section-tag">Who We Are</span>
+        <h2 class="section-title" style="margin:20px 0 20px">The Story Behind <span class="highlight">AcademyKit</span></h2>
+        <p style="color:var(--text-secondary);line-height:1.85;margin-bottom:20px">
+          Founded in 2009 by Arjun Mehta — a former national-level footballer and sports educator — AcademyKit began with a simple mission: give every school the same quality of sportswear that professional clubs enjoy, at prices schools can afford.
+        </p>
+        <p style="color:var(--text-secondary);line-height:1.85;margin-bottom:32px">
+          What started as a small Delhi workshop producing 500 football kits per season has grown into India's most trusted school sportswear partner — with state-of-the-art manufacturing in Ludhiana, Surat and Tiruppur, and a network serving 500+ schools across 28 states.
+        </p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:36px">
+          <div class="icon-box">
+            <div class="icon-box-icon">🏭</div>
+            <div class="icon-box-content">
+              <h4>3 Manufacturing Units</h4>
+              <p>Ludhiana, Surat &amp; Tiruppur with ISO 9001:2015 certification.</p>
+            </div>
+          </div>
+          <div class="icon-box">
+            <div class="icon-box-icon">🌍</div>
+            <div class="icon-box-content">
+              <h4>Pan-India Reach</h4>
+              <p>Serving schools in all 28 states with 48-hour express delivery.</p>
+            </div>
+          </div>
+        </div>
+        <a href="contact.html#quote" class="btn btn-primary btn-lg">Partner With Us →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3: MISSION & VALUES ═══ -->
+<section class="section" style="background:var(--bg-secondary)">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-tag">Our Foundation</span>
+      <h2 class="section-title">Mission, Vision &amp; <span class="highlight-violet">Values</span></h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div style="background:var(--gradient-violet);border-radius:var(--radius-xl);padding:40px 32px;text-align:center" data-reveal data-delay="1">
+        <div style="font-size:3rem;margin-bottom:20px">🎯</div>
+        <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:14px">Our Mission</h3>
+        <p style="color:rgba(255,255,255,0.85);line-height:1.8">To make premium-quality sportswear accessible to every school in India, regardless of size or budget — fostering a culture of athletic pride and team spirit.</p>
+      </div>
+
+      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:40px 32px;text-align:center" data-reveal data-delay="2">
+        <div style="font-size:3rem;margin-bottom:20px">👁️</div>
+        <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:14px">Our Vision</h3>
+        <p style="color:var(--text-secondary);line-height:1.8">To become Asia's most innovative school sportswear brand — where cutting-edge design meets sustainable manufacturing and every kit tells a school's unique story.</p>
+      </div>
+
+      <div style="background:var(--gradient-coral);border-radius:var(--radius-xl);padding:40px 32px;text-align:center" data-reveal data-delay="3">
+        <div style="font-size:3rem;margin-bottom:20px">💎</div>
+        <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:14px">Our Values</h3>
+        <p style="color:rgba(255,255,255,0.85);line-height:1.8">Quality over quantity. Partnership over transaction. Sustainability over shortcuts. We believe great sportswear inspires great athletes — and that is why we never compromise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4: TEAM ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-tag">Meet the Team</span>
+      <h2 class="section-title">The People Behind <span class="highlight-champagne">Every Kit</span></h2>
+    </div>
+    <div class="grid-4">
+      <div class="team-card" data-reveal data-delay="1">
+        <div class="team-card-image">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Arjun Mehta" loading="lazy"/>
+          <div class="team-card-socials">
+            <a href="#" class="social-btn">💼</a>
+            <a href="#" class="social-btn">🐦</a>
+            <a href="#" class="social-btn">📘</a>
+          </div>
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-name">Arjun Mehta</div>
+          <div class="team-card-role">Founder & CEO</div>
+        </div>
+      </div>
+
+      <div class="team-card" data-reveal data-delay="2">
+        <div class="team-card-image">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Priya Nair" loading="lazy"/>
+          <div class="team-card-socials">
+            <a href="#" class="social-btn">💼</a>
+            <a href="#" class="social-btn">📸</a>
+          </div>
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-name">Priya Nair</div>
+          <div class="team-card-role">Head of Design</div>
+        </div>
+      </div>
+
+      <div class="team-card" data-reveal data-delay="3">
+        <div class="team-card-image">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Rahul Verma" loading="lazy"/>
+          <div class="team-card-socials">
+            <a href="#" class="social-btn">💼</a>
+            <a href="#" class="social-btn">🐦</a>
+          </div>
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-name">Rahul Verma</div>
+          <div class="team-card-role">Production Director</div>
+        </div>
+      </div>
+
+      <div class="team-card" data-reveal data-delay="4">
+        <div class="team-card-image">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" alt="Meera Pillai" loading="lazy"/>
+          <div class="team-card-socials">
+            <a href="#" class="social-btn">💼</a>
+            <a href="#" class="social-btn">📸</a>
+          </div>
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-name">Meera Pillai</div>
+          <div class="team-card-role">School Relations Head</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 5: MILESTONES TIMELINE ═══ -->
+<section class="section" style="background:var(--bg-secondary)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+      <div data-reveal="left">
+        <span class="section-tag">Our Journey</span>
+        <h2 class="section-title" style="margin:20px 0 40px">15 Years of <span class="highlight">Milestones</span></h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2009</div>
+            <div class="timeline-title">AcademyKit Founded</div>
+            <div class="timeline-desc">Arjun Mehta starts with a small workshop producing 500 kits for 5 Delhi schools.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2012</div>
+            <div class="timeline-title">ISO 9001 Certification</div>
+            <div class="timeline-desc">Achieved ISO certification and expanded to 3 manufacturing units across India.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2016</div>
+            <div class="timeline-title">100 Schools Milestone</div>
+            <div class="timeline-desc">Reached 100 school partners and launched our custom digital design portal.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-title">Pan-India Expansion</div>
+            <div class="timeline-desc">Extended delivery network to all 28 states with 48-hr express shipping.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-title">500+ Schools Served</div>
+            <div class="timeline-desc">50,000+ kits delivered. Launched sustainable recycled polyester fabric range.</div>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal="right">
+        <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80" alt="Sports achievement" loading="lazy" style="width:100%;border-radius:var(--radius-xl);box-shadow:var(--shadow-lg)"/>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px">
+          <div class="stat-card">
+            <div class="stat-value" data-count="500" data-suffix="+">500+</div>
+            <div class="stat-label">Schools</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-count="50000" data-suffix="+">50K+</div>
+            <div class="stat-label">Kits Delivered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-count="15" data-suffix="yrs">15yrs</div>
+            <div class="stat-label">Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-count="3">3</div>
+            <div class="stat-label">Factories</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 6: AWARDS & CERTIFICATIONS ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-tag">Recognition</span>
+      <h2 class="section-title">Awards &amp; <span class="highlight-violet">Certifications</span></h2>
+    </div>
+    <div class="grid-4">
+      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:32px;text-align:center;transition:all var(--transition-base)" class="award-card" data-reveal data-delay="1">
+        <div style="font-size:3.5rem;margin-bottom:16px">🏆</div>
+        <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Best School Supplier 2024</h4>
+        <p style="font-size:0.8rem;color:var(--champagne);font-weight:600">Indian Sports Excellence Awards</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:32px;text-align:center" data-reveal data-delay="2">
+        <div style="font-size:3.5rem;margin-bottom:16px">📜</div>
+        <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">ISO 9001:2015 Certified</h4>
+        <p style="font-size:0.8rem;color:var(--champagne);font-weight:600">Quality Management System</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:32px;text-align:center" data-reveal data-delay="3">
+        <div style="font-size:3.5rem;margin-bottom:16px">🌿</div>
+        <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Eco-Certified Fabrics</h4>
+        <p style="font-size:0.8rem;color:var(--champagne);font-weight:600">OEKO-TEX® Standard 100</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:32px;text-align:center" data-reveal data-delay="4">
+        <div style="font-size:3.5rem;margin-bottom:16px">🥇</div>
+        <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Top-Rated on Justdial</h4>
+        <p style="font-size:0.8rem;color:var(--champagne);font-weight:600">4.9★ from 2,000+ reviews</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px">
+      <a href="contact.html#quote" class="btn btn-primary btn-lg">Start Your Order Today →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="navbar-logo" style="margin-bottom:16px;display:inline-flex">
+          <div class="logo-icon">🏆</div>
+          <div class="logo-text"><span class="logo-name">AcademyKit</span><span class="logo-tagline">Elite Sportswear</span></div>
+        </a>
+        <p>Premium school sports uniforms and team kits across India since 2009.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social">📘</a>
+          <a href="#" class="footer-social">📸</a>
+          <a href="#" class="footer-social">🐦</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Pages</h3>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="about.html" class="footer-link">About</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Sports</h3>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link">Football</a></li>
+          <li><a href="services.html#cricket" class="footer-link">Cricket</a></li>
+          <li><a href="services.html#basketball" class="footer-link">Basketball</a></li>
+          <li><a href="services.html#athletics" class="footer-link">Athletics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Contact</h3>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📞</div>
+          <div class="footer-contact-text">+91 98765 43210</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">✉️</div>
+          <div class="footer-contact-text">hello@academykit.in</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">© 2026 AcademyKit. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

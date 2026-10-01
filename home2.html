@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="AcademyKit Home 2 — Explore our full range of premium school sports uniforms with an immersive split-screen layout."/>
+  <title>AcademyKit — Home 2 | Premium School Sportswear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <style>
+    /* Stacked product showcase */
+    .showcase-slider { position: relative; overflow: hidden; }
+    .showcase-track { display: flex; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+    .showcase-slide { min-width: 100%; }
+
+    /* Sport tabs panel */
+    .sport-panel { display: none; }
+    .sport-panel.active { display: block; animation: fadeInUp 0.5s ease; }
+
+    /* Video overlay */
+    .video-section {
+      position: relative;
+      height: 580px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+    }
+
+    .video-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 8s ease-out;
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(16,26,51,0.6);
+    }
+
+    /* Custom timeline */
+    .timeline { position: relative; padding-left: 40px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 12px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--royal-violet), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 36px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -34px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--electric-coral);
+      border: 3px solid var(--bg-primary);
+      box-shadow: 0 0 0 3px rgba(240,90,90,0.3);
+    }
+
+    .timeline-year {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      margin-bottom: 4px;
+    }
+
+    .timeline-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .timeline-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    /* Sport card large */
+    .sport-card-large {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      cursor: pointer;
+    }
+
+    .sport-card-large img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .sport-card-large:hover img { transform: scale(1.06); }
+
+    .sport-card-large-content {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 32px 28px;
+      background: linear-gradient(transparent, rgba(16,26,51,0.98));
+    }
+
+    .sport-card-large-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--champagne);
+      margin-bottom: 8px;
+    }
+
+    .sport-card-large-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .sport-card-large-price {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--electric-coral);
+    }
+
+    /* Floating comparison badge */
+    .compare-float {
+      position: fixed;
+      bottom: 100px;
+      right: 32px;
+      background: var(--gradient-violet);
+      color: white;
+      padding: 12px 20px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-violet);
+      display: none;
+      z-index: 800;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-transition" id="pageTransition"></div>
+<button class="back-to-top" aria-label="Back to top">↑</button>
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close">✕</button>
+    <img src="" alt="Lightbox image"/>
+  </div>
+</div>
+<div class="toast-container"></div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">🏆</div>
+      <div class="logo-text">
+        <span class="logo-name">AcademyKit</span>
+        <span class="logo-tagline">Elite Sportswear</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item"><a href="home2.html" class="nav-link active">Home 2</a></div>
+      <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+      <div class="nav-item">
+        <a href="services.html" class="nav-link">Services <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 6l4 4 4-4"/></svg></a>
+        <div class="dropdown">
+          <a href="services.html" class="dropdown-link"><span>⚽</span> Football Kits</a>
+          <a href="services.html#cricket" class="dropdown-link"><span>🏏</span> Cricket Kits</a>
+          <a href="services.html#basketball" class="dropdown-link"><span>🏀</span> Basketball Kits</a>
+          <a href="service-details.html" class="dropdown-link"><span>🎨</span> Custom Branding</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></div>
+      <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    </nav>
+    <div class="nav-controls">
+      <button class="nav-control-btn" data-theme-toggle><span data-theme-icon>☀️</span></button>
+      <button class="nav-control-btn" data-rtl-toggle><span data-dir-icon>RTL</span></button>
+      <a href="login.html" class="btn btn-sm btn-outline nav-cta">Sign In</a>
+      <a href="contact.html#quote" class="btn btn-sm btn-primary">Get Quote</a>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-nav-links">
+    <li><a href="index.html" class="mobile-nav-link">🏠 Home</a></li>
+    <li><a href="home2.html" class="mobile-nav-link">🏠 Home 2</a></li>
+    <li><a href="about.html" class="mobile-nav-link">ℹ️ About Us</a></li>
+    <li><a href="services.html" class="mobile-nav-link">🎽 Services</a></li>
+    <li><a href="pricing.html" class="mobile-nav-link">💰 Pricing</a></li>
+    <li><a href="blog.html" class="mobile-nav-link">📝 Blog</a></li>
+    <li><a href="contact.html" class="mobile-nav-link">📞 Contact</a></li>
+    <li><a href="login.html" class="mobile-nav-link">🔐 Login</a></li>
+  </ul>
+</div>
+
+<!-- ═══ SECTION 1: SPLIT HERO ═══ -->
+<section class="home2-hero">
+  <div class="home2-hero-left">
+    <div class="hero-tag" style="margin-bottom:24px">
+      <span class="hero-tag-dot"></span> Season 2026 Collection
+    </div>
+    <h1 style="font-size:clamp(2.8rem,6vw,5.5rem);font-weight:900;line-height:1.02;margin-bottom:24px">
+      Dress Your<br/>
+      <span class="highlight">School</span><br/>
+      Like Champions
+    </h1>
+    <p style="font-size:1.05rem;color:var(--text-secondary);max-width:460px;margin-bottom:40px;line-height:1.8">
+      AcademyKit's 2026 Season Collection brings bold new designs, advanced performance fabrics and fully customizable team branding for every school sport.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:48px">
+      <a href="services.html" class="btn btn-primary btn-lg">Shop 2026 Collection</a>
+      <a href="contact.html#quote" class="btn btn-outline btn-lg">Bulk Order Quote</a>
+    </div>
+
+    <!-- Sport Tabs -->
+    <div class="sport-tab-nav" data-sport-tabs-wrapper="home2">
+      <button class="sport-tab-btn active" data-sport-tab="football">⚽ Football</button>
+      <button class="sport-tab-btn" data-sport-tab="cricket">🏏 Cricket</button>
+      <button class="sport-tab-btn" data-sport-tab="basketball">🏀 Basketball</button>
+      <button class="sport-tab-btn" data-sport-tab="athletics">🏃 Athletics</button>
+    </div>
+  </div>
+
+  <div class="home2-hero-right" style="position:relative">
+    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1000&q=85" alt="Elite football team in uniform" style="width:100%;height:100%;object-fit:cover"/>
+    <div class="home2-hero-right" style="position:absolute;inset:0;background:linear-gradient(to right,var(--bg-primary) 0%,transparent 25%);z-index:1"></div>
+    <!-- Floating card -->
+    <div style="position:absolute;bottom:32px;left:32px;z-index:3;background:rgba(26,37,64,0.9);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-lg);padding:20px 24px;backdrop-filter:blur(16px);box-shadow:var(--shadow-lg)">
+      <div style="font-size:0.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--champagne);margin-bottom:6px">🔥 Best Seller</div>
+      <div style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;margin-bottom:10px">Elite Football Kit 2026</div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="font-family:var(--font-heading);font-size:1.3rem;font-weight:900;color:var(--electric-coral)">₹1,299</span>
+        <a href="service-details.html" class="btn btn-sm btn-primary">Order Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE TEXT STRIP ═══ -->
+<div class="marquee-text-section" aria-hidden="true">
+  <div class="marquee-text-track">
+    <div class="marquee-text-item">⚽ Football <span class="marquee-sep">✦</span></div>
+    <div class="marquee-text-item">🏏 Cricket <span class="marquee-sep">✦</span></div>
+    <div class="marquee-text-item">🏀 Basketball <span class="marquee-sep">✦</span></div>
+    <div class="marquee-text-item">🏃 Athletics <span class="marquee-sep">✦</span></div>
+    <div class="marquee-text-item">🏊 Swimming <span class="marquee-sep">✦</span></div>
+    <div class="marquee-text-item">🏑 Hockey <span class="marquee-sep">✦</span></div>
+    <div class="marquee-text-item">🎾 Tennis <span class="marquee-sep">✦</span></div>
+    <div class="marquee-text-item">🏋️ Gym Wear <span class="marquee-sep">✦</span></div>
+    <div class="marquee-text-item">⚽ Football <span class="marquee-sep">✦</span></div>
+    <div class="marquee-text-item">🏏 Cricket <span class="marquee-sep">✦</span></div>
+    <div class="marquee-text-item">🏀 Basketball <span class="marquee-sep">✦</span></div>
+    <div class="marquee-text-item">🏃 Athletics <span class="marquee-sep">✦</span></div>
+    <div class="marquee-text-item">🏊 Swimming <span class="marquee-sep">✦</span></div>
+    <div class="marquee-text-item">🏑 Hockey <span class="marquee-sep">✦</span></div>
+    <div class="marquee-text-item">🎾 Tennis <span class="marquee-sep">✦</span></div>
+    <div class="marquee-text-item">🏋️ Gym Wear <span class="marquee-sep">✦</span></div>
+  </div>
+</div>
+
+<!-- ═══ SECTION 2: SPORT CARD GRID ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-tag">By Sport</span>
+      <h2 class="section-title">Choose Your <span class="highlight">Arena</span></h2>
+      <p class="section-subtitle">Explore sport-specific collections designed for peak performance and team identity.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px" class="sport-cards-grid">
+      <div class="sport-card-large" data-reveal data-delay="1" data-lightbox="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=700&q=80" alt="Football team" loading="lazy"/>
+        <div class="sport-card-large-content">
+          <div class="sport-card-large-tag">⚽ Football</div>
+          <div class="sport-card-large-title">Football Kits</div>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div class="sport-card-large-price">From ₹899</div>
+            <a href="services.html" class="btn btn-sm btn-primary">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-rows:1fr 1fr;gap:20px">
+        <div class="sport-card-large" data-reveal data-delay="2" style="aspect-ratio:unset" data-lightbox="https://images.unsplash.com/photo-1624880357913-a8539238245b?w=1200&q=85">
+          <img src="https://images.unsplash.com/photo-1624880357913-a8539238245b?w=700&q=80" alt="Cricket team" loading="lazy"/>
+          <div class="sport-card-large-content">
+            <div class="sport-card-large-tag">🏏 Cricket</div>
+            <div class="sport-card-large-title">Cricket Kits</div>
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div class="sport-card-large-price">From ₹1,599</div>
+              <a href="services.html#cricket" class="btn btn-sm btn-secondary">Shop Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="sport-card-large" data-reveal data-delay="3" style="aspect-ratio:unset" data-lightbox="https://images.unsplash.com/photo-1546519638405-a9f9d0a55e7d?w=1200&q=85">
+          <img src="https://images.unsplash.com/photo-1546519638405-a9f9d0a55e7d?w=700&q=80" alt="Basketball team" loading="lazy"/>
+          <div class="sport-card-large-content">
+            <div class="sport-card-large-tag">🏀 Basketball</div>
+            <div class="sport-card-large-title">Basketball Kits</div>
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div class="sport-card-large-price">From ₹1,299</div>
+              <a href="services.html#basketball" class="btn btn-sm btn-champagne">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sport-card-large" data-reveal data-delay="4" data-lightbox="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?w=1200&q=85">
+        <img src="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?w=700&q=80" alt="Athletics" loading="lazy"/>
+        <div class="sport-card-large-content">
+          <div class="sport-card-large-tag">🏃 Athletics</div>
+          <div class="sport-card-large-title">Athletics Wear</div>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div class="sport-card-large-price">From ₹799</div>
+            <a href="services.html#athletics" class="btn btn-sm btn-outline">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3: VIDEO / BRANDING SHOWCASE ═══ -->
+<section class="section" style="background:var(--bg-secondary)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+      <!-- Video box -->
+      <div class="video-section" data-reveal="left" style="border-radius:var(--radius-xl)">
+        <div class="video-bg" style="background-image:url('https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1000&q=85')"></div>
+        <div class="video-overlay" style="border-radius:var(--radius-xl)"></div>
+        <div style="position:relative;z-index:2;text-align:center">
+          <button class="video-play-btn" onclick="alert('Video player would launch here')">▶</button>
+          <p style="margin-top:16px;font-family:var(--font-heading);font-size:0.9rem;font-weight:600;color:rgba(255,255,255,0.8)">Watch Our Craft Story</p>
+        </div>
+        <!-- floating badge -->
+        <div class="floating-badge" style="position:absolute;bottom:30px;left:24px;z-index:3">
+          <span class="floating-badge-icon">🏅</span>
+          <div class="floating-badge-text">
+            <strong>ISO Certified</strong>
+            <span>Quality Manufacturing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div data-reveal="right">
+        <span class="section-tag">Our Process</span>
+        <h2 class="section-title" style="margin:20px 0 16px">From Design to<br/><span class="highlight">Your School Field</span></h2>
+        <p style="margin-bottom:36px;color:var(--text-secondary);line-height:1.8">Every AcademyKit uniform goes through a rigorous design, fabrication and quality-control process — ensuring that what arrives at your school is nothing short of elite.</p>
+
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div class="process-step">
+            <div class="process-step-num">1</div>
+            <div class="process-step-content">
+              <h4>Design Consultation</h4>
+              <p>Our design team works with your school to create a unique kit that reflects your identity, colors and traditions.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">2</div>
+            <div class="process-step-content">
+              <h4>Fabric Selection</h4>
+              <p>Choose from our range of technical fabrics — moisture-wicking polyester, stretch mesh, or premium cotton blends.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">3</div>
+            <div class="process-step-content">
+              <h4>Production & QC</h4>
+              <p>ISO-certified manufacturing with 3-stage quality control — every stitch is inspected before dispatch.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">4</div>
+            <div class="process-step-content">
+              <h4>Delivery</h4>
+              <p>Fast, tracked delivery to your school — with complete kit manifest and fitting guide included.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4: INTERACTIVE BRANDING PREVIEW ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-tag">Custom Branding</span>
+      <h2 class="section-title">Preview Your <span class="highlight-violet">Team Identity</span></h2>
+      <p class="section-subtitle">Customise your team's kit in real-time — name, colors and crest, all in one place.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+      <!-- Branding preview -->
+      <div class="branding-preview" data-reveal="left" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:40px;text-align:center">
+        <div style="position:relative;display:inline-block;width:240px;height:320px;background:linear-gradient(135deg,#5B3FA3,#101A33);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;margin:0 auto 24px">
+          <div style="font-size:3rem" data-color-target="badge">🏆</div>
+          <div class="branding-preview-text" style="font-family:var(--font-heading);font-size:1.2rem;font-weight:900;color:white;text-align:center;padding:0 16px;letter-spacing:.08em;text-transform:uppercase">YOUR TEAM NAME</div>
+          <div style="font-size:0.75rem;color:rgba(255,255,255,0.6);letter-spacing:.15em;text-transform:uppercase">2026 Season</div>
+        </div>
+        <p style="font-size:0.85rem;color:var(--text-muted)">Live preview updates as you type</p>
+      </div>
+
+      <!-- Form -->
+      <div data-reveal="right">
+        <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:8px">Design Your Kit</h3>
+        <p style="color:var(--text-secondary);margin-bottom:28px">Fill in your team details to see a live preview.</p>
+
+        <div class="form-group">
+          <label class="form-label" for="branding-name">Team / School Name</label>
+          <input type="text" id="branding-name" class="form-input" placeholder="e.g. St. Xavier's Warriors" maxlength="30"/>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Primary Color</label>
+          <div class="color-swatches">
+            <div class="color-swatch selected" style="background:#101A33" title="Midnight Navy"></div>
+            <div class="color-swatch" style="background:#5B3FA3" title="Royal Violet"></div>
+            <div class="color-swatch" style="background:#F05A5A" title="Electric Coral"></div>
+            <div class="color-swatch" style="background:#D4B46A" title="Champagne"></div>
+            <div class="color-swatch" style="background:#1a472a" title="Forest Green"></div>
+            <div class="color-swatch" style="background:#c0392b" title="Deep Red"></div>
+            <div class="color-swatch" style="background:#2980b9" title="Sky Blue"></div>
+            <div class="color-swatch" style="background:#e67e22" title="Orange"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Sport Type</label>
+          <select class="form-select">
+            <option>Football Kit</option>
+            <option>Cricket Kit</option>
+            <option>Basketball Kit</option>
+            <option>Athletics Wear</option>
+            <option>Hockey Kit</option>
+          </select>
+        </div>
+
+        <div style="display:flex;gap:12px">
+          <a href="contact.html#quote" class="btn btn-primary" style="flex:1;justify-content:center">Get Full Quote</a>
+          <a href="service-details.html" class="btn btn-outline" style="flex:1;justify-content:center">Size Guide</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 5: TEAM GALLERY ═══ -->
+<section class="section" style="background:var(--bg-secondary)">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-tag">Team Gallery</span>
+      <h2 class="section-title">Schools Who <span class="highlight-champagne">Champion AcademyKit</span></h2>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-item-1" data-lightbox="https://images.unsplash.com/photo-1547409883-16c40b90b399?w=1200&q=85" data-reveal="scale">
+        <img src="https://images.unsplash.com/photo-1547409883-16c40b90b399?w=900&q=80" alt="School football team" loading="lazy"/>
+        <div class="gallery-item-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item gallery-item-2" data-lightbox="https://images.unsplash.com/photo-1529904099918-e20dafb2ef97?w=1200&q=85" data-reveal="scale" data-delay="1">
+        <img src="https://images.unsplash.com/photo-1529904099918-e20dafb2ef97?w=600&q=80" alt="Football training" loading="lazy"/>
+        <div class="gallery-item-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item gallery-item-3" data-lightbox="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=85" data-reveal="scale" data-delay="2">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Athletics track" loading="lazy"/>
+        <div class="gallery-item-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item gallery-item-4" data-lightbox="https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?w=1200&q=85" data-reveal="scale" data-delay="1">
+        <img src="https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?w=600&q=80" alt="Cricket match" loading="lazy"/>
+        <div class="gallery-item-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item gallery-item-5" data-lightbox="https://images.unsplash.com/photo-1546519638405-a9f9d0a55e7d?w=1200&q=85" data-reveal="scale" data-delay="2">
+        <img src="https://images.unsplash.com/photo-1546519638405-a9f9d0a55e7d?w=600&q=80" alt="Basketball" loading="lazy"/>
+        <div class="gallery-item-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item gallery-item-6" data-lightbox="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1200&q=85" data-reveal="scale" data-delay="3">
+        <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&q=80" alt="Sports day" loading="lazy"/>
+        <div class="gallery-item-overlay"><span>🔍</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 6: CTA + NEWSLETTER ═══ -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+      <!-- CTA card -->
+      <div class="cta-section" data-reveal="left">
+        <h2 class="cta-title">Ready to Outfit Your School Team?</h2>
+        <p class="cta-desc">Get a free consultation and custom quote for your school's sports uniform requirements.</p>
+        <div class="cta-actions">
+          <a href="contact.html#quote" class="btn btn-champagne btn-lg">Request Free Quote</a>
+          <a href="pricing.html" class="btn btn-outline btn-lg">View Pricing</a>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:52px 44px;display:flex;flex-direction:column;justify-content:center" data-reveal="right">
+        <span class="section-tag" style="margin-bottom:20px">Stay Updated</span>
+        <h3 style="font-size:1.75rem;font-weight:800;margin-bottom:12px">Get Season Updates & Exclusive Deals</h3>
+        <p style="color:var(--text-secondary);margin-bottom:28px;font-size:0.95rem">Subscribe to receive new collection launches, seasonal discounts and sportswear care guides.</p>
+        <form data-validate-form data-success-msg="Thanks! You're now subscribed to AcademyKit updates.">
+          <div class="form-group">
+            <input type="email" class="form-input" placeholder="Your school email address" data-validate="required|email" data-msg-required="Email is required" data-msg-email="Please enter a valid email"/>
+            <p class="form-error-msg"></p>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" data-original-text="Subscribe Now">Subscribe Now →</button>
+        </form>
+        <p style="font-size:0.78rem;color:var(--text-muted);margin-top:12px">No spam. Unsubscribe anytime. Used by 500+ school sports coordinators.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="navbar-logo" style="margin-bottom:16px;display:inline-flex">
+          <div class="logo-icon">🏆</div>
+          <div class="logo-text">
+            <span class="logo-name">AcademyKit</span>
+            <span class="logo-tagline">Elite Sportswear</span>
+          </div>
+        </a>
+        <p>Premium school sports uniforms and team kits. Trusted by 500+ schools across India for over 15 years of sporting excellence.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social">📘</a>
+          <a href="#" class="footer-social">📸</a>
+          <a href="#" class="footer-social">🐦</a>
+          <a href="#" class="footer-social">📺</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Sports</h3>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link">Football Kits</a></li>
+          <li><a href="services.html#cricket" class="footer-link">Cricket Kits</a></li>
+          <li><a href="services.html#basketball" class="footer-link">Basketball Kits</a></li>
+          <li><a href="services.html#athletics" class="footer-link">Athletics Wear</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Contact</h3>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📞</div>
+          <div class="footer-contact-text">+91 98765 43210</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">✉️</div>
+          <div class="footer-contact-text">hello@academykit.in</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">© 2026 AcademyKit. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Privacy Policy</a>
+        <a href="#" class="footer-bottom-link">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

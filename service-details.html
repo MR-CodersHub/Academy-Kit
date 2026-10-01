@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="AcademyKit Service Details — Custom branding, size guide, product zoom, fabric details and everything you need for your school sports kit order."/>
+  <title>Service Details — AcademyKit Custom Sportswear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+</head>
+<body>
+
+<div class="page-transition"></div>
+<button class="back-to-top">↑</button>
+<div class="lightbox" id="lightbox"><div class="lightbox-content"><button class="lightbox-close">✕</button><img src="" alt=""/></div></div>
+<div class="toast-container"></div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">🏆</div>
+      <div class="logo-text"><span class="logo-name">AcademyKit</span><span class="logo-tagline">Elite Sportswear</span></div>
+    </a>
+    <nav class="nav-links">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+      <div class="nav-item">
+        <a href="services.html" class="nav-link active">Services <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 6l4 4 4-4"/></svg></a>
+        <div class="dropdown">
+          <a href="services.html" class="dropdown-link"><span>⚽</span> Football Kits</a>
+          <a href="services.html#cricket" class="dropdown-link"><span>🏏</span> Cricket Kits</a>
+          <a href="services.html#basketball" class="dropdown-link"><span>🏀</span> Basketball Kits</a>
+          <a href="service-details.html" class="dropdown-link"><span>🎨</span> Custom Branding</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></div>
+      <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    </nav>
+    <div class="nav-controls">
+      <button class="nav-control-btn" data-theme-toggle><span data-theme-icon>☀️</span></button>
+      <button class="nav-control-btn" data-rtl-toggle><span data-dir-icon>RTL</span></button>
+      <a href="login.html" class="btn btn-sm btn-outline nav-cta">Sign In</a>
+      <a href="contact.html#quote" class="btn btn-sm btn-primary">Get Quote</a>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-nav-links">
+    <li><a href="index.html" class="mobile-nav-link">🏠 Home</a></li>
+    <li><a href="about.html" class="mobile-nav-link">ℹ️ About Us</a></li>
+    <li><a href="services.html" class="mobile-nav-link">🎽 Services</a></li>
+    <li><a href="pricing.html" class="mobile-nav-link">💰 Pricing</a></li>
+    <li><a href="contact.html" class="mobile-nav-link">📞 Contact</a></li>
+  </ul>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <nav class="breadcrumb" style="justify-content:center;margin-bottom:20px">
+        <a href="index.html" class="breadcrumb-item">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="services.html" class="breadcrumb-item">Services</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-active">Service Details</span>
+      </nav>
+      <span class="section-tag">Custom Branding</span>
+      <h1 class="page-hero-title">Elite Pro <span class="highlight">Football Kit</span></h1>
+      <p class="page-hero-desc">Full details, size guide, customization options and product specifications.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 1: PRODUCT DETAIL ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="product-detail-grid">
+      <!-- Left: Image with zoom -->
+      <div data-reveal="left">
+        <div class="zoom-wrapper" id="productZoom" style="border-radius:var(--radius-xl);overflow:hidden;background:var(--bg-card);border:1px solid var(--border-color)">
+          <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=85" alt="Elite Football Kit" id="mainProductImg" style="width:100%;aspect-ratio:4/5;object-fit:cover"/>
+          <div class="zoom-lens"></div>
+          <div class="zoom-result"></div>
+        </div>
+        <!-- Thumbnails -->
+        <div class="product-detail-thumbnails" style="margin-top:16px">
+          <div class="thumb-item active" onclick="changeThumb(this,'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=85')">
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=200&q=80" alt="View 1"/>
+          </div>
+          <div class="thumb-item" onclick="changeThumb(this,'https://images.unsplash.com/photo-1529904099918-e20dafb2ef97?w=800&q=85')">
+            <img src="https://images.unsplash.com/photo-1529904099918-e20dafb2ef97?w=200&q=80" alt="View 2"/>
+          </div>
+          <div class="thumb-item" onclick="changeThumb(this,'https://images.unsplash.com/photo-1547409883-16c40b90b399?w=800&q=85')">
+            <img src="https://images.unsplash.com/photo-1547409883-16c40b90b399?w=200&q=80" alt="View 3"/>
+          </div>
+          <div class="thumb-item" onclick="changeThumb(this,'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&q=85')">
+            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=200&q=80" alt="View 4"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Details -->
+      <div data-reveal="right">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <div style="background:var(--gradient-violet);color:white;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:5px 14px;border-radius:var(--radius-full)">⚽ Football</div>
+          <div style="background:var(--gradient-coral);color:white;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:5px 14px;border-radius:var(--radius-full)">Best Seller</div>
+        </div>
+
+        <h1 style="font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;margin-bottom:12px">Elite Pro Football Kit 2026</h1>
+
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+          <div style="display:flex;gap:3px;color:var(--champagne)">★★★★★</div>
+          <span style="font-size:.875rem;color:var(--text-muted)">(247 reviews)</span>
+        </div>
+
+        <div style="margin-bottom:24px">
+          <span style="font-family:var(--font-heading);font-size:2rem;font-weight:900;color:var(--electric-coral)">₹1,299</span>
+          <span style="font-size:1rem;color:var(--text-muted);text-decoration:line-through;margin-left:10px">₹1,800</span>
+          <span style="background:rgba(240,90,90,.15);color:var(--electric-coral);font-size:.8rem;font-weight:700;padding:4px 10px;border-radius:var(--radius-full);margin-left:10px">28% OFF</span>
+        </div>
+
+        <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:28px">
+          Our flagship football kit combines cutting-edge moisture-wicking technology with precision sublimated printing. Includes match jersey, shorts and socks — available with full custom branding, number printing and school badge embroidery.
+        </p>
+
+        <!-- Colors -->
+        <div style="margin-bottom:24px">
+          <div style="font-family:var(--font-heading);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;color:var(--text-secondary)">Kit Color <span style="color:var(--text-muted)">(Select Primary)</span></div>
+          <div class="color-swatches">
+            <div class="color-swatch selected" style="background:#101A33" title="Midnight Navy"></div>
+            <div class="color-swatch" style="background:#5B3FA3" title="Royal Violet"></div>
+            <div class="color-swatch" style="background:#F05A5A" title="Electric Coral"></div>
+            <div class="color-swatch" style="background:#D4B46A" title="Champagne Gold"></div>
+            <div class="color-swatch" style="background:#1a472a" title="Forest Green"></div>
+            <div class="color-swatch" style="background:#c0392b" title="Deep Red"></div>
+          </div>
+        </div>
+
+        <!-- Sizes -->
+        <div style="margin-bottom:28px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:12px">
+            <div style="font-family:var(--font-heading);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-secondary)">Size</div>
+            <a href="#size-guide" style="font-size:.82rem;font-weight:700;color:var(--electric-coral)">📐 Size Guide</a>
+          </div>
+          <div class="size-buttons">
+            <button class="size-btn">5-6y</button>
+            <button class="size-btn">7-8y</button>
+            <button class="size-btn selected">9-10y</button>
+            <button class="size-btn">11-12y</button>
+            <button class="size-btn">13-14y</button>
+            <button class="size-btn">S</button>
+            <button class="size-btn">M</button>
+            <button class="size-btn">L</button>
+            <button class="size-btn">XL</button>
+            <button class="size-btn out-of-stock">XXL</button>
+          </div>
+        </div>
+
+        <!-- Quantity -->
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:28px">
+          <div style="font-family:var(--font-heading);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-secondary)">Qty (min. 20)</div>
+          <div class="quantity-selector">
+            <button class="qty-btn qty-dec">−</button>
+            <input type="number" class="qty-input" value="20" min="20"/>
+            <button class="qty-btn qty-inc">+</button>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div style="display:flex;gap:12px;margin-bottom:32px;flex-wrap:wrap">
+          <a href="contact.html#quote" class="btn btn-primary btn-lg" style="flex:1;justify-content:center">🛒 Request Quote</a>
+          <button class="btn btn-outline btn-lg" onclick="Toast.show({type:'info',title:'Saved!',message:'Kit added to your wishlist.'})">♡ Save</button>
+        </div>
+
+        <!-- Meta -->
+        <div style="background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-md);padding:20px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;justify-content:space-between;font-size:.875rem">
+            <span style="color:var(--text-muted)">Fabric</span>
+            <span style="font-weight:600">Moisture-Wicking Polyester (150gsm)</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:.875rem">
+            <span style="color:var(--text-muted)">Customization</span>
+            <span style="font-weight:600">Full sublimation, embroidery available</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:.875rem">
+            <span style="color:var(--text-muted)">Min. Order</span>
+            <span style="font-weight:600">20 units per size run</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:.875rem">
+            <span style="color:var(--text-muted)">Lead Time</span>
+            <span style="font-weight:600">7–14 business days</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:.875rem">
+            <span style="color:var(--text-muted)">Delivery</span>
+            <span style="color:#22c55e;font-weight:600">✓ Free delivery above ₹25,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 2: SERVICE TABS ═══ -->
+<section class="section" style="background:var(--bg-secondary)" id="tabs">
+  <div class="container service-tabs-wrapper">
+    <div class="service-tabs">
+      <button class="service-tab active" data-tab="description">Description</button>
+      <button class="service-tab" data-tab="branding">Custom Branding</button>
+      <button class="service-tab" data-tab="specs">Specifications</button>
+      <button class="service-tab" data-tab="reviews">Reviews (247)</button>
+    </div>
+
+    <div class="tab-content active" data-tab-content="description">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+        <div>
+          <h3 style="font-size:1.5rem;font-weight:800;margin-bottom:16px">About This Kit</h3>
+          <p style="color:var(--text-secondary);line-height:1.85;margin-bottom:16px">The Elite Pro Football Kit is engineered for school-level competitive play. Built on our signature 150gsm moisture-wicking polyester, this kit draws sweat away from the skin and dries 3× faster than cotton, keeping players cool and comfortable throughout match time.</p>
+          <p style="color:var(--text-secondary);line-height:1.85;margin-bottom:24px">The jersey features double-needle stitching at high-stress points, mesh underarm panels for ventilation, and a flatlock collar for comfort. Available in team-specific colorways with full sublimated printing — no peel, no crack.</p>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;gap:10px;font-size:.9rem"><span style="color:var(--champagne)">✓</span> Double-needle reinforced seams</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:.9rem"><span style="color:var(--champagne)">✓</span> Anti-odor treatment applied</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:.9rem"><span style="color:var(--champagne)">✓</span> OEKO-TEX® certified fabric</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:.9rem"><span style="color:var(--champagne)">✓</span> Machine washable at 40°C</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:.9rem"><span style="color:var(--champagne)">✓</span> 50-wash color retention guarantee</div>
+          </div>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1547409883-16c40b90b399?w=700&q=80" alt="Football kit detail" loading="lazy" style="width:100%;border-radius:var(--radius-xl)"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" data-tab-content="branding">
+      <div>
+        <h3 style="font-size:1.5rem;font-weight:800;margin-bottom:16px">Custom Branding Options</h3>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px">
+          <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:24px;text-align:center">
+            <div style="font-size:2.5rem;margin-bottom:12px">🎨</div>
+            <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Sublimation Printing</h4>
+            <p style="font-size:.875rem;color:var(--text-secondary)">Photographic-quality, full-color designs. No additional cost on orders above 50 units.</p>
+          </div>
+          <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:24px;text-align:center">
+            <div style="font-size:2.5rem;margin-bottom:12px">🪡</div>
+            <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Embroidery</h4>
+            <p style="font-size:.875rem;color:var(--text-secondary)">3D raised embroidery for school crests and logos. Premium finish, ₹49 per badge.</p>
+          </div>
+          <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:24px;text-align:center">
+            <div style="font-size:2.5rem;margin-bottom:12px">🔢</div>
+            <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Name & Number</h4>
+            <p style="font-size:.875rem;color:var(--text-secondary)">Heat-pressed or printed player names and squad numbers. ₹29 per unit.</p>
+          </div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:28px">
+          <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:16px">Branding Preview Tool</h4>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+            <div>
+              <div class="form-group">
+                <label class="form-label" for="b-school-name">School / Team Name</label>
+                <input type="text" id="branding-name" class="form-input" placeholder="e.g. BLUE EAGLES"/>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Primary Color</label>
+                <div class="color-swatches">
+                  <div class="color-swatch selected" style="background:#101A33"></div>
+                  <div class="color-swatch" style="background:#5B3FA3"></div>
+                  <div class="color-swatch" style="background:#F05A5A"></div>
+                  <div class="color-swatch" style="background:#D4B46A"></div>
+                  <div class="color-swatch" style="background:#1a472a"></div>
+                </div>
+              </div>
+            </div>
+            <div class="branding-preview" style="background:linear-gradient(135deg,#5B3FA3,#101A33);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;min-height:160px">
+              <div style="font-size:2rem">🏆</div>
+              <div class="branding-preview-text" style="font-family:var(--font-heading);font-size:1.1rem;font-weight:900;color:white;letter-spacing:.1em;text-transform:uppercase">YOUR TEAM NAME</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" data-tab-content="specs">
+      <h3 style="font-size:1.5rem;font-weight:800;margin-bottom:20px">Technical Specifications</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+        <div>
+          <table style="width:100%;border-collapse:collapse">
+            <tr style="border-bottom:1px solid var(--border-color)">
+              <td style="padding:12px 0;font-size:.875rem;color:var(--text-muted);width:40%">Fabric</td>
+              <td style="padding:12px 0;font-size:.875rem;font-weight:600">100% Polyester, 150gsm</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border-color)">
+              <td style="padding:12px 0;font-size:.875rem;color:var(--text-muted)">Technology</td>
+              <td style="padding:12px 0;font-size:.875rem;font-weight:600">DryCool™ Moisture-Wicking</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border-color)">
+              <td style="padding:12px 0;font-size:.875rem;color:var(--text-muted)">Printing</td>
+              <td style="padding:12px 0;font-size:.875rem;font-weight:600">Full Sublimation / Heat Press</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border-color)">
+              <td style="padding:12px 0;font-size:.875rem;color:var(--text-muted)">Fit</td>
+              <td style="padding:12px 0;font-size:.875rem;font-weight:600">Athletic / Semi-slim</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border-color)">
+              <td style="padding:12px 0;font-size:.875rem;color:var(--text-muted)">Care</td>
+              <td style="padding:12px 0;font-size:.875rem;font-weight:600">Machine wash 40°C, no tumble dry</td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:12px">Performance Ratings</h4>
+          <div class="progress-bar-container">
+            <div class="progress-bar-header">
+              <span class="progress-bar-label">Breathability</span>
+              <span class="progress-bar-value">95%</span>
+            </div>
+            <div class="progress-bar-track"><div class="progress-bar-fill" data-progress="95"></div></div>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-header">
+              <span class="progress-bar-label">Moisture Wicking</span>
+              <span class="progress-bar-value">90%</span>
+            </div>
+            <div class="progress-bar-track"><div class="progress-bar-fill" data-progress="90"></div></div>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-header">
+              <span class="progress-bar-label">Durability</span>
+              <span class="progress-bar-value">88%</span>
+            </div>
+            <div class="progress-bar-track"><div class="progress-bar-fill" data-progress="88"></div></div>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-header">
+              <span class="progress-bar-label">Color Fastness</span>
+              <span class="progress-bar-value">98%</span>
+            </div>
+            <div class="progress-bar-track"><div class="progress-bar-fill" data-progress="98"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" data-tab-content="reviews">
+      <div class="grid-3">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Ordered 60 kits for our inter-school tournament. Perfect sublimation, the colors are exactly as designed.</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Coach" class="testimonial-avatar" loading="lazy"/>
+            <div><div class="testimonial-name">Suresh Krishnan</div><div class="testimonial-role">PE Head, DPS Bangalore</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">The quality is unbelievable at this price point. Students love wearing them and parents are impressed too.</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Teacher" class="testimonial-avatar" loading="lazy"/>
+            <div><div class="testimonial-name">Kavitha Reddy</div><div class="testimonial-role">Sports Coordinator, Chennai</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★☆</div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Excellent kits. Delivered in 10 days as promised. Only small request: would like even more color options.</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Coach" class="testimonial-avatar" loading="lazy"/>
+            <div><div class="testimonial-name">Rajan Patel</div><div class="testimonial-role">Football Coach, Ahmedabad</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3: SIZE GUIDE ═══ -->
+<section class="section" id="size-guide">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-tag">Fit Guide</span>
+      <h2 class="section-title">Interactive <span class="highlight-violet">Size Guide</span></h2>
+    </div>
+    <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:40px;overflow-x:auto">
+      <div style="display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap">
+        <button class="service-tab active" onclick="this.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));this.classList.add('active')">Football & Cricket</button>
+        <button class="service-tab" onclick="this.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));this.classList.add('active')">Basketball</button>
+        <button class="service-tab" onclick="this.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));this.classList.add('active')">Athletics</button>
+      </div>
+      <table class="size-guide-table">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Age Group</th>
+            <th>Chest (cm)</th>
+            <th>Waist (cm)</th>
+            <th>Hips (cm)</th>
+            <th>Height (cm)</th>
+            <th>Weight (kg)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>5-6y</td><td>5–6 years</td><td>56–60</td><td>52–56</td><td>58–62</td><td>110–120</td><td>17–22</td></tr>
+          <tr><td>7-8y</td><td>7–8 years</td><td>61–65</td><td>57–61</td><td>63–67</td><td>121–130</td><td>22–28</td></tr>
+          <tr><td>9-10y</td><td>9–10 years</td><td>66–70</td><td>62–66</td><td>68–72</td><td>131–140</td><td>28–35</td></tr>
+          <tr><td>11-12y</td><td>11–12 years</td><td>71–76</td><td>67–72</td><td>73–78</td><td>141–150</td><td>35–44</td></tr>
+          <tr><td>13-14y</td><td>13–14 years</td><td>77–84</td><td>73–80</td><td>79–86</td><td>151–163</td><td>44–56</td></tr>
+          <tr><td>S (Adult)</td><td>15–16 years</td><td>85–90</td><td>70–75</td><td>87–92</td><td>162–168</td><td>56–65</td></tr>
+          <tr><td>M (Adult)</td><td>16–18 years</td><td>91–97</td><td>76–81</td><td>93–99</td><td>168–175</td><td>65–75</td></tr>
+          <tr><td>L (Adult)</td><td>17+ years</td><td>98–104</td><td>82–88</td><td>100–106</td><td>175–182</td><td>75–88</td></tr>
+          <tr><td>XL (Adult)</td><td>Adult</td><td>105–112</td><td>89–96</td><td>107–114</td><td>180–188</td><td>88–100</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:16px;font-size:.82rem;color:var(--text-muted)">💡 Tip: For active sportswear, we recommend ordering one size up for a more comfortable fit. All measurements are in centimetres.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4: FAQ ═══ -->
+<section class="section" style="background:var(--bg-secondary)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+      <div data-reveal="left">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title" style="margin:20px 0 32px">Frequently Asked <span class="highlight">Questions</span></h2>
+        <p style="color:var(--text-secondary);margin-bottom:32px">Have more questions? Our school kit specialists are here to help.</p>
+        <a href="contact.html" class="btn btn-primary">Contact Our Team →</a>
+      </div>
+      <div data-reveal="right">
+        <div class="faq-item">
+          <button class="faq-question">
+            What is the minimum order quantity?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Our minimum order is 20 units per design. For accessories like caps and bags, the minimum is 10 units. We offer tiered pricing with better rates for larger orders.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How long does production take?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Standard lead time is 7–14 business days from design approval. Express orders (5–7 days) are available for urgent tournaments at a small surcharge. We recommend ordering 3 weeks ahead for sports days.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I get a sample before placing a bulk order?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes! We offer digital mockup previews within 24 hours at no cost. Physical samples are available for orders above 100 units at a nominal ₹299 fee (refundable on order placement).</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What customization options are available?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">We offer full sublimation printing, embroidery for school crests, heat-pressed name and number, woven labels, and custom collar/cuff designs. Color combinations are virtually unlimited.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you deliver across all of India?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes, we deliver pan-India to all 28 states and 8 union territories. Free delivery is available on orders above ₹25,000. All shipments are tracked and insured.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 5: RELATED PRODUCTS ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-tag">Also Popular</span>
+      <h2 class="section-title">Complete Your <span class="highlight-champagne">Team Kit</span></h2>
+    </div>
+    <div class="grid-4">
+      <div class="product-card" data-reveal data-delay="1">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1624880357913-a8539238245b?w=500&q=80" alt="Cricket kit" loading="lazy"/>
+          <div class="product-badge">New</div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">🏏 Cricket</div>
+          <h3 class="product-card-title">Championship Cricket Set</h3>
+          <div class="product-card-footer">
+            <span class="product-price">₹2,499</span>
+            <div class="product-rating">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-reveal data-delay="2">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1546519638405-a9f9d0a55e7d?w=500&q=80" alt="Basketball" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">🏀 Basketball</div>
+          <h3 class="product-card-title">Academy Basketball Kit</h3>
+          <div class="product-card-footer">
+            <span class="product-price">₹1,799</span>
+            <div class="product-rating">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-reveal data-delay="3">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&q=80" alt="Team bag" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">👜 Accessories</div>
+          <h3 class="product-card-title">Team Duffel Bag</h3>
+          <div class="product-card-footer">
+            <span class="product-price">₹1,499</span>
+            <div class="product-rating">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-reveal data-delay="4">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=500&q=80" alt="Team cap" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">🧢 Accessories</div>
+          <h3 class="product-card-title">Custom Team Cap</h3>
+          <div class="product-card-footer">
+            <span class="product-price">₹249</span>
+            <div class="product-rating">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 6: CTA ═══ -->
+<section class="section" style="background:var(--bg-secondary)">
+  <div class="container">
+    <div class="cta-section" data-reveal>
+      <h2 class="cta-title">Ready to Place Your School Order?</h2>
+      <p class="cta-desc">Contact our school kit specialists today. Free consultation, digital mockup within 24 hours.</p>
+      <div class="cta-actions">
+        <a href="contact.html#quote" class="btn btn-champagne btn-lg">📋 Get a Free Quote</a>
+        <a href="pricing.html" class="btn btn-outline btn-lg">💰 View Pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="navbar-logo" style="margin-bottom:16px;display:inline-flex">
+          <div class="logo-icon">🏆</div>
+          <div class="logo-text"><span class="logo-name">AcademyKit</span><span class="logo-tagline">Elite Sportswear</span></div>
+        </a>
+        <p>Premium school sports uniforms and team kits. Trusted by 500+ schools across India.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social">📘</a>
+          <a href="#" class="footer-social">📸</a>
+          <a href="#" class="footer-social">🐦</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Services</h3>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link">All Services</a></li>
+          <li><a href="service-details.html" class="footer-link">Custom Branding</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Pages</h3>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="login.html" class="footer-link">Login</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Contact</h3>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📞</div>
+          <div class="footer-contact-text">+91 98765 43210</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">✉️</div>
+          <div class="footer-contact-text">hello@academykit.in</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">© 2026 AcademyKit. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function changeThumb(el, src) {
+  document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  const mainImg = document.getElementById('mainProductImg');
+  if (mainImg) {
+    mainImg.src = src;
+    // Re-init zoom
+    const wrapper = document.getElementById('productZoom');
+    const result = wrapper.querySelector('.zoom-result');
+    if (result) result.style.backgroundImage = `url(${src})`;
+  }
+}
+</script>
+</body>
+</html>

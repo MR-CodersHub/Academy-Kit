@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="AcademyKit — Coming Soon. Our new Season 2026 collection launches soon. Subscribe for early access."/>
+  <title>Coming Soon — AcademyKit Season 2026 Launch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <style>
+    body { overflow: hidden; }
+
+    .cs-page {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    .cs-left {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cs-left img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cs-left-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(16,26,51,0.7) 0%, rgba(16,26,51,0.2) 100%);
+    }
+
+    .cs-left-badge {
+      position: absolute;
+      bottom: 48px;
+      left: 40px;
+      background: rgba(26,37,64,.9);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-xl);
+      padding: 24px 28px;
+      backdrop-filter: blur(16px);
+    }
+
+    .cs-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 56px;
+      background: var(--bg-primary);
+      overflow-y: auto;
+    }
+
+    .cs-content {
+      max-width: 480px;
+      width: 100%;
+    }
+
+    .progress-ring-wrap {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 32px;
+    }
+
+    .progress-ring {
+      transform: rotate(-90deg);
+    }
+
+    .progress-ring-bg {
+      fill: none;
+      stroke: rgba(91,63,163,.2);
+      stroke-width: 8;
+    }
+
+    .progress-ring-fill {
+      fill: none;
+      stroke: url(#ringGradient);
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-dasharray: 326.7;
+      stroke-dashoffset: 163.35;
+      transition: stroke-dashoffset 1s ease;
+    }
+
+    .progress-ring-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--champagne);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-start;
+      margin-top: 32px;
+    }
+
+    .social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all var(--transition-base);
+    }
+
+    .social-link:hover {
+      background: var(--electric-coral);
+      border-color: var(--electric-coral);
+      transform: translateY(-3px);
+    }
+
+    @media(max-width:768px) {
+      body { overflow: auto; }
+      .cs-page { grid-template-columns: 1fr; }
+      .cs-left { height: 320px; }
+      .cs-right { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="toast-container"></div>
+
+<div class="cs-page">
+  <!-- Left: Visual -->
+  <div class="cs-left">
+    <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1200&q=85" alt="Season 2026 kit preview" loading="lazy"/>
+    <div class="cs-left-overlay"></div>
+
+    <!-- Logo overlay -->
+    <div style="position:absolute;top:40px;left:40px;z-index:2">
+      <a href="index.html" class="navbar-logo">
+        <div class="logo-icon">🏆</div>
+        <div class="logo-text">
+          <span class="logo-name">AcademyKit</span>
+          <span class="logo-tagline">Elite Sportswear</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Badge -->
+    <div class="cs-left-badge">
+      <div style="font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--champagne);margin-bottom:6px">🔥 Season 2026 Preview</div>
+      <div style="font-family:var(--font-heading);font-size:1.1rem;font-weight:800;color:white;margin-bottom:6px">New Collection Dropping Soon</div>
+      <div style="font-size:.82rem;color:rgba(255,255,255,.65)">50+ new designs across 8 sports</div>
+    </div>
+  </div>
+
+  <!-- Right: Content -->
+  <div class="cs-right">
+    <div class="cs-content">
+      <span class="section-tag" style="margin-bottom:24px">Coming Soon</span>
+
+      <h1 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;line-height:1.1;margin-bottom:16px">
+        Season 2026 <span class="highlight">Collection</span> Launching Soon
+      </h1>
+
+      <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:36px">
+        We're putting the final stitches on our most ambitious collection yet — 50+ new designs, 8 sports, next-gen fabrics and fully customizable sublimation from day one. Subscribe to get early access and a 15% launch discount.
+      </p>
+
+      <!-- Countdown -->
+      <div class="countdown-grid" data-countdown="2026-11-15T09:00:00" style="justify-content:flex-start;margin-bottom:40px">
+        <div class="countdown-unit">
+          <div class="countdown-value" id="countdown-days">47</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-unit">
+          <div class="countdown-value" id="countdown-hours">00</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-unit">
+          <div class="countdown-value" id="countdown-mins">00</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-unit">
+          <div class="countdown-value" id="countdown-secs">00</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+
+      <!-- Progress Ring -->
+      <div style="display:flex;align-items:center;gap:24px;margin-bottom:36px">
+        <div class="progress-ring-wrap">
+          <svg class="progress-ring" width="120" height="120" viewBox="0 0 120 120">
+            <defs>
+              <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#5B3FA3"/>
+                <stop offset="100%" stop-color="#F05A5A"/>
+              </linearGradient>
+            </defs>
+            <circle class="progress-ring-bg" cx="60" cy="60" r="52"/>
+            <circle class="progress-ring-fill" cx="60" cy="60" r="52"/>
+          </svg>
+          <div class="progress-ring-center">68%</div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-heading);font-weight:700;margin-bottom:4px">Production Progress</div>
+          <p style="font-size:.875rem;color:var(--text-secondary);margin:0">We're 68% complete. Manufacturing is in full swing at our Ludhiana &amp; Tiruppur units.</p>
+        </div>
+      </div>
+
+      <!-- Newsletter form -->
+      <h3 style="font-family:var(--font-heading);font-weight:700;font-size:1.1rem;margin-bottom:8px">Get Early Access + 15% Off</h3>
+      <p style="font-size:.875rem;color:var(--text-secondary);margin-bottom:16px">Be the first school to order from Season 2026. Subscribers get a 15% launch discount.</p>
+
+      <form data-validate-form data-success-msg="You're on the early access list! We'll email you on launch day with your 15% discount code." style="display:flex;gap:10px;margin-bottom:24px">
+        <input type="email" class="form-input" placeholder="School email address" data-validate="required|email" data-msg-required="Email required" data-msg-email="Invalid email" style="flex:1"/>
+        <button type="submit" class="btn btn-primary" data-original-text="Notify Me">Notify Me 🔔</button>
+      </form>
+
+      <p style="font-size:.78rem;color:var(--text-muted);margin-bottom:24px">Already joined by 1,200+ school sports coordinators. No spam — launch update + discount code only.</p>
+
+      <!-- Social -->
+      <div>
+        <div style="font-size:.8rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">Follow the Journey</div>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Instagram">📸</a>
+          <a href="#" class="social-link" title="Facebook">📘</a>
+          <a href="#" class="social-link" title="Twitter">🐦</a>
+          <a href="#" class="social-link" title="YouTube">📺</a>
+          <a href="#" class="social-link" title="LinkedIn">💼</a>
+        </div>
+      </div>
+
+      <!-- Back link -->
+      <div style="margin-top:32px;padding-top:24px;border-top:1px solid var(--border-color)">
+        <a href="index.html" style="font-size:.875rem;color:var(--text-muted);font-weight:600;transition:color .2s">
+          ← Return to main AcademyKit website
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+// Countdown — override with inline for this page
+(function() {
+  const target = new Date('2026-11-15T09:00:00').getTime();
+  function update() {
+    const now = Date.now();
+    const diff = target - now;
+    if (diff <= 0) return;
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+    const secs = Math.floor((diff % (1000*60)) / 1000);
+    const pad = n => String(n).padStart(2,'0');
+    const d = document.getElementById('countdown-days');
+    const h = document.getElementById('countdown-hours');
+    const m = document.getElementById('countdown-mins');
+    const s = document.getElementById('countdown-secs');
+    if(d) d.textContent = pad(days);
+    if(h) h.textContent = pad(hours);
+    if(m) m.textContent = pad(mins);
+    if(s) s.textContent = pad(secs);
+  }
+  update();
+  setInterval(update, 1000);
+
+  // Animate progress ring
+  setTimeout(() => {
+    const fill = document.querySelector('.progress-ring-fill');
+    if (fill) {
+      const r = 52;
+      const circ = 2 * Math.PI * r;
+      const progress = 0.68;
+      fill.style.strokeDashoffset = circ * (1 - progress);
+    }
+  }, 500);
+})();
+</script>
+</body>
+</html>

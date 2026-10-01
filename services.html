@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="AcademyKit Services — Cricket kits, football kits, basketball kits, athletics wear, custom branding and bulk school orders."/>
+  <title>Services — AcademyKit School Sports Uniforms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <style>
+    .service-card-hero {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 400px;
+    }
+    .service-card-hero-left {
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-right: none;
+      border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+    }
+    .service-card-hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card-hero-right img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+    .service-card-hero:hover .service-card-hero-right img { transform: scale(1.05); }
+
+    @media(max-width:768px){
+      .service-card-hero { grid-template-columns: 1fr; }
+      .service-card-hero-left { border-right: 1px solid var(--border-color); border-bottom: none; border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
+    }
+
+    .service-grid-masonry {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media(max-width:1024px){ .service-grid-masonry { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:640px){ .service-grid-masonry { grid-template-columns: 1fr; } }
+
+    .fabric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      transition: all var(--transition-base);
+      text-align: center;
+    }
+    .fabric-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(91,63,163,.4);
+      box-shadow: var(--shadow-violet);
+    }
+    .fabric-swatch {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-transition"></div>
+<button class="back-to-top">↑</button>
+<div class="lightbox" id="lightbox"><div class="lightbox-content"><button class="lightbox-close">✕</button><img src="" alt=""/></div></div>
+<div class="toast-container"></div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">🏆</div>
+      <div class="logo-text"><span class="logo-name">AcademyKit</span><span class="logo-tagline">Elite Sportswear</span></div>
+    </a>
+    <nav class="nav-links">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+      <div class="nav-item">
+        <a href="services.html" class="nav-link active">Services <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 6l4 4 4-4"/></svg></a>
+        <div class="dropdown">
+          <a href="services.html" class="dropdown-link"><span>⚽</span> Football Kits</a>
+          <a href="services.html#cricket" class="dropdown-link"><span>🏏</span> Cricket Kits</a>
+          <a href="services.html#basketball" class="dropdown-link"><span>🏀</span> Basketball Kits</a>
+          <a href="service-details.html" class="dropdown-link"><span>🎨</span> Custom Branding</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></div>
+      <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    </nav>
+    <div class="nav-controls">
+      <button class="nav-control-btn" data-theme-toggle><span data-theme-icon>☀️</span></button>
+      <button class="nav-control-btn" data-rtl-toggle><span data-dir-icon>RTL</span></button>
+      <a href="login.html" class="btn btn-sm btn-outline nav-cta">Sign In</a>
+      <a href="contact.html#quote" class="btn btn-sm btn-primary">Get Quote</a>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-nav-links">
+    <li><a href="index.html" class="mobile-nav-link">🏠 Home</a></li>
+    <li><a href="about.html" class="mobile-nav-link">ℹ️ About Us</a></li>
+    <li><a href="services.html" class="mobile-nav-link">🎽 Services</a></li>
+    <li><a href="pricing.html" class="mobile-nav-link">💰 Pricing</a></li>
+    <li><a href="blog.html" class="mobile-nav-link">📝 Blog</a></li>
+    <li><a href="contact.html" class="mobile-nav-link">📞 Contact</a></li>
+    <li><a href="login.html" class="mobile-nav-link">🔐 Login</a></li>
+  </ul>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=1600&q=80')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <nav class="breadcrumb" style="justify-content:center;margin-bottom:20px">
+        <a href="index.html" class="breadcrumb-item">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-active">Services</span>
+      </nav>
+      <span class="section-tag">What We Offer</span>
+      <h1 class="page-hero-title">Complete <span class="highlight">School Sport</span> Solutions</h1>
+      <p class="page-hero-desc">From cricket to football, athletics to accessories — every sport covered with premium quality kits.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 1: FOOTBALL KITS ═══ -->
+<section class="section" id="football">
+  <div class="container">
+    <div class="service-card-hero" data-reveal>
+      <div class="service-card-hero-left">
+        <div style="font-size:3rem;margin-bottom:16px">⚽</div>
+        <span class="section-tag" style="margin-bottom:16px">Football</span>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;margin-bottom:16px">Football Kits &amp; Training Wear</h2>
+        <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:24px">
+          Full football kit packages including match jerseys, shorts, socks, goalkeeper kits, training bibs and teamwear bags. Available in over 200 color combinations with fully sublimated custom printing.
+        </p>
+        <ul style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px">
+          <li style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--text-secondary)"><span style="color:var(--champagne)">✓</span> Match &amp; Training Jerseys</li>
+          <li style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--text-secondary)"><span style="color:var(--champagne)">✓</span> Goalkeeper Kits (padded shorts)</li>
+          <li style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--text-secondary)"><span style="color:var(--champagne)">✓</span> Custom Name &amp; Number Printing</li>
+          <li style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--text-secondary)"><span style="color:var(--champagne)">✓</span> Bulk Pricing from 20 units</li>
+        </ul>
+        <div style="display:flex;gap:12px">
+          <a href="contact.html#quote" class="btn btn-primary">Get Quote</a>
+          <a href="service-details.html" class="btn btn-outline">Details →</a>
+        </div>
+      </div>
+      <div class="service-card-hero-right">
+        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80" alt="Football team in uniform" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 2: CRICKET + BASKETBALL ═══ -->
+<section class="section" style="background:var(--bg-secondary)" id="cricket">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-tag">More Sports</span>
+      <h2 class="section-title">Cricket, Basketball &amp; <span class="highlight">Beyond</span></h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <!-- Cricket -->
+      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);overflow:hidden" data-reveal data-delay="1">
+        <div style="position:relative;height:260px;overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1624880357913-a8539238245b?w=700&q=80" alt="Cricket kit" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform var(--transition-slow)"/>
+          <div style="position:absolute;top:16px;left:16px;background:var(--gradient-violet);color:white;font-family:var(--font-heading);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:6px 14px;border-radius:var(--radius-full)">🏏 Cricket</div>
+        </div>
+        <div style="padding:32px">
+          <h3 style="font-family:var(--font-heading);font-size:1.4rem;font-weight:800;margin-bottom:12px">Cricket Kits</h3>
+          <p style="color:var(--text-secondary);font-size:.9rem;line-height:1.75;margin-bottom:20px">Complete cricket uniforms — white match kits, colored ODI/T20 jerseys, trousers and caps. Embroidered school crest on all garments. Available for junior to senior players.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span style="font-family:var(--font-heading);font-size:1.2rem;font-weight:900;color:var(--electric-coral)">From ₹1,599</span>
+            <a href="service-details.html" class="btn btn-sm btn-secondary">Learn More →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Basketball -->
+      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);overflow:hidden" data-reveal data-delay="2" id="basketball">
+        <div style="position:relative;height:260px;overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1546519638405-a9f9d0a55e7d?w=700&q=80" alt="Basketball kit" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+          <div style="position:absolute;top:16px;left:16px;background:var(--gradient-coral);color:white;font-family:var(--font-heading);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:6px 14px;border-radius:var(--radius-full)">🏀 Basketball</div>
+        </div>
+        <div style="padding:32px">
+          <h3 style="font-family:var(--font-heading);font-size:1.4rem;font-weight:800;margin-bottom:12px">Basketball Kits</h3>
+          <p style="color:var(--text-secondary);font-size:.9rem;line-height:1.75;margin-bottom:20px">Reversible jerseys, shorts and warm-up suits for school basketball teams. Bold sublimated graphics, reinforced stitching and moisture-wicking fabric for intense court play.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span style="font-family:var(--font-heading);font-size:1.2rem;font-weight:900;color:var(--electric-coral)">From ₹1,299</span>
+            <a href="service-details.html" class="btn btn-sm btn-primary">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3: ATHLETICS ═══ -->
+<section class="section" id="athletics">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+      <div data-reveal="left">
+        <img src="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?w=800&q=80" alt="Athletics wear" loading="lazy" style="width:100%;border-radius:var(--radius-xl);box-shadow:var(--shadow-lg)"/>
+      </div>
+      <div data-reveal="right">
+        <span class="section-tag">Athletics &amp; Track</span>
+        <h2 class="section-title" style="margin:20px 0 16px">Built for <span class="highlight">Speed &amp; Endurance</span></h2>
+        <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:28px">
+          Our athletics range covers sprint vests, long-distance running tops, track shorts, joggers, warm-up suits and field event attire. Ultra-lightweight and UV-resistant fabrics designed for Indian climate conditions.
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:32px">
+          <div class="icon-box">
+            <div class="icon-box-icon">🏃</div>
+            <div class="icon-box-content"><h4>Sprint Vests</h4><p>Aerodynamic cut, 120gsm poly.</p></div>
+          </div>
+          <div class="icon-box">
+            <div class="icon-box-icon">🏋️</div>
+            <div class="icon-box-content"><h4>Warm-up Suits</h4><p>Full zip, 4-way stretch fabric.</p></div>
+          </div>
+          <div class="icon-box">
+            <div class="icon-box-icon">🧦</div>
+            <div class="icon-box-content"><h4>Track Shorts</h4><p>Built-in liner, split hem design.</p></div>
+          </div>
+          <div class="icon-box">
+            <div class="icon-box-icon">🌤️</div>
+            <div class="icon-box-content"><h4>UV Protection</h4><p>UPF 50+ rated outer fabrics.</p></div>
+          </div>
+        </div>
+        <a href="contact.html#quote" class="btn btn-primary">Order Athletics Wear →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4: FABRIC OPTIONS ═══ -->
+<section class="section" style="background:var(--bg-secondary)" id="fabric">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-tag">Materials</span>
+      <h2 class="section-title">Our <span class="highlight-violet">Fabric Options</span></h2>
+      <p class="section-subtitle">Every fabric is tested for breathability, durability and colorfastness — so your kits look great all season long.</p>
+    </div>
+    <div class="grid-3">
+      <div class="fabric-card" data-reveal data-delay="1">
+        <div class="fabric-swatch" style="background:linear-gradient(135deg,#5B3FA3,#101A33)">💧</div>
+        <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Moisture-Wicking Polyester</h4>
+        <p style="font-size:.875rem;color:var(--text-secondary)">Our most popular choice. 100% polyester, 150gsm, pulls sweat away from skin for all-day comfort. Ideal for football &amp; cricket.</p>
+        <div style="margin-top:16px;font-size:.8rem;color:var(--champagne);font-weight:700">Best For: Football, Cricket, Basketball</div>
+      </div>
+      <div class="fabric-card" data-reveal data-delay="2">
+        <div class="fabric-swatch" style="background:linear-gradient(135deg,#F05A5A,#FF7A7A)">🌬️</div>
+        <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Breathable Mesh</h4>
+        <p style="font-size:.875rem;color:var(--text-secondary)">Open-weave mesh fabric that allows maximum airflow. Ultra-lightweight at 80gsm. Perfect for athletics and warm-weather sports.</p>
+        <div style="margin-top:16px;font-size:.8rem;color:var(--champagne);font-weight:700">Best For: Athletics, Tennis, Swimming</div>
+      </div>
+      <div class="fabric-card" data-reveal data-delay="3">
+        <div class="fabric-swatch" style="background:linear-gradient(135deg,#D4B46A,#E8CC8A)">🌿</div>
+        <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Premium Cotton Blend</h4>
+        <p style="font-size:.875rem;color:var(--text-secondary)">65% cotton, 35% polyester blend. Soft, breathable and hypoallergenic. Popular for cricket whites and school sports days.</p>
+        <div style="margin-top:16px;font-size:.8rem;color:var(--champagne);font-weight:700">Best For: Cricket, Sports Day, PE Wear</div>
+      </div>
+      <div class="fabric-card" data-reveal data-delay="1">
+        <div class="fabric-swatch" style="background:linear-gradient(135deg,#1a472a,#2d8a50)">♻️</div>
+        <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Recycled Polyester</h4>
+        <p style="font-size:.875rem;color:var(--text-secondary)">Made from 100% recycled PET bottles. OEKO-TEX® certified, same performance as virgin polyester — but eco-friendly.</p>
+        <div style="margin-top:16px;font-size:.8rem;color:var(--champagne);font-weight:700">Best For: Eco-conscious schools</div>
+      </div>
+      <div class="fabric-card" data-reveal data-delay="2">
+        <div class="fabric-swatch" style="background:linear-gradient(135deg,#2980b9,#3498db)">🔧</div>
+        <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">4-Way Stretch Spandex</h4>
+        <p style="font-size:.875rem;color:var(--text-secondary)">90% polyester, 10% spandex. Maximum stretch and recovery. Ideal for gymnastics, athletics and yoga/PE uniform options.</p>
+        <div style="margin-top:16px;font-size:.8rem;color:var(--champagne);font-weight:700">Best For: Gymnastics, Athletics</div>
+      </div>
+      <div class="fabric-card" data-reveal data-delay="3">
+        <div class="fabric-swatch" style="background:linear-gradient(135deg,#7f8c8d,#bdc3c7)">🧥</div>
+        <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Interlock Knit</h4>
+        <p style="font-size:.875rem;color:var(--text-secondary)">Double-faced knit fabric, smooth both sides. Durable and wrinkle-resistant. Excellent for rugby, hockey &amp; contact sports.</p>
+        <div style="margin-top:16px;font-size:.8rem;color:var(--champagne);font-weight:700">Best For: Rugby, Hockey, Netball</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 5: ACCESSORIES ═══ -->
+<section class="section" id="accessories">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-tag">Accessories</span>
+      <h2 class="section-title">Complete the <span class="highlight">Kit Experience</span></h2>
+    </div>
+    <div class="grid-4">
+      <div class="product-card" data-reveal data-delay="1">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=500&q=80" alt="Sports cap" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">🧢 Headwear</div>
+          <h3 class="product-card-title">Custom Team Cap</h3>
+          <div class="product-card-footer">
+            <span class="product-price">₹249</span>
+            <div class="product-rating">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-reveal data-delay="2">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80" alt="Sports shoes" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">👟 Footwear</div>
+          <h3 class="product-card-title">Branded Sports Socks</h3>
+          <div class="product-card-footer">
+            <span class="product-price">₹149</span>
+            <div class="product-rating">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-reveal data-delay="3">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&q=80" alt="Sports bag" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">👜 Kit Bag</div>
+          <h3 class="product-card-title">Team Duffel Bag</h3>
+          <div class="product-card-footer">
+            <span class="product-price">₹1,499</span>
+            <div class="product-rating">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-reveal data-delay="4">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1543357480-c60d40a7de6a?w=500&q=80" alt="Water bottle" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">🥤 Hydration</div>
+          <h3 class="product-card-title">Branded Bottle 1L</h3>
+          <div class="product-card-footer">
+            <span class="product-price">₹599</span>
+            <div class="product-rating">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 6: HOW TO ORDER ═══ -->
+<section class="section" style="background:var(--bg-secondary)">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-tag">How to Order</span>
+      <h2 class="section-title">Four Simple <span class="highlight-champagne">Steps to Your Kit</span></h2>
+    </div>
+    <div class="grid-4">
+      <div style="text-align:center;padding:32px 20px" data-reveal data-delay="1">
+        <div style="width:80px;height:80px;border-radius:50%;background:var(--gradient-coral);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 20px;box-shadow:var(--shadow-coral)">📋</div>
+        <h4 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;margin-bottom:10px">1. Submit Requirements</h4>
+        <p style="font-size:.875rem;color:var(--text-secondary)">Fill our quotation form with sport, quantity, sizes and any customization preferences.</p>
+      </div>
+      <div style="text-align:center;padding:32px 20px" data-reveal data-delay="2">
+        <div style="width:80px;height:80px;border-radius:50%;background:var(--gradient-violet);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 20px;box-shadow:var(--shadow-violet)">🎨</div>
+        <h4 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;margin-bottom:10px">2. Design Approval</h4>
+        <p style="font-size:.875rem;color:var(--text-secondary)">Receive a digital mockup of your kit within 24 hours. Approve or request changes.</p>
+      </div>
+      <div style="text-align:center;padding:32px 20px" data-reveal data-delay="3">
+        <div style="width:80px;height:80px;border-radius:50%;background:var(--gradient-champagne);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 20px">🏭</div>
+        <h4 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;margin-bottom:10px">3. Production</h4>
+        <p style="font-size:.875rem;color:var(--text-secondary)">Your kits are manufactured at our ISO-certified facility with 3-stage quality control.</p>
+      </div>
+      <div style="text-align:center;padding:32px 20px" data-reveal data-delay="4">
+        <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#22c55e,#16a34a);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 20px">🚚</div>
+        <h4 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;margin-bottom:10px">4. Delivery</h4>
+        <p style="font-size:.875rem;color:var(--text-secondary)">Packed and delivered to your school within 7–14 business days, with live tracking.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px">
+      <a href="contact.html#quote" class="btn btn-primary btn-lg">Start Your Order →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="navbar-logo" style="margin-bottom:16px;display:inline-flex">
+          <div class="logo-icon">🏆</div>
+          <div class="logo-text"><span class="logo-name">AcademyKit</span><span class="logo-tagline">Elite Sportswear</span></div>
+        </a>
+        <p>Premium school sports uniforms and team kits. Trusted by 500+ schools across India.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social">📘</a>
+          <a href="#" class="footer-social">📸</a>
+          <a href="#" class="footer-social">🐦</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Sports</h3>
+        <ul class="footer-links">
+          <li><a href="services.html#football" class="footer-link">Football Kits</a></li>
+          <li><a href="services.html#cricket" class="footer-link">Cricket Kits</a></li>
+          <li><a href="services.html#basketball" class="footer-link">Basketball Kits</a></li>
+          <li><a href="services.html#athletics" class="footer-link">Athletics Wear</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Pages</h3>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Contact</h3>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📞</div>
+          <div class="footer-contact-text">+91 98765 43210</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">✉️</div>
+          <div class="footer-contact-text">hello@academykit.in</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">© 2026 AcademyKit. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

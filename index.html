@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="AcademyKit — Premium School Sports Uniforms & Team Kits Supplier. Cricket, Football, Basketball, Athletics wear and custom team branding for schools."/>
+  <meta name="keywords" content="school sports uniform, cricket kit, football kit, basketball uniform, school team kit, custom sportswear"/>
+  <meta property="og:title" content="AcademyKit — Elite School Sportswear"/>
+  <meta property="og:description" content="Premium school sports uniforms, team kits and custom branding for schools worldwide."/>
+  <meta property="og:type" content="website"/>
+  <title>AcademyKit — Elite School Sports Uniforms & Team Kits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+</head>
+<body>
+
+<!-- PAGE TRANSITION -->
+<div class="page-transition" id="pageTransition"></div>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" aria-label="Back to top">↑</button>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <div class="lightbox-content">
+    <button class="lightbox-close" aria-label="Close lightbox">✕</button>
+    <img src="" alt="Gallery image"/>
+  </div>
+</div>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" role="complementary" aria-label="Cookie notice">
+  <p style="font-size:0.85rem;margin-bottom:14px;color:var(--text-secondary)">
+    🍪 We use cookies to enhance your experience. By continuing, you agree to our <a href="privacy.html" style="color:var(--electric-coral)">Privacy Policy</a>.
+  </p>
+  <div style="display:flex;gap:10px">
+    <button class="btn btn-sm btn-primary" data-cookie-accept>Accept</button>
+    <button class="btn btn-sm btn-outline" data-cookie-decline>Decline</button>
+  </div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<header class="navbar" id="navbar" role="banner">
+  <div class="navbar-inner">
+    <!-- Logo -->
+    <a href="index.html" class="navbar-logo" aria-label="AcademyKit Home">
+      <div class="logo-icon">🏆</div>
+      <div class="logo-text">
+        <span class="logo-name">AcademyKit</span>
+        <span class="logo-tagline">Elite Sportswear</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <div class="nav-item">
+        <a href="index.html" class="nav-link active">Home</a>
+      </div>
+      <div class="nav-item">
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-item">
+        <a href="services.html" class="nav-link">Services <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 6l4 4 4-4"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="services.html" class="dropdown-link" role="menuitem"><span>⚽</span> Football Kits</a>
+          <a href="services.html#cricket" class="dropdown-link" role="menuitem"><span>🏏</span> Cricket Kits</a>
+          <a href="services.html#basketball" class="dropdown-link" role="menuitem"><span>🏀</span> Basketball Kits</a>
+          <a href="services.html#athletics" class="dropdown-link" role="menuitem"><span>🏃</span> Athletics Wear</a>
+          <a href="service-details.html" class="dropdown-link" role="menuitem"><span>🎨</span> Custom Branding</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="pricing.html" class="nav-link">Pricing</a>
+      </div>
+      <div class="nav-item">
+        <a href="blog.html" class="nav-link">Blog</a>
+      </div>
+      <div class="nav-item">
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Nav Controls -->
+    <div class="nav-controls">
+      <button class="nav-control-btn" data-theme-toggle title="Toggle dark/light mode" aria-label="Toggle theme">
+        <span data-theme-icon>☀️</span>
+      </button>
+      <button class="nav-control-btn" data-rtl-toggle title="Toggle RTL/LTR" aria-label="Toggle text direction">
+        <span data-dir-icon>RTL</span>
+      </button>
+      <a href="login.html" class="btn btn-sm btn-outline nav-cta">Sign In</a>
+      <a href="contact.html#quote" class="btn btn-sm btn-primary">Get Quote</a>
+
+      <!-- Mobile Toggle -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <ul class="mobile-nav-links">
+    <li><a href="index.html" class="mobile-nav-link">🏠 Home</a></li>
+    <li><a href="home2.html" class="mobile-nav-link">🏠 Home 2</a></li>
+    <li>
+      <a href="#" class="mobile-nav-link" data-has-sub="sub-services">
+        Services <span class="arrow">▼</span>
+      </a>
+      <div class="mobile-submenu" id="sub-services">
+        <a href="services.html">Football Kits</a>
+        <a href="services.html#cricket">Cricket Kits</a>
+        <a href="services.html#basketball">Basketball Kits</a>
+        <a href="services.html#athletics">Athletics Wear</a>
+        <a href="service-details.html">Custom Branding</a>
+      </div>
+    </li>
+    <li><a href="about.html" class="mobile-nav-link">ℹ️ About Us</a></li>
+    <li><a href="pricing.html" class="mobile-nav-link">💰 Pricing</a></li>
+    <li><a href="blog.html" class="mobile-nav-link">📝 Blog</a></li>
+    <li><a href="contact.html" class="mobile-nav-link">📞 Contact</a></li>
+    <li><a href="login.html" class="mobile-nav-link">🔐 Login / Register</a></li>
+    <li><a href="404.html" class="mobile-nav-link">❌ 404 Page</a></li>
+    <li><a href="coming-soon.html" class="mobile-nav-link">🚀 Coming Soon</a></li>
+  </ul>
+  <div style="margin-top:32px;display:flex;gap:12px">
+    <a href="contact.html#quote" class="btn btn-primary" style="flex:1;justify-content:center">Get a Quote</a>
+    <a href="login.html" class="btn btn-outline" style="flex:1;justify-content:center">Sign In</a>
+  </div>
+</div>
+
+<!-- ═══════════════ HERO SECTION ═══════════════ -->
+<section class="hero" id="hero" aria-label="Hero">
+  <!-- Hero Slider -->
+  <div class="hero-slider">
+    <!-- Slide 1 -->
+    <div class="hero-slide active">
+      <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1600&q=80')"></div>
+      <div class="hero-slide-overlay"></div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="hero-slide">
+      <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=1600&q=80')"></div>
+      <div class="hero-slide-overlay"></div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="hero-slide">
+      <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80')"></div>
+      <div class="hero-slide-overlay"></div>
+    </div>
+  </div>
+
+  <!-- Hero Arrow Controls -->
+  <div class="hero-arrows" aria-hidden="true">
+    <button class="hero-arrow hero-arrow-prev" aria-label="Previous slide">←</button>
+    <button class="hero-arrow hero-arrow-next" aria-label="Next slide">→</button>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="hero-tag-dot"></span>
+        Trusted by 500+ Schools Worldwide
+      </div>
+      <h1 class="hero-title">
+        <span>Elite Sports</span>
+        <span class="highlight">Uniforms</span>
+        <span>Built for Champions</span>
+      </h1>
+      <p class="hero-desc">
+        Premium school sports kits for cricket, football, basketball & athletics. Custom team branding, bulk orders and nationwide delivery — all under one roof.
+      </p>
+      <div class="hero-actions">
+        <a href="services.html" class="btn btn-primary btn-lg">
+          <span>🏆</span> Explore Collections
+        </a>
+        <a href="contact.html#quote" class="btn btn-outline btn-lg">
+          <span>📋</span> Request a Quote
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-value" data-count="500" data-suffix="+">500+</span>
+          <span class="hero-stat-label">Schools Served</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-value" data-count="50000" data-suffix="+">50,000+</span>
+          <span class="hero-stat-label">Kits Delivered</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-value" data-count="12" data-suffix=" Sports">12 Sports</span>
+          <span class="hero-stat-label">Covered</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-value" data-count="15" data-suffix="yrs">15yrs</span>
+          <span class="hero-stat-label">Experience</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Kit Cards -->
+  <div class="hero-right" aria-hidden="true">
+    <div class="hero-kit-card">
+      <div class="kit-card-sport">⚽ Football</div>
+      <div class="kit-card-title">Elite Pro Kit</div>
+      <div class="kit-card-colors">
+        <div class="kit-color" style="background:#101A33"></div>
+        <div class="kit-color" style="background:#5B3FA3"></div>
+        <div class="kit-color" style="background:#F05A5A"></div>
+      </div>
+    </div>
+    <div class="hero-kit-card">
+      <div class="kit-card-sport">🏏 Cricket</div>
+      <div class="kit-card-title">Championship White</div>
+      <div class="kit-card-colors">
+        <div class="kit-color" style="background:#FFFFFF"></div>
+        <div class="kit-color" style="background:#D4B46A"></div>
+        <div class="kit-color" style="background:#101A33"></div>
+      </div>
+    </div>
+    <div class="hero-kit-card">
+      <div class="kit-card-sport">🏀 Basketball</div>
+      <div class="kit-card-title">Academy Edition</div>
+      <div class="kit-card-colors">
+        <div class="kit-color" style="background:#F05A5A"></div>
+        <div class="kit-color" style="background:#5B3FA3"></div>
+        <div class="kit-color" style="background:#EEF1F5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider Dots -->
+  <div class="hero-controls" role="tablist" aria-label="Slide navigation">
+    <button class="hero-dot active" role="tab" aria-label="Slide 1"></button>
+    <button class="hero-dot" role="tab" aria-label="Slide 2"></button>
+    <button class="hero-dot" role="tab" aria-label="Slide 3"></button>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTION 2: BRANDS STRIP ═══════════════ -->
+<section class="brands-strip" aria-label="Partner schools">
+  <div class="brands-track">
+    <!-- Double for seamless loop -->
+    <div class="brand-item"><span>🏫</span> St. Xavier's Academy</div>
+    <div class="brand-item"><span>🎓</span> Cambridge International</div>
+    <div class="brand-item"><span>🏫</span> Delhi Public School</div>
+    <div class="brand-item"><span>🎓</span> Heritage School Kolkata</div>
+    <div class="brand-item"><span>🏫</span> Bombay Scottish</div>
+    <div class="brand-item"><span>🎓</span> The Doon School</div>
+    <div class="brand-item"><span>🏫</span> Bishop Cotton School</div>
+    <div class="brand-item"><span>🎓</span> Mayo College</div>
+    <div class="brand-item"><span>🏫</span> Scindia School</div>
+    <div class="brand-item"><span>🎓</span> Rishi Valley School</div>
+    <!-- Duplicate -->
+    <div class="brand-item"><span>🏫</span> St. Xavier's Academy</div>
+    <div class="brand-item"><span>🎓</span> Cambridge International</div>
+    <div class="brand-item"><span>🏫</span> Delhi Public School</div>
+    <div class="brand-item"><span>🎓</span> Heritage School Kolkata</div>
+    <div class="brand-item"><span>🏫</span> Bombay Scottish</div>
+    <div class="brand-item"><span>🎓</span> The Doon School</div>
+    <div class="brand-item"><span>🏫</span> Bishop Cotton School</div>
+    <div class="brand-item"><span>🎓</span> Mayo College</div>
+    <div class="brand-item"><span>🏫</span> Scindia School</div>
+    <div class="brand-item"><span>🎓</span> Rishi Valley School</div>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTION 3: SPORT CATEGORIES ═══════════════ -->
+<section class="section" id="sports" aria-labelledby="sports-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Our Collections</span>
+      <h2 class="section-title" id="sports-title">
+        Kits for <span class="highlight">Every Sport</span>
+      </h2>
+      <p class="section-subtitle">
+        Professionally designed sportswear for all major school sports — crafted for performance, durability and team identity.
+      </p>
+    </div>
+
+    <!-- Sport Filters -->
+    <div class="sport-filters" data-filter-target="products" aria-label="Filter by sport">
+      <button class="filter-btn active" data-filter="*" data-filter-target="products">
+        <span class="filter-btn-icon">🏆</span> All Sports
+      </button>
+      <button class="filter-btn" data-filter="football" data-filter-target="products">
+        <span class="filter-btn-icon">⚽</span> Football
+      </button>
+      <button class="filter-btn" data-filter="cricket" data-filter-target="products">
+        <span class="filter-btn-icon">🏏</span> Cricket
+      </button>
+      <button class="filter-btn" data-filter="basketball" data-filter-target="products">
+        <span class="filter-btn-icon">🏀</span> Basketball
+      </button>
+      <button class="filter-btn" data-filter="athletics" data-filter-target="products">
+        <span class="filter-btn-icon">🏃</span> Athletics
+      </button>
+      <button class="filter-btn" data-filter="accessories" data-filter-target="products">
+        <span class="filter-btn-icon">🎽</span> Accessories
+      </button>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid-4" data-filter-group="products">
+
+      <!-- Football Kit 1 -->
+      <div class="product-card" data-reveal data-delay="1" data-filter-item data-filter-group="products" data-category="football">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80" alt="Elite Football Kit Navy" loading="lazy"/>
+          <div class="product-badge">Best Seller</div>
+          <div class="product-actions-overlay">
+            <button class="product-action-btn" title="Quick view" data-lightbox="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1200&q=90">🔍</button>
+            <button class="product-action-btn" title="Add to wishlist">♡</button>
+            <button class="product-action-btn" title="Compare">⊕</button>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">⚽ Football</div>
+          <h3 class="product-card-title">Elite Pro Football Kit</h3>
+          <p class="product-card-desc">Moisture-wicking polyester blend with mesh panels for optimal airflow.</p>
+          <div class="product-card-footer">
+            <div>
+              <span class="product-price">₹1,299</span>
+              <span class="product-price-old">₹1,800</span>
+            </div>
+            <div class="product-rating">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cricket Kit 1 -->
+      <div class="product-card" data-reveal data-delay="2" data-filter-item data-filter-group="products" data-category="cricket">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1624880357913-a8539238245b?w=600&q=80" alt="Championship Cricket Kit" loading="lazy"/>
+          <div class="product-badge">Premium</div>
+          <div class="product-actions-overlay">
+            <button class="product-action-btn" title="Quick view" data-lightbox="https://images.unsplash.com/photo-1624880357913-a8539238245b?w=1200&q=90">🔍</button>
+            <button class="product-action-btn" title="Add to wishlist">♡</button>
+            <button class="product-action-btn" title="Compare">⊕</button>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">🏏 Cricket</div>
+          <h3 class="product-card-title">Championship Cricket Set</h3>
+          <p class="product-card-desc">Full cricket uniform — jersey, trousers & cap with embroidered team logo.</p>
+          <div class="product-card-footer">
+            <div>
+              <span class="product-price">₹2,499</span>
+              <span class="product-price-old">₹3,200</span>
+            </div>
+            <div class="product-rating">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Basketball Kit -->
+      <div class="product-card" data-reveal data-delay="3" data-filter-item data-filter-group="products" data-category="basketball">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1546519638405-a9f9d0a55e7d?w=600&q=80" alt="Academy Basketball Kit" loading="lazy"/>
+          <div class="product-badge">New Arrival</div>
+          <div class="product-actions-overlay">
+            <button class="product-action-btn" data-lightbox="https://images.unsplash.com/photo-1546519638405-a9f9d0a55e7d?w=1200&q=90">🔍</button>
+            <button class="product-action-btn">♡</button>
+            <button class="product-action-btn">⊕</button>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">🏀 Basketball</div>
+          <h3 class="product-card-title">Academy Basketball Set</h3>
+          <p class="product-card-desc">Reversible jersey with team numbers, breathable fabric for intense play.</p>
+          <div class="product-card-footer">
+            <div>
+              <span class="product-price">₹1,799</span>
+              <span class="product-price-old">₹2,400</span>
+            </div>
+            <div class="product-rating">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Athletics -->
+      <div class="product-card" data-reveal data-delay="4" data-filter-item data-filter-group="products" data-category="athletics">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?w=600&q=80" alt="Athletics Track Suit" loading="lazy"/>
+          <div class="product-badge">Trending</div>
+          <div class="product-actions-overlay">
+            <button class="product-action-btn" data-lightbox="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?w=1200&q=90">🔍</button>
+            <button class="product-action-btn">♡</button>
+            <button class="product-action-btn">⊕</button>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">🏃 Athletics</div>
+          <h3 class="product-card-title">Sprint Athletics Vest Set</h3>
+          <p class="product-card-desc">Ultra-lightweight athletics vest and shorts, UV-resistant and quick-dry.</p>
+          <div class="product-card-footer">
+            <div>
+              <span class="product-price">₹999</span>
+              <span class="product-price-old">₹1,400</span>
+            </div>
+            <div class="product-rating">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Football Kit 2 -->
+      <div class="product-card" data-reveal data-delay="1" data-filter-item data-filter-group="products" data-category="football">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1529904099918-e20dafb2ef97?w=600&q=80" alt="School Football Training Kit" loading="lazy"/>
+          <div class="product-actions-overlay">
+            <button class="product-action-btn" data-lightbox="https://images.unsplash.com/photo-1529904099918-e20dafb2ef97?w=1200&q=90">🔍</button>
+            <button class="product-action-btn">♡</button>
+            <button class="product-action-btn">⊕</button>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">⚽ Football</div>
+          <h3 class="product-card-title">School Training Kit</h3>
+          <p class="product-card-desc">Durable training kit with reinforced stitching for daily practice sessions.</p>
+          <div class="product-card-footer">
+            <div>
+              <span class="product-price">₹899</span>
+              <span class="product-price-old">₹1,200</span>
+            </div>
+            <div class="product-rating">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accessories -->
+      <div class="product-card" data-reveal data-delay="2" data-filter-item data-filter-group="products" data-category="accessories">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1512374382149-233c42b6a83b?w=600&q=80" alt="Sports Kit Bag" loading="lazy"/>
+          <div class="product-badge">Popular</div>
+          <div class="product-actions-overlay">
+            <button class="product-action-btn" data-lightbox="https://images.unsplash.com/photo-1512374382149-233c42b6a83b?w=1200&q=90">🔍</button>
+            <button class="product-action-btn">♡</button>
+            <button class="product-action-btn">⊕</button>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">🎽 Accessories</div>
+          <h3 class="product-card-title">Team Kit Bag Pro</h3>
+          <p class="product-card-desc">Large-capacity sports bag with custom embroidery and waterproof lining.</p>
+          <div class="product-card-footer">
+            <div>
+              <span class="product-price">₹1,199</span>
+              <span class="product-price-old">₹1,600</span>
+            </div>
+            <div class="product-rating">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cricket Kit 2 -->
+      <div class="product-card" data-reveal data-delay="3" data-filter-item data-filter-group="products" data-category="cricket">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1566519463674-0c85825f0eba?w=600&q=80" alt="Junior Cricket Kit" loading="lazy"/>
+          <div class="product-actions-overlay">
+            <button class="product-action-btn" data-lightbox="https://images.unsplash.com/photo-1566519463674-0c85825f0eba?w=1200&q=90">🔍</button>
+            <button class="product-action-btn">♡</button>
+            <button class="product-action-btn">⊕</button>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">🏏 Cricket</div>
+          <h3 class="product-card-title">Junior Cricket Kit</h3>
+          <p class="product-card-desc">Specially sized for junior players, soft cotton-blend for all-day comfort.</p>
+          <div class="product-card-footer">
+            <div>
+              <span class="product-price">₹1,599</span>
+              <span class="product-price-old">₹2,100</span>
+            </div>
+            <div class="product-rating">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Basketball Kit 2 -->
+      <div class="product-card" data-reveal data-delay="4" data-filter-item data-filter-group="products" data-category="basketball">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Tournament Basketball Kit" loading="lazy"/>
+          <div class="product-badge">Limited</div>
+          <div class="product-actions-overlay">
+            <button class="product-action-btn" data-lightbox="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=90">🔍</button>
+            <button class="product-action-btn">♡</button>
+            <button class="product-action-btn">⊕</button>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-sport-tag">🏀 Basketball</div>
+          <h3 class="product-card-title">Tournament Edition Kit</h3>
+          <p class="product-card-desc">Pro-grade tournament kit with sublimated printing for vivid team colors.</p>
+          <div class="product-card-footer">
+            <div>
+              <span class="product-price">₹2,299</span>
+              <span class="product-price-old">₹3,000</span>
+            </div>
+            <div class="product-rating">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:48px">
+      <a href="services.html" class="btn btn-secondary btn-lg">View All Collections →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTION 4: WHY CHOOSE US ═══════════════ -->
+<section class="section" style="background:var(--bg-secondary)" aria-labelledby="features-title">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-tag">Why AcademyKit</span>
+      <h2 class="section-title" id="features-title">
+        The <span class="highlight-violet">Premium Standard</span> in School Sport
+      </h2>
+      <p class="section-subtitle">Everything your school needs for elite-level sportswear, delivered with precision.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="feature-card" data-reveal data-delay="1">
+        <div class="feature-icon">🎨</div>
+        <h3 class="feature-title">Custom Team Branding</h3>
+        <p class="feature-desc">Your school crest, team name and player numbers — perfectly embroidered or sublimated on every garment with vibrant, fade-resistant colors.</p>
+        <a href="service-details.html" class="feature-link">Learn More →</a>
+      </div>
+
+      <div class="feature-card" data-reveal data-delay="2">
+        <div class="feature-icon">📦</div>
+        <h3 class="feature-title">Bulk School Orders</h3>
+        <p class="feature-desc">Tiered pricing for bulk orders. Whether it's 20 or 2,000 kits, we scale with you — with consistent quality across every unit.</p>
+        <a href="pricing.html" class="feature-link">See Pricing →</a>
+      </div>
+
+      <div class="feature-card" data-reveal data-delay="3">
+        <div class="feature-icon">🏆</div>
+        <h3 class="feature-title">Premium Fabrics</h3>
+        <p class="feature-desc">Moisture-wicking polyester, breathable mesh, UV-protective coatings — our technical fabrics are athlete-tested and sport-specific.</p>
+        <a href="services.html" class="feature-link">Explore Fabrics →</a>
+      </div>
+
+      <div class="feature-card" data-reveal data-delay="1">
+        <div class="feature-icon">📐</div>
+        <h3 class="feature-title">Interactive Size Guide</h3>
+        <p class="feature-desc">Our detailed size guide ensures a perfect fit for every student, from junior to senior — with easy measurement charts for all sports.</p>
+        <a href="service-details.html#size-guide" class="feature-link">Size Guide →</a>
+      </div>
+
+      <div class="feature-card" data-reveal data-delay="2">
+        <div class="feature-icon">🚚</div>
+        <h3 class="feature-title">Pan-India Delivery</h3>
+        <p class="feature-desc">Fast, tracked delivery to all 28 states. Express shipping for urgent inter-school tournaments and sports days.</p>
+        <a href="contact.html" class="feature-link">Contact Us →</a>
+      </div>
+
+      <div class="feature-card" data-reveal data-delay="3">
+        <div class="feature-icon">🔄</div>
+        <h3 class="feature-title">Easy Returns & Exchanges</h3>
+        <p class="feature-desc">Not the right fit? Our hassle-free 30-day return policy ensures every school gets exactly what they ordered.</p>
+        <a href="contact.html" class="feature-link">Our Policy →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTION 5: STATS ═══════════════ -->
+<section class="parallax-section" aria-labelledby="stats-title">
+  <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1547409883-16c40b90b399?w=1600&q=80')"></div>
+  <div class="parallax-overlay"></div>
+  <div class="parallax-content">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">Our Impact</span>
+        <h2 class="section-title" id="stats-title">
+          Numbers That <span class="highlight">Speak Volumes</span>
+        </h2>
+      </div>
+      <div class="grid-4">
+        <div class="stat-card" data-reveal data-delay="1">
+          <div class="stat-value" data-count="500" data-suffix="+">500+</div>
+          <div class="stat-label">Schools Across India</div>
+        </div>
+        <div class="stat-card" data-reveal data-delay="2">
+          <div class="stat-value" data-count="50000" data-suffix="+">50K+</div>
+          <div class="stat-label">Kits Delivered</div>
+        </div>
+        <div class="stat-card" data-reveal data-delay="3">
+          <div class="stat-value" data-count="12">12</div>
+          <div class="stat-label">Sports Covered</div>
+        </div>
+        <div class="stat-card" data-reveal data-delay="4">
+          <div class="stat-value" data-count="99" data-suffix="%">99%</div>
+          <div class="stat-label">Satisfaction Rate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTION 6: TESTIMONIALS ═══════════════ -->
+<section class="section" aria-labelledby="testimonials-title">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-tag">What Schools Say</span>
+      <h2 class="section-title" id="testimonials-title">
+        Trusted by <span class="highlight-champagne">School Champions</span>
+      </h2>
+      <p class="section-subtitle">Hear from the schools and sports coordinators who trust AcademyKit for every season.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="testimonial-card" data-reveal data-delay="1">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">The quality of the football kits exceeded our expectations. The sublimated printing retained our school colors perfectly even after 50+ washes. Our students love them!</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Rajesh Kumar" class="testimonial-avatar" loading="lazy"/>
+          <div>
+            <div class="testimonial-name">Rajesh Kumar</div>
+            <div class="testimonial-role">Sports Director, DPS Noida</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" data-reveal data-delay="2">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">We ordered cricket kits for 3 teams. The turnaround time was impressive — all 90 kits arrived in 8 days with flawless embroidery of our school crest.</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Priya Sharma" class="testimonial-avatar" loading="lazy"/>
+          <div>
+            <div class="testimonial-name">Priya Sharma</div>
+            <div class="testimonial-role">Principal, Heritage School</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" data-reveal data-delay="3">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">The custom branding service is outstanding. Our basketball team's jersey design was exactly what we envisioned — bold, professional and identifiable from miles away!</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Vikram Singh" class="testimonial-avatar" loading="lazy"/>
+          <div>
+            <div class="testimonial-name">Vikram Singh</div>
+            <div class="testimonial-role">PE Coach, Bombay Scottish</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="navbar-logo" style="margin-bottom:16px;display:inline-flex">
+          <div class="logo-icon">🏆</div>
+          <div class="logo-text">
+            <span class="logo-name">AcademyKit</span>
+            <span class="logo-tagline">Elite Sportswear</span>
+          </div>
+        </a>
+        <p>Premium school sports uniforms and team kits. Trusted by 500+ schools across India for over 15 years of sporting excellence.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="Facebook">📘</a>
+          <a href="#" class="footer-social" aria-label="Instagram">📸</a>
+          <a href="#" class="footer-social" aria-label="Twitter">🐦</a>
+          <a href="#" class="footer-social" aria-label="YouTube">📺</a>
+          <a href="#" class="footer-social" aria-label="LinkedIn">💼</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Sports</h3>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link">Football Kits</a></li>
+          <li><a href="services.html#cricket" class="footer-link">Cricket Kits</a></li>
+          <li><a href="services.html#basketball" class="footer-link">Basketball Kits</a></li>
+          <li><a href="services.html#athletics" class="footer-link">Athletics Wear</a></li>
+          <li><a href="services.html#accessories" class="footer-link">Accessories</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Services</h3>
+        <ul class="footer-links">
+          <li><a href="service-details.html" class="footer-link">Custom Branding</a></li>
+          <li><a href="service-details.html#size-guide" class="footer-link">Size Guide</a></li>
+          <li><a href="service-details.html#fabric" class="footer-link">Fabric Options</a></li>
+          <li><a href="contact.html#quote" class="footer-link">Bulk Orders</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing Plans</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Company</h3>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="404.html" class="footer-link">Privacy Policy</a></li>
+          <li><a href="404.html" class="footer-link">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Contact</h3>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📍</div>
+          <div class="footer-contact-text">
+            123, SportsPlex Tower, Connaught Place, New Delhi — 110001
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📞</div>
+          <div class="footer-contact-text">
+            +91 98765 43210<br/>+91 11 4567 8900
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">✉️</div>
+          <div class="footer-contact-text">
+            hello@academykit.in<br/>orders@academykit.in
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">© 2026 AcademyKit. All rights reserved. Made with ❤️ for school sports.</p>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Privacy Policy</a>
+        <a href="#" class="footer-bottom-link">Terms of Service</a>
+        <a href="#" class="footer-bottom-link">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

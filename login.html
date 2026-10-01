@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="AcademyKit Login & Register — Access your school sportswear account to track orders, manage designs and reorder kits."/>
+  <title>Login / Register — AcademyKit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <style>
+    .auth-bg-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .password-toggle {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      padding: 0;
+      transition: color .2s;
+    }
+    .password-toggle:hover { color: var(--text-primary); }
+    .input-wrap { position: relative; }
+    .strength-bar {
+      height: 4px;
+      border-radius: 2px;
+      background: var(--bg-surface);
+      margin-top: 8px;
+      overflow: hidden;
+    }
+    .strength-fill {
+      height: 100%;
+      border-radius: 2px;
+      width: 0;
+      transition: width .4s, background .4s;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-transition"></div>
+<div class="toast-container"></div>
+
+<!-- NAVBAR (minimal) -->
+<header class="navbar scrolled" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">🏆</div>
+      <div class="logo-text"><span class="logo-name">AcademyKit</span><span class="logo-tagline">Elite Sportswear</span></div>
+    </a>
+    <div style="flex:1"></div>
+    <div class="nav-controls">
+      <button class="nav-control-btn" data-theme-toggle><span data-theme-icon>☀️</span></button>
+      <a href="index.html" class="btn btn-sm btn-outline">← Back to Home</a>
+    </div>
+  </div>
+</header>
+
+<!-- AUTH PAGE -->
+<div class="auth-page" style="padding-top:var(--navbar-h)">
+  <!-- Left panel -->
+  <div class="auth-left">
+    <div class="auth-bg-orb" style="width:400px;height:400px;background:rgba(91,63,163,.3);top:-100px;right:-100px"></div>
+    <div class="auth-bg-orb" style="width:300px;height:300px;background:rgba(240,90,90,.2);bottom:-100px;left:-100px"></div>
+
+    <a href="index.html" class="navbar-logo" style="position:relative;z-index:1">
+      <div class="logo-icon" style="width:52px;height:52px;font-size:1.6rem">🏆</div>
+      <div class="logo-text">
+        <span class="logo-name" style="font-size:1.6rem">AcademyKit</span>
+        <span class="logo-tagline">Elite Sportswear</span>
+      </div>
+    </a>
+
+    <div style="position:relative;z-index:1;max-width:400px">
+      <h2 style="font-size:2rem;font-weight:900;margin-bottom:12px;color:white">Your School Sports Hub</h2>
+      <p style="color:rgba(255,255,255,.75);line-height:1.75;margin-bottom:36px">Sign in to manage your kit orders, track deliveries, access saved designs and reorder kits for next season — all in one place.</p>
+    </div>
+
+    <div class="auth-feature-list" style="position:relative;z-index:1;max-width:400px">
+      <div class="auth-feature">
+        <div class="auth-feature-icon">📦</div>
+        <div class="auth-feature-text">
+          <h4>Order Tracking</h4>
+          <p>Track every kit order from production to delivery in real-time.</p>
+        </div>
+      </div>
+      <div class="auth-feature">
+        <div class="auth-feature-icon">🎨</div>
+        <div class="auth-feature-text">
+          <h4>Saved Designs</h4>
+          <p>Store your custom kit designs and reorder with one click next season.</p>
+        </div>
+      </div>
+      <div class="auth-feature">
+        <div class="auth-feature-icon">💰</div>
+        <div class="auth-feature-text">
+          <h4>Invoice & Billing</h4>
+          <p>Download GST invoices, payment receipts and order summaries.</p>
+        </div>
+      </div>
+      <div class="auth-feature">
+        <div class="auth-feature-icon">⚡</div>
+        <div class="auth-feature-text">
+          <h4>Priority Support</h4>
+          <p>Registered schools get priority response from our team.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="position:relative;z-index:1;max-width:400px;margin-top:8px">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <div style="display:flex;gap:4px">
+          <div style="width:32px;height:32px;border-radius:50%;border:2px solid rgba(255,255,255,.3);overflow:hidden"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&q=80" alt="" style="width:100%;height:100%;object-fit:cover"/></div>
+          <div style="width:32px;height:32px;border-radius:50%;border:2px solid rgba(255,255,255,.3);overflow:hidden;margin-left:-8px"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&q=80" alt="" style="width:100%;height:100%;object-fit:cover"/></div>
+          <div style="width:32px;height:32px;border-radius:50%;border:2px solid rgba(255,255,255,.3);overflow:hidden;margin-left:-8px"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&q=80" alt="" style="width:100%;height:100%;object-fit:cover"/></div>
+        </div>
+        <span style="font-size:.82rem;color:rgba(255,255,255,.7)">Joined by <strong style="color:white">500+ schools</strong> already</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right panel: Auth form -->
+  <div class="auth-right">
+    <div class="auth-form-card">
+      <h1 class="auth-title">Welcome Back 👋</h1>
+      <p class="auth-subtitle">Sign in to your AcademyKit account or create a new one.</p>
+
+      <!-- Auth Tabs -->
+      <div class="auth-tabs">
+        <div class="auth-tab active" data-auth-tab="login">Sign In</div>
+        <div class="auth-tab" data-auth-tab="register">Create Account</div>
+      </div>
+
+      <!-- Social buttons -->
+      <div class="auth-social-btns">
+        <button class="auth-social-btn" onclick="Toast.show({type:'info',title:'Google Sign-In',message:'Google authentication would launch here.'})">
+          <span>🔍</span> Google
+        </button>
+        <button class="auth-social-btn" onclick="Toast.show({type:'info',title:'Microsoft Sign-In',message:'Microsoft authentication would launch here.'})">
+          <span>🪟</span> Microsoft
+        </button>
+      </div>
+
+      <div class="auth-divider">or continue with email</div>
+
+      <!-- Login Panel -->
+      <div class="auth-panel" data-panel="login">
+        <form data-validate-form data-success-msg="Welcome back! Redirecting to your dashboard...">
+          <div class="form-group">
+            <label class="form-label" for="login-email">Email Address</label>
+            <input type="email" id="login-email" class="form-input" placeholder="your@school.edu.in" data-validate="required|email" data-msg-required="Email is required" data-msg-email="Invalid email address"/>
+            <p class="form-error-msg"></p>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="login-password">Password</label>
+            <div class="input-wrap">
+              <input type="password" id="login-password" class="form-input" placeholder="Your password" data-validate="required|minLength:8" data-msg-required="Password is required" data-msg-minLength="Minimum 8 characters"/>
+              <button type="button" class="password-toggle" onclick="togglePassword('login-password', this)">👁️</button>
+            </div>
+            <p class="form-error-msg"></p>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:.875rem;color:var(--text-secondary)">
+              <input type="checkbox" style="accent-color:var(--royal-violet)"/>
+              Remember me
+            </label>
+            <a href="#" style="font-size:.875rem;color:var(--electric-coral);font-weight:600" onclick="Toast.show({type:'info',title:'Password Reset',message:'A password reset link would be sent to your email.'});return false">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;height:52px" data-original-text="Sign In to Dashboard">🔐 Sign In to Dashboard</button>
+        </form>
+        <p style="text-align:center;margin-top:20px;font-size:.875rem;color:var(--text-muted)">
+          Don't have an account?
+          <a href="#" style="color:var(--electric-coral);font-weight:600" onclick="document.querySelector('[data-auth-tab=register]').click();return false">Create one free →</a>
+        </p>
+      </div>
+
+      <!-- Register Panel -->
+      <div class="auth-panel" data-panel="register" style="display:none">
+        <form data-validate-form data-success-msg="Account created! Welcome to AcademyKit. Redirecting to your dashboard...">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+            <div class="form-group">
+              <label class="form-label" for="reg-fname">First Name</label>
+              <input type="text" id="reg-fname" class="form-input" placeholder="First name" data-validate="required" data-msg-required="Required"/>
+              <p class="form-error-msg"></p>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reg-lname">Last Name</label>
+              <input type="text" id="reg-lname" class="form-input" placeholder="Last name" data-validate="required" data-msg-required="Required"/>
+              <p class="form-error-msg"></p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-school">School / Organization</label>
+            <input type="text" id="reg-school" class="form-input" placeholder="Your school name" data-validate="required" data-msg-required="Required"/>
+            <p class="form-error-msg"></p>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-email">Email Address</label>
+            <input type="email" id="reg-email" class="form-input" placeholder="your@school.edu.in" data-validate="required|email" data-msg-required="Required" data-msg-email="Invalid email"/>
+            <p class="form-error-msg"></p>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-phone">Phone Number</label>
+            <input type="tel" id="reg-phone" class="form-input" placeholder="+91 XXXXX XXXXX" data-validate="required|phone" data-msg-required="Required" data-msg-phone="Invalid phone"/>
+            <p class="form-error-msg"></p>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-password">Password</label>
+            <div class="input-wrap">
+              <input type="password" id="reg-password" class="form-input" placeholder="Create a strong password" data-validate="required|minLength:8" data-msg-required="Required" data-msg-minLength="Min. 8 characters" oninput="checkStrength(this.value)"/>
+              <button type="button" class="password-toggle" onclick="togglePassword('reg-password', this)">👁️</button>
+            </div>
+            <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+            <p class="form-error-msg"></p>
+          </div>
+          <div class="form-group">
+            <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.875rem;color:var(--text-secondary)">
+              <input type="checkbox" style="margin-top:2px;accent-color:var(--royal-violet)"/>
+              I agree to AcademyKit's <a href="#" style="color:var(--electric-coral)">Terms of Service</a> and <a href="#" style="color:var(--electric-coral)">Privacy Policy</a>.
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;height:52px" data-original-text="Create My Account">🏆 Create My Account</button>
+        </form>
+        <p style="text-align:center;margin-top:20px;font-size:.875rem;color:var(--text-muted)">
+          Already have an account?
+          <a href="#" style="color:var(--electric-coral);font-weight:600" onclick="document.querySelector('[data-auth-tab=login]').click();return false">Sign in →</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+function togglePassword(id, btn) {
+  const input = document.getElementById(id);
+  if (input.type === 'password') {
+    input.type = 'text';
+    btn.textContent = '🙈';
+  } else {
+    input.type = 'password';
+    btn.textContent = '👁️';
+  }
+}
+
+function checkStrength(val) {
+  const fill = document.getElementById('strengthFill');
+  if (!fill) return;
+  let score = 0;
+  if (val.length >= 8) score++;
+  if (/[A-Z]/.test(val)) score++;
+  if (/[0-9]/.test(val)) score++;
+  if (/[^A-Za-z0-9]/.test(val)) score++;
+  const widths = ['0%', '25%', '50%', '75%', '100%'];
+  const colors = ['', '#ef4444', '#f97316', '#eab308', '#22c55e'];
+  fill.style.width = widths[score];
+  fill.style.background = colors[score];
+}
+</script>
+</body>
+</html>
