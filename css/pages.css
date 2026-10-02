@@ -2467,3 +2467,52 @@
   .home2-hero-left { padding-left: 24px; padding-right: 24px; }
   .about-split, .blog-layout, .product-detail-grid { max-width: 100%; overflow: hidden; }
 }
+
+/* ══════════════════════════════════════════
+   UNIVERSAL RESPONSIVE — 1024 / 760 / 480 / 360 / 320
+   Covers every page section at common device widths.
+   ══════════════════════════════════════════ */
+.compare-table { min-width: 620px; }
+.size-guide-table { min-width: 700px; }
+
+@media(max-width:1024px) {
+  .rgrid-3 { grid-template-columns: 1fr 1fr !important; }
+  .product-detail-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+  .about-split { grid-template-columns: 1fr !important; gap: 48px !important; }
+  .blog-layout { gap: 36px; }
+  .sidebar { position: static; }
+  .auth-page { grid-template-columns: 1fr; }
+  .auth-left { display: none; }
+  .auth-right { padding: 48px 32px; }
+}
+
+@media(max-width:760px) {
+  .rgrid { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .rgrid-3 { grid-template-columns: 1fr !important; }
+  .rank-row { grid-template-columns: auto 1fr !important; gap: 14px !important; }
+  .rank-row > div:last-child { display: none; }
+  .nav-controls .nav-cta { display: none; }
+}
+
+@media(max-width:480px) {
+  .section { padding: 52px 0; }
+  .page-hero { padding: 140px 0 52px; }
+  .nav-controls > a.btn-primary { display: none; }
+  .rank-row { grid-template-columns: 1fr !important; }
+  .rank-row img { width: 100% !important; height: 180px !important; }
+  .inline-form { flex-direction: column; }
+  .inline-form .btn { width: 100%; justify-content: center; }
+  .auth-right { padding: 36px 18px; }
+  .auth-form-card { padding: 28px 20px; }
+  .quote-form-card { padding: 28px 18px; }
+  .search-404 { flex-wrap: wrap; }
+  .search-404 .btn { width: 100%; justify-content: center; }
+  .countdown-unit { min-width: 64px; padding: 12px; }
+  .blog-layout { gap: 28px; }
+}
+
+@media(max-width:360px) {
+  .auth-form-card { padding: 24px 16px; }
+  .quote-form-card { padding: 24px 14px; }
+  .footer-bottom-links { gap: 10px 14px; }
+}

@@ -124,7 +124,7 @@
 <!-- ═══ SECTION 1: FEATURED POST ═══ -->
 <section class="section">
   <div class="container">
-    <div style="position:relative;border-radius:var(--radius-xl);overflow:hidden;min-height:500px;display:grid;grid-template-columns:1fr 1fr" data-reveal>
+    <div class="rgrid" style="position:relative;border-radius:var(--radius-xl);overflow:hidden;min-height:500px;display:grid;grid-template-columns:1fr 1fr" data-reveal>
       <div style="position:relative;overflow:hidden">
         <img src="https://i.pinimg.com/1200x/06/5c/45/065c45262d88633f7e685b626e206158.jpg" alt="Football team in uniform" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
       </div>
@@ -498,10 +498,6 @@
         </div>
       </article>
     </div>
-
-    <div style="text-align:center;margin-top:48px">
-      <button class="btn btn-secondary btn-lg" onclick="Toast.show({type:'info',title:'Loading...', message:'More articles are being loaded.'})">Load More Articles</button>
-    </div>
   </div>
 </section>
 
@@ -513,7 +509,7 @@
       <span class="section-tag" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);color:white;margin-bottom:20px">Newsletter</span>
       <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;margin-bottom:12px;color:white">Sports Kit Insights to Your Inbox</h2>
       <p style="color:rgba(255,255,255,.8);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto">Get new articles, seasonal kit guides and exclusive discounts — join 8,000+ school sports coordinators.</p>
-      <form data-validate-form data-success-msg="Welcome! You're now subscribed to AcademyKit Blog updates." style="max-width:500px;margin:0 auto;display:flex;gap:12px">
+      <form class="inline-form" data-validate-form data-success-msg="Welcome! You're now subscribed to AcademyKit Blog updates." style="max-width:500px;margin:0 auto;display:flex;gap:12px">
         <input type="email" class="form-input newsletter-input" placeholder="Your email address" data-validate="required|email" data-msg-required="Email required" data-msg-email="Please enter a valid email" style="flex:1"/>
         <button type="submit" class="btn btn-champagne" data-original-text="Subscribe">Subscribe  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
       </form>
@@ -532,7 +528,7 @@
           <h2 class="section-title">Most Read <span class="highlight-champagne">This Month</span></h2>
         </div>
         <div style="display:flex;flex-direction:column;gap:16px">
-          <a href="blog-details.html?post=athletic-wear-vs-pe-kits" style="display:grid;grid-template-columns:auto 140px 1fr auto;gap:20px;align-items:center;background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:16px 20px 16px 8px;transition:all var(--transition-base)" data-reveal onmouseover="this.style.borderColor='var(--electric-coral)';this.style.transform='translateX(6px)'" onmouseout="this.style.borderColor='var(--border-color)';this.style.transform='none'">
+          <a href="blog-details.html?post=athletic-wear-vs-pe-kits" class="rank-row" style="display:grid;grid-template-columns:auto 140px 1fr auto;gap:20px;align-items:center;background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:16px 20px 16px 8px;transition:all var(--transition-base)" data-reveal onmouseover="this.style.borderColor='var(--electric-coral)';this.style.transform='translateX(6px)'" onmouseout="this.style.borderColor='var(--border-color)';this.style.transform='none'">
             <div style="font-family:var(--font-heading);font-size:2.6rem;font-weight:900;line-height:1;background:var(--gradient-coral);-webkit-background-clip:text;background-clip:text;color:transparent;padding-left:16px">01</div>
             <img src="https://i.pinimg.com/736x/12/1f/a1/121fa195c10b4442d98077fea63d559c.jpg" alt="Athletics" loading="lazy" style="width:140px;height:110px;object-fit:cover;border-radius:var(--radius-md)"/>
             <div>
@@ -542,7 +538,7 @@
             </div>
             <div style="width:44px;height:44px;border-radius:50%;background:rgba(240,90,90,.12);display:flex;align-items:center;justify-content:center;color:var(--electric-coral);flex-shrink:0"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
           </a>
-          <a href="blog-details.html?post=sports-day-checklist-admin" style="display:grid;grid-template-columns:auto 140px 1fr auto;gap:20px;align-items:center;background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:16px 20px 16px 8px;transition:all var(--transition-base)" data-reveal data-delay="1" onmouseover="this.style.borderColor='var(--electric-coral)';this.style.transform='translateX(6px)'" onmouseout="this.style.borderColor='var(--border-color)';this.style.transform='none'">
+          <a href="blog-details.html?post=sports-day-checklist-admin" class="rank-row" style="display:grid;grid-template-columns:auto 140px 1fr auto;gap:20px;align-items:center;background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:16px 20px 16px 8px;transition:all var(--transition-base)" data-reveal data-delay="1" onmouseover="this.style.borderColor='var(--electric-coral)';this.style.transform='translateX(6px)'" onmouseout="this.style.borderColor='var(--border-color)';this.style.transform='none'">
             <div style="font-family:var(--font-heading);font-size:2.6rem;font-weight:900;line-height:1;background:var(--gradient-violet);-webkit-background-clip:text;background-clip:text;color:transparent;padding-left:16px">02</div>
             <img src="https://i.pinimg.com/1200x/5c/95/34/5c9534d93c259446665e189d4b89ac0c.jpg" alt="Sports day" loading="lazy" style="width:140px;height:110px;object-fit:cover;border-radius:var(--radius-md)"/>
             <div>

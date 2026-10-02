@@ -331,6 +331,16 @@ p {
   transform: translateY(-2px);
 }
 
+/* Light theme: outline buttons in the navbar need dark text on light bar */
+[data-theme="light"] .navbar .btn-outline {
+  color: var(--midnight-navy);
+  border-color: rgba(16,26,51,0.35);
+}
+[data-theme="light"] .navbar .btn-outline:hover {
+  border-color: var(--electric-coral);
+  color: var(--electric-coral);
+}
+
 .btn-champagne {
   background: var(--gradient-champagne);
   color: var(--midnight-navy);
