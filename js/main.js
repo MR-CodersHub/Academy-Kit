@@ -911,6 +911,78 @@ const QuantitySelector = (() => {
   return { init };
 })();
 
+// ── PRODUCT CARD ACTIONS (wishlist + compare) ──
+const ProductActions = (() => {
+  const WKEY = 'ak_wishlist';
+  const CKEY = 'ak_compare';
+  const MAX_COMPARE = 3;
+
+  function get(key) {
+    try { return JSON.parse(localStorage.getItem(key)) || []; }
+    catch (e) { return []; }
+  }
+  function set(key, val) {
+    try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {}
+  }
+
+  function titleOf(card) {
+    return (card && card.querySelector('.product-card-title') || {}).textContent?.trim() || 'This kit';
+  }
+
+  function paint(btn, on) {
+    btn.classList.toggle('is-active', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+
+  function init() {
+    // Wishlist = 2nd button, Compare = 3rd button in each card overlay
+    document.querySelectorAll('.product-card').forEach(card => {
+      const btns = card.querySelectorAll('.product-actions-overlay .product-action-btn');
+      if (btns.length < 3) return;
+      const title = titleOf(card);
+      const wishBtn = btns[1];
+      const cmpBtn = btns[2];
+
+      if (get(WKEY).includes(title)) paint(wishBtn, true);
+      if (get(CKEY).includes(title)) paint(cmpBtn, true);
+
+      wishBtn.addEventListener('click', () => {
+        let list = get(WKEY);
+        if (list.includes(title)) {
+          set(WKEY, list.filter(t => t !== title));
+          paint(wishBtn, false);
+          Toast.show({ type: 'info', title: 'Wishlist', message: title + ' removed from your wishlist.' });
+        } else {
+          list.push(title);
+          set(WKEY, list);
+          paint(wishBtn, true);
+          Toast.show({ type: 'success', title: 'Wishlisted!', message: title + ' saved to your wishlist.' });
+        }
+      });
+
+      cmpBtn.addEventListener('click', () => {
+        let list = get(CKEY);
+        if (list.includes(title)) {
+          set(CKEY, list.filter(t => t !== title));
+          paint(cmpBtn, false);
+          Toast.show({ type: 'info', title: 'Compare', message: title + ' removed from compare.' });
+        } else {
+          if (list.length >= MAX_COMPARE) {
+            Toast.show({ type: 'warning', title: 'Compare Full', message: 'You can compare up to ' + MAX_COMPARE + ' kits. Remove one first.' });
+            return;
+          }
+          list.push(title);
+          set(CKEY, list);
+          paint(cmpBtn, true);
+          Toast.show({ type: 'success', title: 'Added to Compare (' + list.length + '/' + MAX_COMPARE + ')', message: list.join(' vs ') + '.' });
+        }
+      });
+    });
+  }
+
+  return { init };
+})();
+
 // ── SMOOTH SCROLL ──
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1024,6 +1096,7 @@ document.addEventListener('DOMContentLoaded', () => {
   FormValidator.init();
   BackToTop.init();
   Lightbox.init();
+  ProductActions.init();
   Countdown.init();
   AuthTabs.init();
   ServiceTabs.init();
