@@ -380,6 +380,14 @@ p {
   display: flex;
   align-items: center;
   transition: all var(--transition-base);
+  background: rgba(16,26,51,0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .navbar {
+  background: rgba(238,241,245,0.97);
 }
 
 .navbar-inner {
@@ -771,6 +779,7 @@ p {
   font-weight: 900;
   line-height: 1.02;
   margin-bottom: 24px;
+  color: #fff;
   animation: fadeInUp 0.9s 0.15s ease both;
 }
 
@@ -2252,11 +2261,12 @@ p {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 900;
   margin: 16px 0 12px;
+  color: #fff;
 }
 
 .page-hero-desc {
   font-size: 1.05rem;
-  color: var(--text-secondary);
+  color: rgba(255,255,255,0.8);
   max-width: 520px;
   margin: 0 auto;
 }
@@ -2277,6 +2287,25 @@ p {
   .hero-stats { gap: 28px; }
   .hero-stat-value { font-size: 1.75rem; }
   .cta-section { padding: 40px 24px; }
+}
+
+/* ── 30b. SMALL-DEVICE NAVBAR (480 / 360 / 320) ── */
+@media (max-width: 480px) {
+  .navbar-inner { gap: 12px; }
+  .logo-icon { width: 36px; height: 36px; border-radius: 10px; }
+  .logo-name { font-size: 1.05rem; }
+  .nav-controls { gap: 6px; }
+  .nav-control-btn { width: 34px; height: 34px; }
+  .nav-toggle { width: 36px; height: 36px; }
+}
+
+@media (max-width: 360px) {
+  .navbar-inner { padding: 0 12px; gap: 8px; }
+  .logo-tagline { display: none; }
+  .logo-icon { width: 32px; height: 32px; }
+  .logo-name { font-size: 1rem; }
+  .nav-control-btn { width: 32px; height: 32px; font-size: .85rem; }
+  .nav-toggle { width: 34px; height: 34px; }
 }
 
 /* ── 31. UTILITY CLASSES ── */

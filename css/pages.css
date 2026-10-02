@@ -2516,3 +2516,16 @@
   .quote-form-card { padding: 24px 14px; }
   .footer-bottom-links { gap: 10px 14px; }
 }
+
+@media(max-width:320px) {
+  .section { padding: 44px 0; }
+  .page-hero { padding: 120px 0 44px; }
+  .section-tag { letter-spacing: .08em; }
+  .countdown-unit { min-width: 58px; padding: 10px 8px; }
+  .countdown-value { font-size: 1.6rem; }
+  .footer-grid { gap: 24px; margin-bottom: 32px; }
+  .footer { padding: 40px 0 0; }
+  .rgrid { gap: 16px !important; }
+  .sport-tab-nav { gap: 6px; }
+  .mobile-menu { padding: 20px 16px; }
+}
