@@ -30,17 +30,25 @@
       transition: color .2s;
     }
     .password-toggle:hover { color: var(--text-primary); }
-    /* Pill-shaped header toggles (auth pages) */
+    /* Pill-shaped header toggles (auth pages) — identical shape */
     .pill-toggle {
       border-radius: var(--radius-full);
       border: 1px solid var(--border-color);
       background: var(--bg-card);
-      padding-left: 14px;
-      padding-right: 14px;
-      width: auto;
-      gap: 6px;
+      width: 58px;
+      height: 40px;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
     .pill-toggle:hover { border-color: var(--electric-coral); }
+    .pill-toggle [data-dir-icon] {
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+    }
+    .pill-toggle .icon { width: 18px; height: 18px; }
     .input-wrap { position: relative; }
     .strength-bar {
       height: 4px;
@@ -69,7 +77,7 @@
 </div>
 
 <!-- AUTH PAGE -->
-<div class="auth-page" style="padding-top:var(--navbar-h)">
+<div class="auth-page" style="padding-top:0">
   <!-- Left panel -->
   <div class="auth-left">
     <div class="auth-bg-orb" style="width:400px;height:400px;background:rgba(91,63,163,.3);top:-100px;right:-100px"></div>
