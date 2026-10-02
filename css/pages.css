@@ -8,7 +8,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-top: var(--navbar-h);
+  padding-top: calc(var(--navbar-h) + 12px);
   overflow: hidden;
 }
 
@@ -2496,7 +2496,7 @@
 
 @media(max-width:480px) {
   .section { padding: 52px 0; }
-  .page-hero { padding: 140px 0 52px; }
+  .page-hero { padding: 152px 0 52px; }
   .nav-controls > a.btn-primary { display: none; }
   .rank-row { grid-template-columns: 1fr !important; }
   .rank-row img { width: 100% !important; height: 180px !important; }
@@ -2517,9 +2517,14 @@
   .footer-bottom-links { gap: 10px 14px; }
 }
 
+/* Anchor targets clear the fixed navbar on every page */
+section[id], div[id] {
+  scroll-margin-top: calc(var(--navbar-h) + 12px);
+}
+
 @media(max-width:320px) {
   .section { padding: 44px 0; }
-  .page-hero { padding: 120px 0 44px; }
+  .page-hero { padding: 132px 0 44px; }
   .section-tag { letter-spacing: .08em; }
   .countdown-unit { min-width: 58px; padding: 10px 8px; }
   .countdown-value { font-size: 1.6rem; }

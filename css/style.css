@@ -707,7 +707,7 @@ p {
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-top: var(--navbar-h);
+  padding-top: calc(var(--navbar-h) + 12px);
 }
 
 .hero-slider {
@@ -2232,7 +2232,7 @@ p {
 /* ── 29. PAGE HERO (inner pages) ── */
 .page-hero {
   position: relative;
-  padding: 160px 0 80px;
+  padding: 172px 0 80px;
   overflow: hidden;
   background: var(--gradient-hero);
 }
