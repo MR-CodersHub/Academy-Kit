@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark" dir="ltr">
 <head>
   <meta charset="UTF-8"/>
@@ -13,40 +13,94 @@
 <body>
 
 <div class="page-transition"></div>
-<button class="back-to-top">↑</button>
+<button class="back-to-top"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button>
 <div class="toast-container"></div>
 
 <!-- NAVBAR -->
-<header class="navbar" id="navbar">
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<header class="navbar" id="navbar" role="banner">
   <div class="navbar-inner">
-    <a href="../index.html" class="navbar-logo">
-      <div class="logo-icon">🏆</div>
-      <div class="logo-text"><span class="logo-name">AcademyKit</span><span class="logo-tagline">Elite Sportswear</span></div>
+    <a href="../index.html" class="navbar-logo" aria-label="AcademyKit Home">
+      <div class="logo-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.7V17c0 .6-.5 1-1 1.2C7.9 18.8 7 20.2 7 22"/><path d="M14 14.7V17c0 .6.5 1 1 1.2 1.1.6 2 2 2 3.8"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+      <div class="logo-text">
+        <span class="logo-name">AcademyKit</span>
+        <span class="logo-tagline">Elite Sportswear</span>
+      </div>
     </a>
-    <nav class="nav-links">
-      <div class="nav-item"><a href="../index.html" class="nav-link">Home</a></div>
-      <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
-      <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
-      <div class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></div>
-      <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
-      <div class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></div>
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <div class="nav-item">
+        <a href="../index.html" class="nav-link">Home</a>
+      </div>
+      <div class="nav-item">
+        <a href="home2.html" class="nav-link">Home 2</a>
+      </div>
+      <div class="nav-item">
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-item">
+        <a href="services.html" class="nav-link">Services <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 6l4 4 4-4"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="services.html" class="dropdown-link" role="menuitem"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5l3.2 2.3-1.2 3.7H10L8.8 9.8z"/><path d="M12 2.5V5M4.9 5.9l1.8 1.5M2.5 12H5M4.9 18.1l1.8-1.5M12 21.5V19M19.1 18.1l-1.8-1.5M21.5 12H19M19.1 5.9l-1.8 1.5"/></svg></span> Football Kits</a>
+          <a href="services.html#cricket" class="dropdown-link" role="menuitem"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 3.5c3.5 3 3.5 14 0 17"/><path d="M14.5 3.5c-3.5 3-3.5 14 0 17"/></svg></span> Cricket Kits</a>
+          <a href="services.html#basketball" class="dropdown-link" role="menuitem"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M5 4.5c4.5 3.5 4.5 11.5 0 15"/><path d="M19 4.5c-4.5 3.5-4.5 11.5 0 15"/></svg></span> Basketball Kits</a>
+          <a href="services.html#athletics" class="dropdown-link" role="menuitem"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="4.5" r="2"/><path d="M13 8l-4 4 3 3 1 6"/><path d="M13 8l4 3"/><path d="M9 12l-4 1"/><path d="M12 15l-3 6"/></svg></span> Athletics Wear</a>
+          <a href="service-details.html" class="dropdown-link" role="menuitem"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="12.5" cy="8.5" r="1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="11" r="1" fill="currentColor" stroke="none"/><path d="M15 20a4 4 0 0 0 4-4"/></svg></span> Custom Branding</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="pricing.html" class="nav-link">Pricing</a>
+      </div>
+      <div class="nav-item">
+        <a href="blog.html" class="nav-link">Blog</a>
+      </div>
+      <div class="nav-item">
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </div>
     </nav>
     <div class="nav-controls">
-      <button class="nav-control-btn" data-theme-toggle><span data-theme-icon>☀️</span></button>
-      <button class="nav-control-btn" data-rtl-toggle><span data-dir-icon>RTL</span></button>
+      <button class="nav-control-btn" data-theme-toggle title="Toggle dark/light mode" aria-label="Toggle theme">
+        <span data-theme-icon><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+      </button>
+      <button class="nav-control-btn" data-rtl-toggle title="Toggle RTL/LTR" aria-label="Toggle text direction">
+        <span data-dir-icon>RTL</span>
+      </button>
       <a href="login.html" class="btn btn-sm btn-outline nav-cta">Sign In</a>
-      <a href="#quote" class="btn btn-sm btn-primary">Get Quote</a>
-      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+      <a href="contact.html#quote" class="btn btn-sm btn-primary">Get Quote</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
-<div class="mobile-menu" id="mobileMenu">
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
   <ul class="mobile-nav-links">
-    <li><a href="../index.html" class="mobile-nav-link">🏠 Home</a></li>
-    <li><a href="about.html" class="mobile-nav-link">ℹ️ About</a></li>
-    <li><a href="services.html" class="mobile-nav-link">🎽 Services</a></li>
-    <li><a href="contact.html" class="mobile-nav-link">📞 Contact</a></li>
+    <li><a href="../index.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg> Home</a></li>
+    <li><a href="home2.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg> Home 2</a></li>
+    <li>
+      <a href="#" class="mobile-nav-link" data-has-sub="sub-services">
+        Services <span class="arrow"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+      </a>
+      <div class="mobile-submenu" id="sub-services">
+        <a href="services.html">Football Kits</a>
+        <a href="services.html#cricket">Cricket Kits</a>
+        <a href="services.html#basketball">Basketball Kits</a>
+        <a href="services.html#athletics">Athletics Wear</a>
+        <a href="service-details.html">Custom Branding</a>
+      </div>
+    </li>
+    <li><a href="about.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5h.01"/></svg> About Us</a></li>
+    <li><a href="pricing.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg> Pricing</a></li>
+    <li><a href="blog.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3l4 4L8 20l-5 1 1-5z"/><path d="M14 6l4 4"/></svg> Blog</a></li>
+    <li><a href="contact.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> Contact</a></li>
+    <li><a href="login.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Login / Register</a></li>
+    <li><a href="404.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m9 9 6 6M15 9l-6 6"/></svg> 404 Page</a></li>
+    <li><a href="coming-soon.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M14 4c3-2 7-2 7-2s0 4-2 7l-7 7-5-5z"/><circle cx="15" cy="9" r="1.5"/></svg> Coming Soon</a></li>
   </ul>
+  <div style="margin-top:32px;display:flex;gap:12px">
+    <a href="contact.html#quote" class="btn btn-primary" style="flex:1;justify-content:center">Get a Quote</a>
+    <a href="login.html" class="btn btn-outline" style="flex:1;justify-content:center">Sign In</a>
+  </div>
 </div>
 
 <!-- PAGE HERO -->
@@ -72,7 +126,7 @@
   <div class="container">
     <div class="grid-3" style="margin-bottom:64px">
       <div style="background:var(--gradient-violet);border-radius:var(--radius-xl);padding:40px 32px;text-align:center" data-reveal data-delay="1">
-        <div style="font-size:3rem;margin-bottom:16px">📞</div>
+        <div style="font-size:3rem;margin-bottom:16px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></div>
         <h3 style="font-size:1.2rem;font-weight:800;margin-bottom:12px;color:white">Call Us</h3>
         <p style="color:rgba(255,255,255,.8);font-size:.9rem;margin-bottom:16px">Mon–Sat, 9AM to 7PM IST</p>
         <a href="tel:+919876543210" style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:white">+91 98765 43210</a><br/>
@@ -80,15 +134,15 @@
       </div>
 
       <div style="background:var(--gradient-coral);border-radius:var(--radius-xl);padding:40px 32px;text-align:center" data-reveal data-delay="2">
-        <div style="font-size:3rem;margin-bottom:16px">✉️</div>
+        <div style="font-size:3rem;margin-bottom:16px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6L22 7"/></svg></div>
         <h3 style="font-size:1.2rem;font-weight:800;margin-bottom:12px;color:white">Email Us</h3>
         <p style="color:rgba(255,255,255,.8);font-size:.9rem;margin-bottom:16px">Replies within 4 business hours</p>
-        <a href="mailto:hello@academykit.in" style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:white">hello@academykit.in</a><br/>
+        <a href="mailto:hello@academykit.in" style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:white"><span class="nobr">hello@academykit.in</span></a><br/>
         <a href="mailto:orders@academykit.in" style="font-family:var(--font-heading);font-size:.95rem;color:rgba(255,255,255,.8)">orders@academykit.in</a>
       </div>
 
       <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:40px 32px;text-align:center" data-reveal data-delay="3">
-        <div style="font-size:3rem;margin-bottom:16px">📍</div>
+        <div style="font-size:3rem;margin-bottom:16px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
         <h3 style="font-size:1.2rem;font-weight:800;margin-bottom:12px">Visit Us</h3>
         <p style="color:var(--text-secondary);font-size:.9rem">123, SportsPlex Tower<br/>Connaught Place<br/>New Delhi — 110001</p>
         <p style="color:var(--champagne);font-size:.82rem;font-weight:600;margin-top:12px">Mon–Fri, 10AM–6PM</p>
@@ -156,37 +210,37 @@
             <textarea id="contact-message" class="form-textarea" placeholder="Tell us about your requirements — sport, color preferences, custom branding needs, delivery deadline..." data-validate="required|minLength:20" data-msg-required="Message is required" data-msg-minLength="Please provide more details (20+ chars)"></textarea>
             <p class="form-error-msg"></p>
           </div>
-          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center" data-original-text="Send Message">📨 Send Message</button>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center" data-original-text="Send Message"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg> Send Message</button>
         </form>
       </div>
 
       <!-- Map + Info -->
       <div data-reveal="right">
-        <div class="contact-map">
-          <div class="map-placeholder">
-            <div class="map-placeholder-icon">📍</div>
-            <div class="map-placeholder-text">123, SportsPlex Tower, Connaught Place, New Delhi</div>
-            <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="margin-top:8px">Open in Google Maps</a>
-          </div>
+        <div class="contact-map" style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border-color)">
+          <iframe title="AcademyKit Delhi HQ map — Connaught Place, New Delhi" src="https://maps.google.com/maps?q=Connaught%20Place%2C%20New%20Delhi%20110001&t=&z=15&ie=UTF8&iwloc=&output=embed" style="border:0;width:100%;height:320px;display:block" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:12px;font-size:.875rem;color:var(--text-secondary)">
+          <span>123, SportsPlex Tower, Connaught Place, New Delhi</span>
+          <a href="https://www.google.com/maps/search/?api=1&query=SportsPlex+Tower+Connaught+Place+New+Delhi+110001" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="margin-left:auto;flex-shrink:0">Open in Google Maps</a>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px">
           <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:20px;text-align:center">
-            <div style="font-size:1.8rem;margin-bottom:8px">⚡</div>
+            <div style="font-size:1.8rem;margin-bottom:8px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
             <div style="font-family:var(--font-heading);font-weight:700;font-size:.95rem">4-Hour Response</div>
             <div style="font-size:.8rem;color:var(--text-muted)">On all enquiries</div>
           </div>
           <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:20px;text-align:center">
-            <div style="font-size:1.8rem;margin-bottom:8px">🎨</div>
+            <div style="font-size:1.8rem;margin-bottom:8px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="12.5" cy="8.5" r="1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="11" r="1" fill="currentColor" stroke="none"/><path d="M15 20a4 4 0 0 0 4-4"/></svg></div>
             <div style="font-family:var(--font-heading);font-weight:700;font-size:.95rem">24-Hour Mockup</div>
             <div style="font-size:.8rem;color:var(--text-muted)">Free design preview</div>
           </div>
           <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:20px;text-align:center">
-            <div style="font-size:1.8rem;margin-bottom:8px">💬</div>
+            <div style="font-size:1.8rem;margin-bottom:8px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-3-.4-4.2-1L3 20l1-5.3A8.5 8.5 0 1 1 21 11.5z"/></svg></div>
             <div style="font-family:var(--font-heading);font-weight:700;font-size:.95rem">WhatsApp Support</div>
             <div style="font-size:.8rem;color:var(--text-muted)">+91 98765 43210</div>
           </div>
           <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:20px;text-align:center">
-            <div style="font-size:1.8rem;margin-bottom:8px">🚚</div>
+            <div style="font-size:1.8rem;margin-bottom:8px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.3a4 4 0 0 0-1.2-2.8L19 9h-5"/><circle cx="7.5" cy="17.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></svg></div>
             <div style="font-family:var(--font-heading);font-weight:700;font-size:.95rem">Pan-India Delivery</div>
             <div style="font-size:.8rem;color:var(--text-muted)">All 28 states</div>
           </div>
@@ -248,7 +302,7 @@
           </div>
         </div>
         <div style="display:flex;justify-content:flex-end;margin-top:20px">
-          <button class="btn btn-primary" data-step-next>Next: Kit Details →</button>
+          <button type="button" class="btn btn-primary" data-step-next>Next: Kit Details  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
         </div>
       </div>
 
@@ -280,8 +334,8 @@
           </div>
         </div>
         <div style="display:flex;justify-content:space-between;margin-top:20px">
-          <button class="btn btn-outline" data-step-prev>← Back</button>
-          <button class="btn btn-primary" data-step-next>Next: Review →</button>
+          <button type="button" class="btn btn-outline" data-step-prev><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg> Back</button>
+          <button type="button" class="btn btn-primary" data-step-next>Next: Review  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
         </div>
       </div>
 
@@ -296,12 +350,12 @@
         <div class="form-group">
           <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer">
             <input type="checkbox" style="margin-top:3px;accent-color:var(--royal-violet)"/>
-            <span style="font-size:.875rem;color:var(--text-secondary)">I agree to AcademyKit's Terms of Service and Privacy Policy.</span>
+            <span style="font-size:.875rem;color:var(--text-secondary)">I agree to AcademyKit's <a href="terms.html" style="color:var(--electric-coral)">Terms of Service</a> and <a href="privacy.html" style="color:var(--electric-coral)">Privacy Policy</a>.</span>
           </label>
         </div>
         <div style="display:flex;justify-content:space-between;margin-top:20px">
-          <button class="btn btn-outline" data-step-prev>← Back</button>
-          <button class="btn btn-primary btn-lg" onclick="Toast.show({type:'success',title:'Quote Submitted!',message:'We will send your detailed quote within 2 hours.'})">🏆 Submit Quotation</button>
+          <button type="button" class="btn btn-outline" data-step-prev><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg> Back</button>
+          <button type="button" class="btn btn-primary btn-lg" data-quote-submit><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.7V17c0 .6-.5 1-1 1.2C7.9 18.8 7 20.2 7 22"/><path d="M14 14.7V17c0 .6.5 1 1 1.2 1.1.6 2 2 2 3.8"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg> Submit Quotation</button>
         </div>
       </div>
     </div>
@@ -333,22 +387,25 @@
     </div>
     <div class="grid-3">
       <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:32px;text-align:center" data-reveal data-delay="1">
-        <div style="font-size:2.5rem;margin-bottom:12px">🏭</div>
+        <div style="font-size:2.5rem;margin-bottom:12px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l6 4V9l6 5V5h4v16z"/><path d="M3 21h18"/><path d="M7 17h2M11 17h2M15 17h2"/></svg></div>
         <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Ludhiana Factory</h4>
         <p style="font-size:.875rem;color:var(--text-secondary)">Plot 45, Phase-VIII, Industrial Area, Ludhiana, Punjab — 141013</p>
         <div style="margin-top:12px;font-size:.8rem;color:var(--champagne)">Main Manufacturing Unit</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Plot+45+Phase-VIII+Industrial+Area+Ludhiana+Punjab+141013" target="_blank" rel="noopener" class="btn btn-sm btn-outline" style="margin-top:16px">Get Directions  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
       <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:32px;text-align:center" data-reveal data-delay="2">
-        <div style="font-size:2.5rem;margin-bottom:12px">🏢</div>
+        <div style="font-size:2.5rem;margin-bottom:12px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18"/><path d="M9 21v-3.5h6V21"/><path d="M8.5 7h1.5M14 7h1.5M8.5 11h1.5M14 11h1.5"/></svg></div>
         <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Delhi HQ</h4>
         <p style="font-size:.875rem;color:var(--text-secondary)">123, SportsPlex Tower, Connaught Place, New Delhi — 110001</p>
         <div style="margin-top:12px;font-size:.8rem;color:var(--champagne)">Head Office &amp; Design Studio</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=SportsPlex+Tower+Connaught+Place+New+Delhi+110001" target="_blank" rel="noopener" class="btn btn-sm btn-outline" style="margin-top:16px">Get Directions  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
       <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:32px;text-align:center" data-reveal data-delay="3">
-        <div style="font-size:2.5rem;margin-bottom:12px">🏭</div>
+        <div style="font-size:2.5rem;margin-bottom:12px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l6 4V9l6 5V5h4v16z"/><path d="M3 21h18"/><path d="M7 17h2M11 17h2M15 17h2"/></svg></div>
         <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Tiruppur Unit</h4>
         <p style="font-size:.875rem;color:var(--text-secondary)">82, Sivananda Road, Tiruppur, Tamil Nadu — 641604</p>
         <div style="margin-top:12px;font-size:.8rem;color:var(--champagne)">Fabric &amp; Knitwear Unit</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=82+Sivananda+Road+Tiruppur+Tamil+Nadu+641604" target="_blank" rel="noopener" class="btn btn-sm btn-outline" style="margin-top:16px">Get Directions  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -361,53 +418,101 @@
       <h2 class="cta-title">Connect With Us on Social Media</h2>
       <p class="cta-desc">Follow AcademyKit for new collection launches, school sport inspiration and exclusive early-access deals.</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-        <a href="#" class="btn btn-outline btn-lg">📘 Facebook</a>
-        <a href="#" class="btn btn-outline btn-lg">📸 Instagram</a>
-        <a href="#" class="btn btn-outline btn-lg">🐦 Twitter</a>
-        <a href="#" class="btn btn-outline btn-lg">📺 YouTube</a>
+        <a href="https://www.facebook.com/academykit" target="_blank" rel="noopener" class="btn btn-outline btn-lg"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M14 8h2V5h-2c-2 0-3.5 1.5-3.5 3.5V11H8.5v3h2v7h3v-7h2l.5-3h-2.5V8.7c0-.4.3-.7.5-.7z"/></svg> Facebook</a>
+        <a href="https://www.instagram.com/academykit" target="_blank" rel="noopener" class="btn btn-outline btn-lg"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg> Instagram</a>
+        <a href="https://x.com/academykit" target="_blank" rel="noopener" class="btn btn-outline btn-lg"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M22 5.9c-.74.33-1.53.55-2.36.66.85-.5 1.5-1.3 1.8-2.26-.8.47-1.67.8-2.6 1a4.1 4.1 0 0 0-7 3.74A11.64 11.64 0 0 1 3.4 4.9a4.1 4.1 0 0 0 1.27 5.48c-.65-.02-1.27-.2-1.8-.5v.05c0 1.99 1.41 3.65 3.29 4.02-.6.17-1.23.2-1.87.08.53 1.65 2.06 2.85 3.88 2.88A8.25 8.25 0 0 1 2 18.58a11.64 11.64 0 0 0 6.3 1.85c7.56 0 11.7-6.26 11.7-11.7v-.53c.8-.58 1.5-1.3 2-2.3z"/></svg> Twitter</a>
+        <a href="https://www.youtube.com/@academykit" target="_blank" rel="noopener" class="btn btn-outline btn-lg"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"/></svg> YouTube</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="../index.html" class="navbar-logo" style="margin-bottom:16px;display:inline-flex">
-          <div class="logo-icon">🏆</div>
-          <div class="logo-text"><span class="logo-name">AcademyKit</span><span class="logo-tagline">Elite Sportswear</span></div>
+          <div class="logo-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.7V17c0 .6-.5 1-1 1.2C7.9 18.8 7 20.2 7 22"/><path d="M14 14.7V17c0 .6.5 1 1 1.2 1.1.6 2 2 2 3.8"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+          <div class="logo-text">
+            <span class="logo-name">AcademyKit</span>
+            <span class="logo-tagline">Elite Sportswear</span>
+          </div>
         </a>
-        <p>Premium school sports uniforms. Trusted by 500+ schools across India since 2009.</p>
-        <div class="footer-socials"><a href="#" class="footer-social">📘</a><a href="#" class="footer-social">📸</a><a href="#" class="footer-social">🐦</a></div>
+        <p>Premium school sports uniforms and team kits. Trusted by 500+ schools across India for over 15 years of sporting excellence.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/academykit" target="_blank" rel="noopener" class="footer-social" aria-label="Facebook"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M14 8h2V5h-2c-2 0-3.5 1.5-3.5 3.5V11H8.5v3h2v7h3v-7h2l.5-3h-2.5V8.7c0-.4.3-.7.5-.7z"/></svg></a>
+          <a href="https://www.instagram.com/academykit" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://x.com/academykit" target="_blank" rel="noopener" class="footer-social" aria-label="Twitter"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M22 5.9c-.74.33-1.53.55-2.36.66.85-.5 1.5-1.3 1.8-2.26-.8.47-1.67.8-2.6 1a4.1 4.1 0 0 0-7 3.74A11.64 11.64 0 0 1 3.4 4.9a4.1 4.1 0 0 0 1.27 5.48c-.65-.02-1.27-.2-1.8-.5v.05c0 1.99 1.41 3.65 3.29 4.02-.6.17-1.23.2-1.87.08.53 1.65 2.06 2.85 3.88 2.88A8.25 8.25 0 0 1 2 18.58a11.64 11.64 0 0 0 6.3 1.85c7.56 0 11.7-6.26 11.7-11.7v-.53c.8-.58 1.5-1.3 2-2.3z"/></svg></a>
+          <a href="https://www.youtube.com/@academykit" target="_blank" rel="noopener" class="footer-social" aria-label="YouTube"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/company/academykit" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg></a>
+        </div>
       </div>
+
       <div>
-        <h3 class="footer-col-title">Pages</h3>
+        <h3 class="footer-col-title">Sports</h3>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link">Football Kits</a></li>
+          <li><a href="services.html#cricket" class="footer-link">Cricket Kits</a></li>
+          <li><a href="services.html#basketball" class="footer-link">Basketball Kits</a></li>
+          <li><a href="services.html#athletics" class="footer-link">Athletics Wear</a></li>
+          <li><a href="services.html#accessories" class="footer-link">Accessories</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Quick Links</h3>
         <ul class="footer-links">
           <li><a href="../index.html" class="footer-link">Home</a></li>
           <li><a href="about.html" class="footer-link">About</a></li>
           <li><a href="services.html" class="footer-link">Services</a></li>
           <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
         </ul>
       </div>
-      <div>
-        <h3 class="footer-col-title">Sports</h3>
-        <ul class="footer-links">
-          <li><a href="services.html" class="footer-link">Football</a></li>
-          <li><a href="services.html#cricket" class="footer-link">Cricket</a></li>
-          <li><a href="services.html#basketball" class="footer-link">Basketball</a></li>
-          <li><a href="services.html#athletics" class="footer-link">Athletics</a></li>
-        </ul>
-      </div>
+
       <div>
         <h3 class="footer-col-title">Contact</h3>
-        <div class="footer-contact-item"><div class="footer-contact-icon">📞</div><div class="footer-contact-text">+91 98765 43210</div></div>
-        <div class="footer-contact-item"><div class="footer-contact-icon">✉️</div><div class="footer-contact-text">hello@academykit.in</div></div>
-        <div class="footer-contact-item"><div class="footer-contact-icon">📍</div><div class="footer-contact-text">Connaught Place, New Delhi</div></div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div class="footer-contact-text">
+            <a href="https://www.google.com/maps/search/?api=1&query=SportsPlex+Tower+Connaught+Place+New+Delhi+110001" target="_blank" rel="noopener" style="color:inherit">123, SportsPlex Tower, Connaught Place, New Delhi — 110001</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></div>
+          <div class="footer-contact-text">
+            <a href="tel:+919876543210" style="color:inherit"><span class="nobr">+91 98765 43210</span></a><br/><a href="tel:+911145678900" style="color:inherit"><span class="nobr">+91 11 4567 8900</span></a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6L22 7"/></svg></div>
+          <div class="footer-contact-text">
+            <a href="mailto:hello@academykit.in" style="color:inherit"><span class="nobr">hello@academykit.in</span></a><br/><a href="mailto:orders@academykit.in" style="color:inherit"><span class="nobr">orders@academykit.in</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Stay Updated</h3>
+        <p class="footer-newsletter-desc">Kit launches & bulk-order offers — join 8,000+ coordinators.</p>
+        <form class="footer-newsletter-form footer-newsletter-form--col" data-validate-form data-success-msg="You're subscribed! Welcome to the AcademyKit newsletter.">
+          <input type="email" class="footer-newsletter-input" placeholder="Your email address" aria-label="Email address" data-validate="required|email"/>
+          <button type="submit" class="btn btn-primary btn-sm footer-newsletter-btn" data-original-text="Subscribe">Subscribe</button>
+        </form>
       </div>
     </div>
-    <div class="footer-bottom"><p class="footer-bottom-text">© 2026 AcademyKit. All rights reserved.</p></div>
+
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">© 2026 AcademyKit. All rights reserved. Made with <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="#F05A5A" stroke="none" aria-hidden="true" style="vertical-align:-2px;flex-shrink:0"><path d="M12 21C7 16.5 2 12.8 2 8.5 2 5.5 4.5 3 7.5 3c1.8 0 3.4 1 4.5 2.6C13.1 4 14.7 3 16.5 3 19.5 3 22 5.5 22 8.5c0 4.3-5 8-10 12.5z"/></svg> for school sports.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html" class="footer-bottom-link">Privacy Policy</a>
+        <a href="terms.html" class="footer-bottom-link">Terms of Service</a>
+        <a href="sitemap.html" class="footer-bottom-link">Sitemap</a>
+      </div>
+    </div>
   </div>
 </footer>
 

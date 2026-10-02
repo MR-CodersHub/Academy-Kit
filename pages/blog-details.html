@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark" dir="ltr">
 <head>
   <meta charset="UTF-8"/>
@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../css/style.css"/>
   <link rel="stylesheet" href="../css/pages.css"/>
   <style>
-    .blog-content h2 { font-size:1.6rem;font-weight:800;margin:36px 0 14px; }
+    .blog-content h2 { font-size:1.6rem;font-weight:800;margin:36px 0 14px;scroll-margin-top:110px; }
     .blog-content h3 { font-size:1.2rem;font-weight:700;margin:24px 0 10px; }
     .blog-content p { color:var(--text-secondary);line-height:1.85;margin-bottom:18px; }
     .blog-content ul,.blog-content ol { padding-left:24px;margin-bottom:18px; }
@@ -41,45 +41,99 @@
 <body>
 
 <div class="page-transition"></div>
-<button class="back-to-top">↑</button>
+<button class="back-to-top"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button>
 <div class="toast-container"></div>
 
 <!-- NAVBAR -->
-<header class="navbar" id="navbar">
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<header class="navbar" id="navbar" role="banner">
   <div class="navbar-inner">
-    <a href="../index.html" class="navbar-logo">
-      <div class="logo-icon">🏆</div>
-      <div class="logo-text"><span class="logo-name">AcademyKit</span><span class="logo-tagline">Elite Sportswear</span></div>
+    <a href="../index.html" class="navbar-logo" aria-label="AcademyKit Home">
+      <div class="logo-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.7V17c0 .6-.5 1-1 1.2C7.9 18.8 7 20.2 7 22"/><path d="M14 14.7V17c0 .6.5 1 1 1.2 1.1.6 2 2 2 3.8"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+      <div class="logo-text">
+        <span class="logo-name">AcademyKit</span>
+        <span class="logo-tagline">Elite Sportswear</span>
+      </div>
     </a>
-    <nav class="nav-links">
-      <div class="nav-item"><a href="../index.html" class="nav-link">Home</a></div>
-      <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
-      <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
-      <div class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></div>
-      <div class="nav-item"><a href="blog.html" class="nav-link active">Blog</a></div>
-      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <div class="nav-item">
+        <a href="../index.html" class="nav-link">Home</a>
+      </div>
+      <div class="nav-item">
+        <a href="home2.html" class="nav-link">Home 2</a>
+      </div>
+      <div class="nav-item">
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-item">
+        <a href="services.html" class="nav-link">Services <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 6l4 4 4-4"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="services.html" class="dropdown-link" role="menuitem"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5l3.2 2.3-1.2 3.7H10L8.8 9.8z"/><path d="M12 2.5V5M4.9 5.9l1.8 1.5M2.5 12H5M4.9 18.1l1.8-1.5M12 21.5V19M19.1 18.1l-1.8-1.5M21.5 12H19M19.1 5.9l-1.8 1.5"/></svg></span> Football Kits</a>
+          <a href="services.html#cricket" class="dropdown-link" role="menuitem"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 3.5c3.5 3 3.5 14 0 17"/><path d="M14.5 3.5c-3.5 3-3.5 14 0 17"/></svg></span> Cricket Kits</a>
+          <a href="services.html#basketball" class="dropdown-link" role="menuitem"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M5 4.5c4.5 3.5 4.5 11.5 0 15"/><path d="M19 4.5c-4.5 3.5-4.5 11.5 0 15"/></svg></span> Basketball Kits</a>
+          <a href="services.html#athletics" class="dropdown-link" role="menuitem"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="4.5" r="2"/><path d="M13 8l-4 4 3 3 1 6"/><path d="M13 8l4 3"/><path d="M9 12l-4 1"/><path d="M12 15l-3 6"/></svg></span> Athletics Wear</a>
+          <a href="service-details.html" class="dropdown-link" role="menuitem"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="12.5" cy="8.5" r="1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="11" r="1" fill="currentColor" stroke="none"/><path d="M15 20a4 4 0 0 0 4-4"/></svg></span> Custom Branding</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="pricing.html" class="nav-link">Pricing</a>
+      </div>
+      <div class="nav-item">
+        <a href="blog.html" class="nav-link active">Blog</a>
+      </div>
+      <div class="nav-item">
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
     </nav>
     <div class="nav-controls">
-      <button class="nav-control-btn" data-theme-toggle><span data-theme-icon>☀️</span></button>
-      <button class="nav-control-btn" data-rtl-toggle><span data-dir-icon>RTL</span></button>
+      <button class="nav-control-btn" data-theme-toggle title="Toggle dark/light mode" aria-label="Toggle theme">
+        <span data-theme-icon><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+      </button>
+      <button class="nav-control-btn" data-rtl-toggle title="Toggle RTL/LTR" aria-label="Toggle text direction">
+        <span data-dir-icon>RTL</span>
+      </button>
       <a href="login.html" class="btn btn-sm btn-outline nav-cta">Sign In</a>
       <a href="contact.html#quote" class="btn btn-sm btn-primary">Get Quote</a>
-      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
-<div class="mobile-menu" id="mobileMenu">
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
   <ul class="mobile-nav-links">
-    <li><a href="../index.html" class="mobile-nav-link">🏠 Home</a></li>
-    <li><a href="blog.html" class="mobile-nav-link">📝 Blog</a></li>
-    <li><a href="services.html" class="mobile-nav-link">🎽 Services</a></li>
-    <li><a href="contact.html" class="mobile-nav-link">📞 Contact</a></li>
+    <li><a href="../index.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg> Home</a></li>
+    <li><a href="home2.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg> Home 2</a></li>
+    <li>
+      <a href="#" class="mobile-nav-link" data-has-sub="sub-services">
+        Services <span class="arrow"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+      </a>
+      <div class="mobile-submenu" id="sub-services">
+        <a href="services.html">Football Kits</a>
+        <a href="services.html#cricket">Cricket Kits</a>
+        <a href="services.html#basketball">Basketball Kits</a>
+        <a href="services.html#athletics">Athletics Wear</a>
+        <a href="service-details.html">Custom Branding</a>
+      </div>
+    </li>
+    <li><a href="about.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5h.01"/></svg> About Us</a></li>
+    <li><a href="pricing.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg> Pricing</a></li>
+    <li><a href="blog.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3l4 4L8 20l-5 1 1-5z"/><path d="M14 6l4 4"/></svg> Blog</a></li>
+    <li><a href="contact.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> Contact</a></li>
+    <li><a href="login.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Login / Register</a></li>
+    <li><a href="404.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m9 9 6 6M15 9l-6 6"/></svg> 404 Page</a></li>
+    <li><a href="coming-soon.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M14 4c3-2 7-2 7-2s0 4-2 7l-7 7-5-5z"/><circle cx="15" cy="9" r="1.5"/></svg> Coming Soon</a></li>
   </ul>
+  <div style="margin-top:32px;display:flex;gap:12px">
+    <a href="contact.html#quote" class="btn btn-primary" style="flex:1;justify-content:center">Get a Quote</a>
+    <a href="login.html" class="btn btn-outline" style="flex:1;justify-content:center">Sign In</a>
+  </div>
 </div>
 
 <!-- BLOG HERO -->
 <section class="page-hero" style="padding:180px 0 60px">
-  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1600&q=85');opacity:.25"></div>
+  <div class="page-hero-bg" id="postHeroBg" style="background-image:url('https://i.pinimg.com/1200x/06/5c/45/065c45262d88633f7e685b626e206158.jpg');opacity:.25"></div>
   <div class="page-hero-overlay"></div>
   <div class="container">
     <div class="page-hero-content">
@@ -91,20 +145,20 @@
         <span class="breadcrumb-active">Article</span>
       </nav>
       <div style="display:flex;justify-content:center;gap:12px;margin-bottom:20px">
-        <div style="background:var(--gradient-coral);color:white;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:5px 14px;border-radius:var(--radius-full)">⭐ Featured</div>
-        <div style="background:rgba(91,63,163,.5);border:1px solid rgba(91,63,163,.5);color:white;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:5px 14px;border-radius:var(--radius-full)">⚽ Kit Guides</div>
+        <div style="background:var(--gradient-coral);color:white;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:5px 14px;border-radius:var(--radius-full)"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg> Featured</div>
+        <div id="postCat" style="background:rgba(91,63,163,.5);border:1px solid rgba(91,63,163,.5);color:white;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:5px 14px;border-radius:var(--radius-full)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5l3.2 2.3-1.2 3.7H10L8.8 9.8z"/><path d="M12 2.5V5M4.9 5.9l1.8 1.5M2.5 12H5M4.9 18.1l1.8-1.5M12 21.5V19M19.1 18.1l-1.8-1.5M21.5 12H19M19.1 5.9l-1.8 1.5"/></svg> Kit Guides</div>
       </div>
-      <h1 style="font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;margin-bottom:20px;max-width:820px;margin-left:auto;margin-right:auto">
+      <h1 id="postTitle" style="font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;margin-bottom:20px;max-width:820px;margin-left:auto;margin-right:auto">
         How to Choose the Perfect Football Kit for Your School Team in 2026
       </h1>
       <div style="display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap">
         <div style="display:flex;align-items:center;gap:8px;font-size:.875rem;color:rgba(255,255,255,.75)">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Arjun" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(212,180,106,.5)"/>
-          <span>By Arjun Mehta</span>
+          <img id="postAuthorImg" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Arjun" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(212,180,106,.5)"/>
+          <span id="postAuthorName">By Arjun Mehta</span>
         </div>
-        <div style="font-size:.875rem;color:rgba(255,255,255,.65)">📅 September 28, 2026</div>
-        <div style="font-size:.875rem;color:rgba(255,255,255,.65)">⏱️ 8 min read</div>
-        <div style="font-size:.875rem;color:rgba(255,255,255,.65)">👁️ 3.2K views</div>
+        <div style="font-size:.875rem;color:rgba(255,255,255,.65)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg> <span id="postDate">September 28, 2026</span></div>
+        <div style="font-size:.875rem;color:rgba(255,255,255,.65)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> <span id="postRead">8 min read</span></div>
+        <div style="font-size:.875rem;color:rgba(255,255,255,.65)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg> <span id="postViews">3.2K views</span></div>
       </div>
     </div>
   </div>
@@ -116,8 +170,9 @@
     <div class="blog-layout">
       <!-- Article -->
       <article class="blog-content">
-        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&q=85" alt="Football team with professional kit" loading="lazy" style="margin-top:0"/>
+        <img id="postImg" src="https://i.pinimg.com/1200x/06/5c/45/065c45262d88633f7e685b626e206158.jpg" alt="Football team with professional kit" loading="lazy" style="margin-top:0"/>
 
+        <div id="postBody">
         <p>Choosing the right football kit for your school team is much more than picking colors and slapping a badge on a jersey. A great kit should perform under match conditions, fit every player comfortably, represent your school's identity, and survive the rigors of a full season — all without breaking your budget.</p>
 
         <p>In this guide, we break down the key factors every PE coordinator and sports head should consider when ordering football kits in 2026.</p>
@@ -126,7 +181,7 @@
         <p>Before anything else, establish your per-unit budget. School football kits typically range from ₹799 for basic training jerseys to ₹2,500+ for full match kits with embroidered crests and player names. A realistic mid-range budget is ₹1,200–₹1,800 per player for a complete home-and-away set.</p>
 
         <div class="callout">
-          <strong style="color:var(--champagne)">💡 Pro Tip:</strong> Order in larger quantities to unlock bulk pricing discounts. Most suppliers (including AcademyKit) offer 10–25% price reductions for orders above 50 units.
+          <strong style="color:var(--champagne)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.4 1 2.3h6c0-.9.4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg> Pro Tip:</strong> Order in larger quantities to unlock bulk pricing discounts. Most suppliers (including AcademyKit) offer 10–25% price reductions for orders above 50 units.
         </div>
 
         <h2>2. Choose the Right Fabric</h2>
@@ -161,56 +216,57 @@
         <h2>5. Customization Options</h2>
         <p>Beyond the team color and crest, consider these branding additions:</p>
         <ul>
-          <li>🎽 <strong>Embroidered school badge</strong> — Adds a premium, professional look. ₹49/badge.</li>
-          <li>🔢 <strong>Squad numbers</strong> — Essential for match play. Back and chest numbers available.</li>
-          <li>👤 <strong>Player names</strong> — Great for tournaments and inter-school matches.</li>
-          <li>🏫 <strong>School name text</strong> — Across back collar or chest for team identity.</li>
+          <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3 3.5 6 5.5 10l2-1V21h9V9l2 1 2-4L15 3a3 3 0 0 1-6 0z"/></svg> <strong>Embroidered school badge</strong> — Adds a premium, professional look. ₹49/badge.</li>
+          <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3 7 21"/><path d="M17 3l-2 18"/><path d="M4 8h17"/><path d="M3 16h17"/></svg> <strong>Squad numbers</strong> — Essential for match play. Back and chest numbers available.</li>
+          <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg> <strong>Player names</strong> — Great for tournaments and inter-school matches.</li>
+          <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9.5 21v-3.5h5V21"/><path d="M12 9v4"/><path d="M12 4V2.5"/></svg> <strong>School name text</strong> — Across back collar or chest for team identity.</li>
         </ul>
 
         <h2>6. Lead Times and Delivery</h2>
         <p>Plan ahead. Custom kits take 7–14 business days to produce and deliver. For major inter-school tournaments or annual sports days, order at least 4 weeks in advance. Express production (5–7 days) is available at AcademyKit for urgent needs.</p>
 
         <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:28px;margin:28px 0">
-          <h3 style="margin:0 0 16px">📋 Quick Decision Checklist</h3>
+          <h3 style="margin:0 0 16px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 11h6M9 15h4"/></svg> Quick Decision Checklist</h3>
           <ul style="list-style:none;padding:0">
-            <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border-color);color:var(--text-secondary)"><span style="color:var(--champagne)">☐</span> Budget per player confirmed</li>
-            <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border-color);color:var(--text-secondary)"><span style="color:var(--champagne)">☐</span> Moisture-wicking fabric selected</li>
-            <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border-color);color:var(--text-secondary)"><span style="color:var(--champagne)">☐</span> Sublimation printing confirmed</li>
-            <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border-color);color:var(--text-secondary)"><span style="color:var(--champagne)">☐</span> Full size run with extras ordered</li>
-            <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border-color);color:var(--text-secondary)"><span style="color:var(--champagne)">☐</span> School crest file ready (SVG/AI)</li>
-            <li style="display:flex;align-items:center;gap:10px;padding:8px 0;color:var(--text-secondary)"><span style="color:var(--champagne)">☐</span> Order placed 4+ weeks before event</li>
+            <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border-color);color:var(--text-secondary)"><span style="color:var(--champagne)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/></svg></span> Budget per player confirmed</li>
+            <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border-color);color:var(--text-secondary)"><span style="color:var(--champagne)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/></svg></span> Moisture-wicking fabric selected</li>
+            <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border-color);color:var(--text-secondary)"><span style="color:var(--champagne)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/></svg></span> Sublimation printing confirmed</li>
+            <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border-color);color:var(--text-secondary)"><span style="color:var(--champagne)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/></svg></span> Full size run with extras ordered</li>
+            <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border-color);color:var(--text-secondary)"><span style="color:var(--champagne)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/></svg></span> School crest file ready (SVG/AI)</li>
+            <li style="display:flex;align-items:center;gap:10px;padding:8px 0;color:var(--text-secondary)"><span style="color:var(--champagne)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/></svg></span> Order placed 4+ weeks before event</li>
           </ul>
         </div>
 
         <h2>Conclusion</h2>
         <p>A well-chosen football kit is an investment in your school's sports culture. It boosts team morale, creates a unified identity and, with the right fabric and printing, will serve your players for 2–3 seasons without fading or deteriorating. Follow these six steps and your school will be dressed to impress on every match day.</p>
         <p>Ready to start? <a href="contact.html#quote" style="color:var(--electric-coral);font-weight:700">Request a free quote from AcademyKit</a> and receive a digital mockup of your custom kit within 24 hours.</p>
+        </div>
 
         <!-- Author card -->
         <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:32px;display:flex;gap:24px;align-items:flex-start;margin-top:40px">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80" alt="Arjun Mehta" loading="lazy" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--border-accent);margin:0;flex-shrink:0"/>
+          <img id="postBioImg" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80" alt="Arjun Mehta" loading="lazy" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--border-accent);margin:0;flex-shrink:0"/>
           <div>
-            <h4 style="font-family:var(--font-heading);font-weight:800;margin-bottom:4px">Arjun Mehta</h4>
-            <div style="font-size:.8rem;color:var(--champagne);font-weight:600;margin-bottom:10px">Founder &amp; CEO, AcademyKit</div>
-            <p style="margin:0;font-size:.875rem;color:var(--text-secondary)">Former national-level footballer and sports educator with 15+ years of experience in school sportswear. Arjun founded AcademyKit to bring professional-quality kits to every school in India.</p>
+            <h4 id="postBioName" style="font-family:var(--font-heading);font-weight:800;margin-bottom:4px">Arjun Mehta</h4>
+            <div id="postBioRole" style="font-size:.8rem;color:var(--champagne);font-weight:600;margin-bottom:10px">Founder &amp; CEO, AcademyKit</div>
+            <p id="postBioBio" style="margin:0;font-size:.875rem;color:var(--text-secondary)">Former national-level footballer and sports educator with 15+ years of experience in school sportswear. Arjun founded AcademyKit to bring professional-quality kits to every school in India.</p>
           </div>
         </div>
 
         <!-- Social share -->
         <div style="display:flex;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid var(--border-color)">
           <span style="font-family:var(--font-heading);font-size:.82rem;font-weight:700;color:var(--text-muted)">Share Article:</span>
-          <a href="#" class="btn btn-sm btn-outline" onclick="return false">📘 Facebook</a>
-          <a href="#" class="btn btn-sm btn-outline" onclick="return false">🐦 Twitter</a>
-          <a href="#" class="btn btn-sm btn-outline" onclick="return false">💼 LinkedIn</a>
-          <a href="#" class="btn btn-sm btn-outline" onclick="return false">🔗 Copy Link</a>
+          <a href="https://www.facebook.com/sharer/sharer.php" target="_blank" rel="noopener" class="btn btn-sm btn-outline" onclick="this.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href)">Facebook</a>
+          <a href="https://twitter.com/intent/tweet" target="_blank" rel="noopener" class="btn btn-sm btn-outline" onclick="this.href='https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title)">Twitter</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/" target="_blank" rel="noopener" class="btn btn-sm btn-outline" onclick="this.href='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(location.href)">LinkedIn</a>
+          <a href="#" class="btn btn-sm btn-outline" onclick="copyArticleLink();return false">Copy Link</a>
         </div>
       </article>
 
       <!-- Sidebar -->
       <aside class="sidebar">
         <div class="sidebar-widget">
-          <div class="sidebar-widget-title">📋 Table of Contents</div>
-          <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="sidebar-widget-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 11h6M9 15h4"/></svg> Table of Contents</div>
+          <div id="postToc" style="display:flex;flex-direction:column;gap:8px">
             <a href="#" style="font-size:.875rem;color:var(--text-secondary);padding:6px 0;border-bottom:1px solid var(--border-color);transition:color .2s">1. Define Your Budget</a>
             <a href="#" style="font-size:.875rem;color:var(--text-secondary);padding:6px 0;border-bottom:1px solid var(--border-color);transition:color .2s">2. Choose the Right Fabric</a>
             <a href="#" style="font-size:.875rem;color:var(--text-secondary);padding:6px 0;border-bottom:1px solid var(--border-color);transition:color .2s">3. Sublimation vs Screen Print</a>
@@ -220,24 +276,24 @@
           </div>
         </div>
         <div style="background:var(--gradient-violet);border-radius:var(--radius-lg);padding:28px;text-align:center">
-          <div style="font-size:2.5rem;margin-bottom:12px">🏆</div>
+          <div style="font-size:2.5rem;margin-bottom:12px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.7V17c0 .6-.5 1-1 1.2C7.9 18.8 7 20.2 7 22"/><path d="M14 14.7V17c0 .6.5 1 1 1.2 1.1.6 2 2 2 3.8"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
           <h4 style="font-weight:800;margin-bottom:8px;color:white">Get Your Custom Kit</h4>
           <p style="font-size:.85rem;color:rgba(255,255,255,.85);margin-bottom:16px">Free design mockup in 24 hours. No commitment required.</p>
           <a href="contact.html#quote" class="btn btn-champagne" style="width:100%;justify-content:center">Request Free Quote</a>
         </div>
         <div class="sidebar-widget" style="margin-top:20px">
-          <div class="sidebar-widget-title">📰 Related Articles</div>
+          <div class="sidebar-widget-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22V4c4-2 8 2 12 0v9c-4 2-8-2-12 0"/><path d="M4 22h16"/><path d="M8 9h5M8 13h5"/></svg> Related Articles</div>
           <div class="recent-post">
-            <img src="https://images.unsplash.com/photo-1624880357913-a8539238245b?w=150&q=80" alt="" class="recent-post-img" loading="lazy"/>
+            <img src="https://i.pinimg.com/1200x/7e/9c/45/7e9c451f7c26757be12e7dfafc95065d.jpg" alt="" class="recent-post-img" loading="lazy"/>
             <div><div class="recent-post-title">The Ultimate Guide to School Cricket Kits</div><div class="recent-post-date">Sep 25, 2026</div></div>
           </div>
           <div class="recent-post">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=150&q=80" alt="" class="recent-post-img" loading="lazy"/>
+            <img src="https://i.pinimg.com/736x/0d/17/9a/0d179a1b6bc4160b4132594d9513e171.jpg" alt="" class="recent-post-img" loading="lazy"/>
             <div><div class="recent-post-title">Why Custom Branding Boosts Performance</div><div class="recent-post-date">Sep 15, 2026</div></div>
           </div>
         </div>
         <div class="sidebar-widget">
-          <div class="sidebar-widget-title">🏷️ Tags</div>
+          <div class="sidebar-widget-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h7l11 11-7 7L3 10z"/><circle cx="8" cy="8" r="1.5"/></svg> Tags</div>
           <div>
             <span class="sidebar-tag">football kit</span>
             <span class="sidebar-tag">school sports</span>
@@ -258,46 +314,46 @@
       <span class="section-tag">Keep Reading</span>
       <h2 class="section-title">More <span class="highlight-violet">Kit Insights</span></h2>
     </div>
-    <div class="grid-3">
+    <div class="grid-3" id="relatedGrid">
       <article class="blog-card" data-reveal data-delay="1">
         <div class="blog-card-image">
-          <img src="https://images.unsplash.com/photo-1624880357913-a8539238245b?w=600&q=80" alt="Cricket" loading="lazy"/>
-          <div class="blog-card-cat">🏏 Kit Guides</div>
+          <img src="https://i.pinimg.com/1200x/7e/9c/45/7e9c451f7c26757be12e7dfafc95065d.jpg" alt="Cricket" loading="lazy"/>
+          <div class="blog-card-cat"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 3.5c3.5 3 3.5 14 0 17"/><path d="M14.5 3.5c-3.5 3-3.5 14 0 17"/></svg> Kit Guides</div>
         </div>
         <div class="blog-card-body">
-          <div class="blog-meta"><div class="blog-meta-item">📅 Sep 25</div><div class="blog-meta-item">⏱️ 6 min</div></div>
+          <div class="blog-meta"><div class="blog-meta-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg> Sep 25</div><div class="blog-meta-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 6 min</div></div>
           <h3 class="blog-card-title">The Ultimate Guide to School Cricket Kits</h3>
           <div class="blog-card-footer">
             <div class="blog-author"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&q=80" alt="" class="blog-author-img" loading="lazy"/><span class="blog-author-name">Priya Nair</span></div>
-            <a href="blog-details.html" class="blog-read-more">Read →</a>
+            <a href="blog-details.html" class="blog-read-more">Read  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
           </div>
         </div>
       </article>
       <article class="blog-card" data-reveal data-delay="2">
         <div class="blog-card-image">
           <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Athletics" loading="lazy"/>
-          <div class="blog-card-cat">📈 Trends</div>
+          <div class="blog-card-cat"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg> Trends</div>
         </div>
         <div class="blog-card-body">
-          <div class="blog-meta"><div class="blog-meta-item">📅 Sep 10</div><div class="blog-meta-item">⏱️ 5 min</div></div>
+          <div class="blog-meta"><div class="blog-meta-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg> Sep 10</div><div class="blog-meta-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 5 min</div></div>
           <h3 class="blog-card-title">School Sportswear Trends Dominating 2026</h3>
           <div class="blog-card-footer">
             <div class="blog-author"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&q=80" alt="" class="blog-author-img" loading="lazy"/><span class="blog-author-name">Meera Pillai</span></div>
-            <a href="blog-details.html" class="blog-read-more">Read →</a>
+            <a href="blog-details.html" class="blog-read-more">Read  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
           </div>
         </div>
       </article>
       <article class="blog-card" data-reveal data-delay="3">
         <div class="blog-card-image">
           <img src="https://images.unsplash.com/photo-1604671801908-6f0c6a092c05?w=600&q=80" alt="Kit care" loading="lazy"/>
-          <div class="blog-card-cat">🧺 Kit Care</div>
+          <div class="blog-card-cat"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11h14l-1.8 9H6.8z"/><path d="M8.5 11 12 4l3.5 7"/><path d="M3 11h18"/></svg> Kit Care</div>
         </div>
         <div class="blog-card-body">
-          <div class="blog-meta"><div class="blog-meta-item">📅 Sep 20</div><div class="blog-meta-item">⏱️ 4 min</div></div>
+          <div class="blog-meta"><div class="blog-meta-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg> Sep 20</div><div class="blog-meta-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 4 min</div></div>
           <h3 class="blog-card-title">10 Tips to Make Your School Football Kits Last Longer</h3>
           <div class="blog-card-footer">
             <div class="blog-author"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&q=80" alt="" class="blog-author-img" loading="lazy"/><span class="blog-author-name">Rahul Verma</span></div>
-            <a href="blog-details.html" class="blog-read-more">Read →</a>
+            <a href="blog-details.html" class="blog-read-more">Read  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
           </div>
         </div>
       </article>
@@ -306,43 +362,106 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="../index.html" class="navbar-logo" style="margin-bottom:16px;display:inline-flex">
-          <div class="logo-icon">🏆</div>
-          <div class="logo-text"><span class="logo-name">AcademyKit</span><span class="logo-tagline">Elite Sportswear</span></div>
+          <div class="logo-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.7V17c0 .6-.5 1-1 1.2C7.9 18.8 7 20.2 7 22"/><path d="M14 14.7V17c0 .6.5 1 1 1.2 1.1.6 2 2 2 3.8"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+          <div class="logo-text">
+            <span class="logo-name">AcademyKit</span>
+            <span class="logo-tagline">Elite Sportswear</span>
+          </div>
         </a>
-        <p>Premium school sports uniforms and team kits. Trusted by 500+ schools across India.</p>
-        <div class="footer-socials"><a href="#" class="footer-social">📘</a><a href="#" class="footer-social">📸</a><a href="#" class="footer-social">🐦</a></div>
+        <p>Premium school sports uniforms and team kits. Trusted by 500+ schools across India for over 15 years of sporting excellence.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/academykit" target="_blank" rel="noopener" class="footer-social" aria-label="Facebook"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M14 8h2V5h-2c-2 0-3.5 1.5-3.5 3.5V11H8.5v3h2v7h3v-7h2l.5-3h-2.5V8.7c0-.4.3-.7.5-.7z"/></svg></a>
+          <a href="https://www.instagram.com/academykit" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://x.com/academykit" target="_blank" rel="noopener" class="footer-social" aria-label="Twitter"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M22 5.9c-.74.33-1.53.55-2.36.66.85-.5 1.5-1.3 1.8-2.26-.8.47-1.67.8-2.6 1a4.1 4.1 0 0 0-7 3.74A11.64 11.64 0 0 1 3.4 4.9a4.1 4.1 0 0 0 1.27 5.48c-.65-.02-1.27-.2-1.8-.5v.05c0 1.99 1.41 3.65 3.29 4.02-.6.17-1.23.2-1.87.08.53 1.65 2.06 2.85 3.88 2.88A8.25 8.25 0 0 1 2 18.58a11.64 11.64 0 0 0 6.3 1.85c7.56 0 11.7-6.26 11.7-11.7v-.53c.8-.58 1.5-1.3 2-2.3z"/></svg></a>
+          <a href="https://www.youtube.com/@academykit" target="_blank" rel="noopener" class="footer-social" aria-label="YouTube"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/company/academykit" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg></a>
+        </div>
       </div>
+
       <div>
-        <h3 class="footer-col-title">Blog</h3>
+        <h3 class="footer-col-title">Sports</h3>
         <ul class="footer-links">
-          <li><a href="blog.html" class="footer-link">All Articles</a></li>
-          <li><a href="blog-details.html" class="footer-link">Kit Guides</a></li>
+          <li><a href="services.html" class="footer-link">Football Kits</a></li>
+          <li><a href="services.html#cricket" class="footer-link">Cricket Kits</a></li>
+          <li><a href="services.html#basketball" class="footer-link">Basketball Kits</a></li>
+          <li><a href="services.html#athletics" class="footer-link">Athletics Wear</a></li>
+          <li><a href="services.html#accessories" class="footer-link">Accessories</a></li>
         </ul>
       </div>
+
       <div>
-        <h3 class="footer-col-title">Pages</h3>
+        <h3 class="footer-col-title">Quick Links</h3>
         <ul class="footer-links">
+          <li><a href="../index.html" class="footer-link">Home</a></li>
           <li><a href="about.html" class="footer-link">About</a></li>
           <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
           <li><a href="contact.html" class="footer-link">Contact</a></li>
         </ul>
       </div>
+
       <div>
         <h3 class="footer-col-title">Contact</h3>
-        <div class="footer-contact-item"><div class="footer-contact-icon">📞</div><div class="footer-contact-text">+91 98765 43210</div></div>
-        <div class="footer-contact-item"><div class="footer-contact-icon">✉️</div><div class="footer-contact-text">hello@academykit.in</div></div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div class="footer-contact-text">
+            <a href="https://www.google.com/maps/search/?api=1&query=SportsPlex+Tower+Connaught+Place+New+Delhi+110001" target="_blank" rel="noopener" style="color:inherit">123, SportsPlex Tower, Connaught Place, New Delhi — 110001</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></div>
+          <div class="footer-contact-text">
+            <a href="tel:+919876543210" style="color:inherit"><span class="nobr">+91 98765 43210</span></a><br/><a href="tel:+911145678900" style="color:inherit"><span class="nobr">+91 11 4567 8900</span></a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6L22 7"/></svg></div>
+          <div class="footer-contact-text">
+            <a href="mailto:hello@academykit.in" style="color:inherit"><span class="nobr">hello@academykit.in</span></a><br/><a href="mailto:orders@academykit.in" style="color:inherit"><span class="nobr">orders@academykit.in</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Stay Updated</h3>
+        <p class="footer-newsletter-desc">Kit launches & bulk-order offers — join 8,000+ coordinators.</p>
+        <form class="footer-newsletter-form footer-newsletter-form--col" data-validate-form data-success-msg="You're subscribed! Welcome to the AcademyKit newsletter.">
+          <input type="email" class="footer-newsletter-input" placeholder="Your email address" aria-label="Email address" data-validate="required|email"/>
+          <button type="submit" class="btn btn-primary btn-sm footer-newsletter-btn" data-original-text="Subscribe">Subscribe</button>
+        </form>
       </div>
     </div>
-    <div class="footer-bottom"><p class="footer-bottom-text">© 2026 AcademyKit. All rights reserved.</p></div>
+
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">© 2026 AcademyKit. All rights reserved. Made with <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="#F05A5A" stroke="none" aria-hidden="true" style="vertical-align:-2px;flex-shrink:0"><path d="M12 21C7 16.5 2 12.8 2 8.5 2 5.5 4.5 3 7.5 3c1.8 0 3.4 1 4.5 2.6C13.1 4 14.7 3 16.5 3 19.5 3 22 5.5 22 8.5c0 4.3-5 8-10 12.5z"/></svg> for school sports.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html" class="footer-bottom-link">Privacy Policy</a>
+        <a href="terms.html" class="footer-bottom-link">Terms of Service</a>
+        <a href="sitemap.html" class="footer-bottom-link">Sitemap</a>
+      </div>
+    </div>
   </div>
 </footer>
 
 <script src="../js/main.js"></script>
+<script src="../js/blog-posts.js"></script>
+<script>
+function copyArticleLink() {
+  const done = () => Toast.show({ type: 'success', title: 'Link Copied!', message: 'Article URL copied to clipboard.' });
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(location.href).then(done).catch(() => Toast.show({ type: 'info', title: 'Copy Link', message: location.href }));
+  } else {
+    Toast.show({ type: 'info', title: 'Copy Link', message: location.href });
+  }
+}
+</script>
 </body>
 </html>
 

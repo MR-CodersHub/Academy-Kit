@@ -17,8 +17,10 @@ const ThemeManager = (() => {
   function set(theme) {
     localStorage.setItem(STORAGE_KEY, theme);
     document.documentElement.setAttribute('data-theme', theme);
+    const ICON_SUN = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+    const ICON_MOON = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
     document.querySelectorAll('[data-theme-icon]').forEach(el => {
-      el.textContent = theme === 'dark' ? '☀️' : '🌙';
+      el.innerHTML = theme === 'dark' ? ICON_SUN : ICON_MOON;
     });
   }
 
@@ -84,6 +86,85 @@ const Navbar = (() => {
       toggle.addEventListener('click', toggleMenu);
     }
 
+    // Desktop dropdowns: tap/click + keyboard accessible (fixes touch)
+    const dropdownItems = document.querySelectorAll('.nav-item:has(.dropdown)');
+    dropdownItems.forEach(item => {
+      const link = item.querySelector(':scope > .nav-link');
+      const menu = item.querySelector(':scope > .dropdown');
+      if (!link || !menu) return;
+      link.setAttribute('aria-haspopup', 'true');
+      if (!link.hasAttribute('aria-expanded')) link.setAttribute('aria-expanded', 'false');
+
+      const closeOthers = () => {
+        document.querySelectorAll('.nav-item.open').forEach(o => {
+          if (o !== item) {
+            o.classList.remove('open');
+            o.querySelector(':scope > .nav-link')?.setAttribute('aria-expanded', 'false');
+          }
+        });
+      };
+
+      // First tap opens, second tap navigates
+      link.addEventListener('click', (e) => {
+        if (!item.classList.contains('open')) {
+          e.preventDefault();
+          closeOthers();
+          item.classList.add('open');
+          link.setAttribute('aria-expanded', 'true');
+        }
+        // else: allow default navigation on second tap
+      });
+
+      // Keyboard: Enter/Space/ArrowDown opens, Escape closes
+      link.addEventListener('keydown', (e) => {
+        if ((e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') && !item.classList.contains('open')) {
+          e.preventDefault();
+          closeOthers();
+          item.classList.add('open');
+          link.setAttribute('aria-expanded', 'true');
+          menu.querySelector('.dropdown-link')?.focus();
+        } else if (e.key === 'Escape') {
+          item.classList.remove('open');
+          link.setAttribute('aria-expanded', 'false');
+          link.focus();
+        }
+      });
+
+      menu.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          item.classList.remove('open');
+          link.setAttribute('aria-expanded', 'false');
+          link.focus();
+        }
+      });
+
+      // Close when focus leaves the whole nav-item
+      item.addEventListener('focusout', (e) => {
+        if (!item.contains(e.relatedTarget)) {
+          item.classList.remove('open');
+          link.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // Close dropdowns on outside tap / Escape
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-item:has(.dropdown)')) {
+        document.querySelectorAll('.nav-item.open').forEach(o => {
+          o.classList.remove('open');
+          o.querySelector(':scope > .nav-link')?.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.nav-item.open').forEach(o => {
+          o.classList.remove('open');
+          o.querySelector(':scope > .nav-link')?.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+
     // Dropdown toggles on mobile
     document.querySelectorAll('.mobile-nav-link[data-has-sub]').forEach(link => {
       link.addEventListener('click', (e) => {
@@ -92,8 +173,7 @@ const Navbar = (() => {
         const sub = document.getElementById(subId);
         if (sub) {
           sub.classList.toggle('open');
-          const arrow = link.querySelector('.arrow');
-          if (arrow) arrow.textContent = sub.classList.contains('open') ? '▲' : '▼';
+          link.classList.toggle('open', sub.classList.contains('open'));
         }
       });
     });
@@ -273,6 +353,13 @@ const SportFilter = (() => {
           });
         });
       });
+    });
+
+    // Live category counts (e.g. blog sidebar badges reflect actual cards)
+    document.querySelectorAll('[data-cat-count]').forEach(badge => {
+      const cat = badge.getAttribute('data-cat-count');
+      const n = document.querySelectorAll(`[data-filter-item][data-category="${cat}"]`).length;
+      if (n > 0) badge.textContent = n;
     });
   }
 
@@ -475,6 +562,7 @@ const FormValidator = (() => {
         if (allValid) {
           const btn = form.querySelector('[type="submit"]');
           if (btn) {
+            if (!btn.hasAttribute('data-original-html')) btn.setAttribute('data-original-html', btn.innerHTML);
             btn.textContent = 'Sending...';
             btn.disabled = true;
           }
@@ -487,8 +575,13 @@ const FormValidator = (() => {
             });
             form.reset();
             if (btn) {
-              btn.textContent = btn.getAttribute('data-original-text') || 'Submit';
+              btn.innerHTML = btn.getAttribute('data-original-html') || btn.getAttribute('data-original-text') || 'Submit';
               btn.disabled = false;
+            }
+            // Redirect after success (e.g. login/signup -> home page)
+            const redirect = form.getAttribute('data-redirect');
+            if (redirect) {
+              setTimeout(() => { window.location.href = redirect; }, 1400);
             }
           }, 1800);
         }
@@ -515,11 +608,12 @@ const Toast = (() => {
     return container;
   }
 
+  const SVG_OPEN = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
   const icons = {
-    success: '✅',
-    error: '❌',
-    info: 'ℹ️',
-    warning: '⚠️'
+    success: SVG_OPEN + '<circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 5-5.5"/></svg>',
+    error: SVG_OPEN + '<circle cx="12" cy="12" r="9"/><path d="m9 9 6 6M15 9l-6 6"/></svg>',
+    info: SVG_OPEN + '<circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5h.01"/></svg>',
+    warning: SVG_OPEN + '<path d="M12 3 2 20h20z"/><path d="M12 10v4"/><path d="M12 17.5h.01"/></svg>'
   };
 
   function show({ type = 'info', title, message, duration = 4000 }) {
@@ -736,6 +830,20 @@ const QuoteForm = (() => {
       });
     });
 
+    // Final submit: toast + reset all fields + back to step 1
+    form.querySelectorAll('[data-quote-submit]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        Toast.show({ type: 'success', title: 'Quote Submitted!', message: 'We will send your detailed quote within 2 hours.' });
+        form.querySelectorAll('input, select, textarea').forEach(field => {
+          if (field.type === 'checkbox' || field.type === 'radio') field.checked = false;
+          else field.value = '';
+        });
+        currentStep = 1;
+        updateUI();
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
     function updateUI() {
       form.querySelectorAll('[data-step]').forEach(step => {
         const num = parseInt(step.getAttribute('data-step'));
@@ -884,6 +992,18 @@ function initBrandingPreview() {
       const target = input.getAttribute('data-branding-color');
       const previewEl = document.querySelector(`.branding-preview [data-color-target="${target}"]`);
       if (previewEl) previewEl.style.background = input.value;
+    });
+  });
+
+  // Primary color swatches update the live preview (any .branding-preview on page)
+  document.querySelectorAll('.branding-preview').forEach(previewBox => {
+    const scope = previewBox.closest('section') || document;
+    const primaryTarget = previewBox.querySelector('[data-color-target="primary"]') || previewBox;
+    scope.querySelectorAll('.color-swatches .color-swatch').forEach(swatch => {
+      swatch.addEventListener('click', () => {
+        const color = swatch.style.background || getComputedStyle(swatch).backgroundColor;
+        if (color) primaryTarget.style.background = color;
+      });
     });
   });
 }

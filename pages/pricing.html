@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark" dir="ltr">
 <head>
   <meta charset="UTF-8"/>
@@ -13,41 +13,94 @@
 <body>
 
 <div class="page-transition"></div>
-<button class="back-to-top">↑</button>
+<button class="back-to-top"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button>
 <div class="toast-container"></div>
 
 <!-- NAVBAR -->
-<header class="navbar" id="navbar">
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<header class="navbar" id="navbar" role="banner">
   <div class="navbar-inner">
-    <a href="../index.html" class="navbar-logo">
-      <div class="logo-icon">🏆</div>
-      <div class="logo-text"><span class="logo-name">AcademyKit</span><span class="logo-tagline">Elite Sportswear</span></div>
+    <a href="../index.html" class="navbar-logo" aria-label="AcademyKit Home">
+      <div class="logo-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.7V17c0 .6-.5 1-1 1.2C7.9 18.8 7 20.2 7 22"/><path d="M14 14.7V17c0 .6.5 1 1 1.2 1.1.6 2 2 2 3.8"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+      <div class="logo-text">
+        <span class="logo-name">AcademyKit</span>
+        <span class="logo-tagline">Elite Sportswear</span>
+      </div>
     </a>
-    <nav class="nav-links">
-      <div class="nav-item"><a href="../index.html" class="nav-link">Home</a></div>
-      <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
-      <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
-      <div class="nav-item"><a href="pricing.html" class="nav-link active">Pricing</a></div>
-      <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
-      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <div class="nav-item">
+        <a href="../index.html" class="nav-link">Home</a>
+      </div>
+      <div class="nav-item">
+        <a href="home2.html" class="nav-link">Home 2</a>
+      </div>
+      <div class="nav-item">
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-item">
+        <a href="services.html" class="nav-link">Services <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 6l4 4 4-4"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="services.html" class="dropdown-link" role="menuitem"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5l3.2 2.3-1.2 3.7H10L8.8 9.8z"/><path d="M12 2.5V5M4.9 5.9l1.8 1.5M2.5 12H5M4.9 18.1l1.8-1.5M12 21.5V19M19.1 18.1l-1.8-1.5M21.5 12H19M19.1 5.9l-1.8 1.5"/></svg></span> Football Kits</a>
+          <a href="services.html#cricket" class="dropdown-link" role="menuitem"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 3.5c3.5 3 3.5 14 0 17"/><path d="M14.5 3.5c-3.5 3-3.5 14 0 17"/></svg></span> Cricket Kits</a>
+          <a href="services.html#basketball" class="dropdown-link" role="menuitem"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M5 4.5c4.5 3.5 4.5 11.5 0 15"/><path d="M19 4.5c-4.5 3.5-4.5 11.5 0 15"/></svg></span> Basketball Kits</a>
+          <a href="services.html#athletics" class="dropdown-link" role="menuitem"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="4.5" r="2"/><path d="M13 8l-4 4 3 3 1 6"/><path d="M13 8l4 3"/><path d="M9 12l-4 1"/><path d="M12 15l-3 6"/></svg></span> Athletics Wear</a>
+          <a href="service-details.html" class="dropdown-link" role="menuitem"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="12.5" cy="8.5" r="1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="11" r="1" fill="currentColor" stroke="none"/><path d="M15 20a4 4 0 0 0 4-4"/></svg></span> Custom Branding</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="pricing.html" class="nav-link active">Pricing</a>
+      </div>
+      <div class="nav-item">
+        <a href="blog.html" class="nav-link">Blog</a>
+      </div>
+      <div class="nav-item">
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
     </nav>
     <div class="nav-controls">
-      <button class="nav-control-btn" data-theme-toggle><span data-theme-icon>☀️</span></button>
-      <button class="nav-control-btn" data-rtl-toggle><span data-dir-icon>RTL</span></button>
+      <button class="nav-control-btn" data-theme-toggle title="Toggle dark/light mode" aria-label="Toggle theme">
+        <span data-theme-icon><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+      </button>
+      <button class="nav-control-btn" data-rtl-toggle title="Toggle RTL/LTR" aria-label="Toggle text direction">
+        <span data-dir-icon>RTL</span>
+      </button>
       <a href="login.html" class="btn btn-sm btn-outline nav-cta">Sign In</a>
       <a href="contact.html#quote" class="btn btn-sm btn-primary">Get Quote</a>
-      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
-<div class="mobile-menu" id="mobileMenu">
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
   <ul class="mobile-nav-links">
-    <li><a href="../index.html" class="mobile-nav-link">🏠 Home</a></li>
-    <li><a href="about.html" class="mobile-nav-link">ℹ️ About</a></li>
-    <li><a href="services.html" class="mobile-nav-link">🎽 Services</a></li>
-    <li><a href="pricing.html" class="mobile-nav-link">💰 Pricing</a></li>
-    <li><a href="contact.html" class="mobile-nav-link">📞 Contact</a></li>
+    <li><a href="../index.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg> Home</a></li>
+    <li><a href="home2.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg> Home 2</a></li>
+    <li>
+      <a href="#" class="mobile-nav-link" data-has-sub="sub-services">
+        Services <span class="arrow"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+      </a>
+      <div class="mobile-submenu" id="sub-services">
+        <a href="services.html">Football Kits</a>
+        <a href="services.html#cricket">Cricket Kits</a>
+        <a href="services.html#basketball">Basketball Kits</a>
+        <a href="services.html#athletics">Athletics Wear</a>
+        <a href="service-details.html">Custom Branding</a>
+      </div>
+    </li>
+    <li><a href="about.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5h.01"/></svg> About Us</a></li>
+    <li><a href="pricing.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg> Pricing</a></li>
+    <li><a href="blog.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3l4 4L8 20l-5 1 1-5z"/><path d="M14 6l4 4"/></svg> Blog</a></li>
+    <li><a href="contact.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> Contact</a></li>
+    <li><a href="login.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Login / Register</a></li>
+    <li><a href="404.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m9 9 6 6M15 9l-6 6"/></svg> 404 Page</a></li>
+    <li><a href="coming-soon.html" class="mobile-nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M14 4c3-2 7-2 7-2s0 4-2 7l-7 7-5-5z"/><circle cx="15" cy="9" r="1.5"/></svg> Coming Soon</a></li>
   </ul>
+  <div style="margin-top:32px;display:flex;gap:12px">
+    <a href="contact.html#quote" class="btn btn-primary" style="flex:1;justify-content:center">Get a Quote</a>
+    <a href="login.html" class="btn btn-outline" style="flex:1;justify-content:center">Sign In</a>
+  </div>
 </div>
 
 <!-- PAGE HERO -->
@@ -77,7 +130,7 @@
       <p class="section-subtitle">Full match kit includes jersey, shorts and socks with basic team color printing.</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start">
+    <div class="pricing-tiers" data-reveal>
       <!-- Starter -->
       <div class="pricing-card" data-reveal data-delay="1">
         <div class="pricing-tier">Starter Pack</div>
@@ -88,19 +141,19 @@
         </div>
         <p class="pricing-desc">Perfect for small school teams and training squads. 20–49 unit orders.</p>
         <ul class="pricing-features">
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Full football kit (jersey + shorts + socks)</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Basic sublimation printing</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Team colors (up to 3 colors)</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Squad numbers front &amp; back</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Standard 150gsm polyester</li>
-          <li class="pricing-feature" style="opacity:.4"><div class="pricing-check">✗</div> Embroidered school crest</li>
-          <li class="pricing-feature" style="opacity:.4"><div class="pricing-check">✗</div> Player name printing</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Full football kit (jersey + shorts + socks)</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Basic sublimation printing</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Team colors (up to 3 colors)</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Squad numbers front &amp; back</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Standard 150gsm polyester</li>
+          <li class="pricing-feature" style="opacity:.4"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></div> Embroidered school crest</li>
+          <li class="pricing-feature" style="opacity:.4"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></div> Player name printing</li>
         </ul>
         <a href="contact.html#quote" class="btn btn-secondary" style="width:100%;justify-content:center">Get Starter Quote</a>
       </div>
 
       <!-- Pro (Featured) -->
-      <div class="pricing-card featured" data-reveal data-delay="2">
+      <div class="pricing-card featured pro" data-reveal data-delay="2">
         <div class="pricing-badge">Most Popular</div>
         <div class="pricing-tier">Pro Pack</div>
         <div class="pricing-price">
@@ -108,15 +161,16 @@
           <span class="pricing-amount">999</span>
           <span class="pricing-period">/ kit</span>
         </div>
+        <div class="pricing-save"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.6l2.9 6.2 6.6.6-5 4.4 1.5 6.5L12 16.9l-6 3.4 1.5-6.5-5-4.4 6.6-.6z"/></svg> Save ₹300 / kit vs Starter</div>
         <p class="pricing-desc" style="color:rgba(255,255,255,.8)">Best value for full school sports teams. 50–199 unit orders.</p>
         <ul class="pricing-features">
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Full football kit (jersey + shorts + socks)</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Full sublimation printing</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Unlimited color combinations</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Squad numbers + player names</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Premium 160gsm moisture-wicking</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Embroidered school crest</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Free digital mockup</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Full football kit (jersey + shorts + socks)</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Full sublimation printing</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Unlimited color combinations</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Squad numbers + player names</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Premium 160gsm moisture-wicking</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Embroidered school crest</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Free digital mockup</li>
         </ul>
         <a href="contact.html#quote" class="btn btn-champagne" style="width:100%;justify-content:center">Get Pro Quote</a>
       </div>
@@ -129,15 +183,16 @@
           <span class="pricing-amount">749</span>
           <span class="pricing-period">/ kit</span>
         </div>
+        <div class="pricing-save"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.6l2.9 6.2 6.6.6-5 4.4 1.5 6.5L12 16.9l-6 3.4 1.5-6.5-5-4.4 6.6-.6z"/></svg> Save ₹550 / kit vs Starter</div>
         <p class="pricing-desc">For large academies &amp; inter-school programs. 200+ unit orders.</p>
         <ul class="pricing-features">
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Full kit + alternate goalkeeper kit</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Full sublimation printing</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Unlimited color combinations</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Everything in Pro Pack</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Dedicated account manager</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Free express delivery</li>
-          <li class="pricing-feature"><div class="pricing-check">✓</div> Annual reorder discounts</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Full kit + alternate goalkeeper kit</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Full sublimation printing</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Unlimited color combinations</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Everything in Pro Pack</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Dedicated account manager</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Free express delivery</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></div> Annual reorder discounts</li>
         </ul>
         <a href="contact.html#quote" class="btn btn-primary" style="width:100%;justify-content:center">Get Elite Quote</a>
       </div>
@@ -158,49 +213,49 @@
           <tr style="border-bottom:2px solid var(--border-color)">
             <th style="text-align:left;padding:20px 24px;font-family:var(--font-heading);font-weight:700">Sport Kit</th>
             <th style="padding:20px 16px">20–49 units<br/><small style="color:var(--text-muted);font-weight:400">Starter</small></th>
-            <th style="padding:20px 16px;background:rgba(91,63,163,.1)">50–199 units<br/><small style="color:var(--champagne);font-weight:400">Pro ★</small></th>
+            <th style="padding:20px 16px;background:rgba(91,63,163,.1)">50–199 units<br/><small style="color:var(--champagne);font-weight:400">Pro <svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12 2.6l2.9 6.2 6.6.6-5 4.4 1.5 6.5L12 16.9l-6 3.4 1.5-6.5-5-4.4 6.6-.6z"/></svg></small></th>
             <th style="padding:20px 16px">200+ units<br/><small style="color:var(--text-muted);font-weight:400">Elite</small></th>
             <th style="padding:20px 16px">Includes</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom:1px solid var(--border-color)">
-            <td style="padding:16px 24px;font-weight:600;font-size:.95rem">⚽ Football Kit</td>
+            <td style="padding:16px 24px;font-weight:600;font-size:.95rem"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5l3.2 2.3-1.2 3.7H10L8.8 9.8z"/><path d="M12 2.5V5M4.9 5.9l1.8 1.5M2.5 12H5M4.9 18.1l1.8-1.5M12 21.5V19M19.1 18.1l-1.8-1.5M21.5 12H19M19.1 5.9l-1.8 1.5"/></svg> Football Kit</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700">₹1,299</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700;background:rgba(91,63,163,.08);color:var(--electric-coral)">₹999</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700">₹749</td>
             <td style="padding:16px;font-size:.85rem;color:var(--text-muted)">Jersey + Shorts + Socks</td>
           </tr>
           <tr style="border-bottom:1px solid var(--border-color)">
-            <td style="padding:16px 24px;font-weight:600;font-size:.95rem">🏏 Cricket Kit</td>
+            <td style="padding:16px 24px;font-weight:600;font-size:.95rem"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 3.5c3.5 3 3.5 14 0 17"/><path d="M14.5 3.5c-3.5 3-3.5 14 0 17"/></svg> Cricket Kit</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700">₹2,499</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700;background:rgba(91,63,163,.08);color:var(--electric-coral)">₹1,899</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700">₹1,499</td>
             <td style="padding:16px;font-size:.85rem;color:var(--text-muted)">Jersey + Trousers + Cap</td>
           </tr>
           <tr style="border-bottom:1px solid var(--border-color)">
-            <td style="padding:16px 24px;font-weight:600;font-size:.95rem">🏀 Basketball Kit</td>
+            <td style="padding:16px 24px;font-weight:600;font-size:.95rem"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M5 4.5c4.5 3.5 4.5 11.5 0 15"/><path d="M19 4.5c-4.5 3.5-4.5 11.5 0 15"/></svg> Basketball Kit</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700">₹1,799</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700;background:rgba(91,63,163,.08);color:var(--electric-coral)">₹1,299</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700">₹999</td>
             <td style="padding:16px;font-size:.85rem;color:var(--text-muted)">Reversible Jersey + Shorts</td>
           </tr>
           <tr style="border-bottom:1px solid var(--border-color)">
-            <td style="padding:16px 24px;font-weight:600;font-size:.95rem">🏃 Athletics Vest Set</td>
+            <td style="padding:16px 24px;font-weight:600;font-size:.95rem"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="4.5" r="2"/><path d="M13 8l-4 4 3 3 1 6"/><path d="M13 8l4 3"/><path d="M9 12l-4 1"/><path d="M12 15l-3 6"/></svg> Athletics Vest Set</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700">₹999</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700;background:rgba(91,63,163,.08);color:var(--electric-coral)">₹749</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700">₹599</td>
             <td style="padding:16px;font-size:.85rem;color:var(--text-muted)">Vest + Shorts</td>
           </tr>
           <tr style="border-bottom:1px solid var(--border-color)">
-            <td style="padding:16px 24px;font-weight:600;font-size:.95rem">🏑 Hockey Kit</td>
+            <td style="padding:16px 24px;font-weight:600;font-size:.95rem"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l12 18"/><path d="M18 3L6 21"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg> Hockey Kit</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700">₹1,599</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700;background:rgba(91,63,163,.08);color:var(--electric-coral)">₹1,199</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700">₹899</td>
             <td style="padding:16px;font-size:.85rem;color:var(--text-muted)">Jersey + Shorts + Socks</td>
           </tr>
           <tr>
-            <td style="padding:16px 24px;font-weight:600;font-size:.95rem">🎾 Tennis Kit</td>
+            <td style="padding:16px 24px;font-weight:600;font-size:.95rem"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M3.5 3.5c5 4 5 13 0 17"/><path d="M20.5 3.5c-5 4-5 13 0 17"/></svg> Tennis Kit</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700">₹1,099</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700;background:rgba(91,63,163,.08);color:var(--electric-coral)">₹849</td>
             <td style="padding:16px;text-align:center;font-family:var(--font-heading);font-weight:700">₹649</td>
@@ -209,7 +264,7 @@
         </tbody>
       </table>
     </div>
-    <p style="text-align:center;margin-top:20px;font-size:.875rem;color:var(--text-muted)">All prices include basic sublimation printing. GST @12% applicable. Custom branding add-ons priced separately. <a href="contact.html#quote" style="color:var(--electric-coral)">Request exact quote →</a></p>
+    <p style="text-align:center;margin-top:20px;font-size:.875rem;color:var(--text-muted)">All prices include basic sublimation printing. GST @12% applicable. Custom branding add-ons priced separately. <a href="contact.html#quote" style="color:var(--electric-coral)">Request exact quote  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></p>
   </div>
 </section>
 
@@ -221,26 +276,26 @@
       <h2 class="section-title">Branding <span class="highlight-champagne">Add-On Pricing</span></h2>
     </div>
     <div class="grid-4">
-      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:28px;text-align:center" data-reveal data-delay="1">
-        <div style="font-size:2.5rem;margin-bottom:12px">🪡</div>
+      <div class="addon-card" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:28px;text-align:center" data-reveal data-delay="1">
+        <div style="font-size:2.5rem;margin-bottom:12px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21 15 9"/><circle cx="17.5" cy="6.5" r="2"/><path d="M13 5c4-1 6 1 8 1"/></svg></div>
         <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:6px">Embroidered Crest</h4>
         <div style="font-family:var(--font-heading);font-size:1.5rem;font-weight:900;color:var(--electric-coral);margin:8px 0">₹49</div>
         <div style="font-size:.8rem;color:var(--text-muted)">Per garment. Up to 7,000 stitches.</div>
       </div>
-      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:28px;text-align:center" data-reveal data-delay="2">
-        <div style="font-size:2.5rem;margin-bottom:12px">🔢</div>
+      <div class="addon-card" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:28px;text-align:center" data-reveal data-delay="2">
+        <div style="font-size:2.5rem;margin-bottom:12px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3 7 21"/><path d="M17 3l-2 18"/><path d="M4 8h17"/><path d="M3 16h17"/></svg></div>
         <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:6px">Player Numbers</h4>
         <div style="font-family:var(--font-heading);font-size:1.5rem;font-weight:900;color:var(--electric-coral);margin:8px 0">₹29</div>
         <div style="font-size:.8rem;color:var(--text-muted)">Per garment, front &amp; back included.</div>
       </div>
-      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:28px;text-align:center" data-reveal data-delay="3">
-        <div style="font-size:2.5rem;margin-bottom:12px">👤</div>
+      <div class="addon-card" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:28px;text-align:center" data-reveal data-delay="3">
+        <div style="font-size:2.5rem;margin-bottom:12px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
         <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:6px">Player Name</h4>
         <div style="font-family:var(--font-heading);font-size:1.5rem;font-weight:900;color:var(--electric-coral);margin:8px 0">₹39</div>
         <div style="font-size:.8rem;color:var(--text-muted)">Per garment. Heat press or sublimation.</div>
       </div>
-      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:28px;text-align:center" data-reveal data-delay="4">
-        <div style="font-size:2.5rem;margin-bottom:12px">🚚</div>
+      <div class="addon-card" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:28px;text-align:center" data-reveal data-delay="4">
+        <div style="font-size:2.5rem;margin-bottom:12px"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.3a4 4 0 0 0-1.2-2.8L19 9h-5"/><circle cx="7.5" cy="17.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></svg></div>
         <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:6px">Express Delivery</h4>
         <div style="font-family:var(--font-heading);font-size:1.5rem;font-weight:900;color:var(--electric-coral);margin:8px 0">₹999</div>
         <div style="font-size:.8rem;color:var(--text-muted)">5–7 day production &amp; delivery.</div>
@@ -262,20 +317,20 @@
           <tr>
             <th style="text-align:left;padding:20px 24px">Feature</th>
             <th>Starter</th>
-            <th style="background:rgba(91,63,163,.15)">Pro ★</th>
+            <th style="background:rgba(91,63,163,.15)">Pro <svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12 2.6l2.9 6.2 6.6.6-5 4.4 1.5 6.5L12 16.9l-6 3.4 1.5-6.5-5-4.4 6.6-.6z"/></svg></th>
             <th>Elite</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td style="padding:14px 24px;font-size:.9rem">Full kit (jersey + shorts + socks)</td><td><span class="check-yes">✓</span></td><td style="background:rgba(91,63,163,.05)"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
-          <tr><td style="padding:14px 24px;font-size:.9rem">Basic sublimation printing</td><td><span class="check-yes">✓</span></td><td style="background:rgba(91,63,163,.05)"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
-          <tr><td style="padding:14px 24px;font-size:.9rem">Unlimited color combinations</td><td><span class="check-no">✗</span></td><td style="background:rgba(91,63,163,.05)"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
-          <tr><td style="padding:14px 24px;font-size:.9rem">Embroidered school crest</td><td><span class="check-no">✗</span></td><td style="background:rgba(91,63,163,.05)"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
-          <tr><td style="padding:14px 24px;font-size:.9rem">Player name printing</td><td><span class="check-no">✗</span></td><td style="background:rgba(91,63,163,.05)"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
-          <tr><td style="padding:14px 24px;font-size:.9rem">Free digital mockup</td><td><span class="check-yes">✓</span></td><td style="background:rgba(91,63,163,.05)"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
-          <tr><td style="padding:14px 24px;font-size:.9rem">Dedicated account manager</td><td><span class="check-no">✗</span></td><td style="background:rgba(91,63,163,.05)"><span class="check-no">✗</span></td><td><span class="check-yes">✓</span></td></tr>
-          <tr><td style="padding:14px 24px;font-size:.9rem">Free express delivery</td><td><span class="check-no">✗</span></td><td style="background:rgba(91,63,163,.05)"><span class="check-no">✗</span></td><td><span class="check-yes">✓</span></td></tr>
-          <tr><td style="padding:14px 24px;font-size:.9rem">Annual reorder priority</td><td><span class="check-no">✗</span></td><td style="background:rgba(91,63,163,.05)"><span class="check-no">✗</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td style="padding:14px 24px;font-size:.9rem">Full kit (jersey + shorts + socks)</td><td><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td><td style="background:rgba(91,63,163,.05)"><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td><td><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td></tr>
+          <tr><td style="padding:14px 24px;font-size:.9rem">Basic sublimation printing</td><td><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td><td style="background:rgba(91,63,163,.05)"><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td><td><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td></tr>
+          <tr><td style="padding:14px 24px;font-size:.9rem">Unlimited color combinations</td><td><span class="check-no"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span></td><td style="background:rgba(91,63,163,.05)"><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td><td><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td></tr>
+          <tr><td style="padding:14px 24px;font-size:.9rem">Embroidered school crest</td><td><span class="check-no"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span></td><td style="background:rgba(91,63,163,.05)"><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td><td><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td></tr>
+          <tr><td style="padding:14px 24px;font-size:.9rem">Player name printing</td><td><span class="check-no"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span></td><td style="background:rgba(91,63,163,.05)"><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td><td><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td></tr>
+          <tr><td style="padding:14px 24px;font-size:.9rem">Free digital mockup</td><td><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td><td style="background:rgba(91,63,163,.05)"><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td><td><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td></tr>
+          <tr><td style="padding:14px 24px;font-size:.9rem">Dedicated account manager</td><td><span class="check-no"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span></td><td style="background:rgba(91,63,163,.05)"><span class="check-no"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span></td><td><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td></tr>
+          <tr><td style="padding:14px 24px;font-size:.9rem">Free express delivery</td><td><span class="check-no"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span></td><td style="background:rgba(91,63,163,.05)"><span class="check-no"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span></td><td><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td></tr>
+          <tr><td style="padding:14px 24px;font-size:.9rem">Annual reorder priority</td><td><span class="check-no"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span></td><td style="background:rgba(91,63,163,.05)"><span class="check-no"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span></td><td><span class="check-yes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span></td></tr>
         </tbody>
       </table>
     </div>
@@ -305,50 +360,99 @@
       <h2 class="cta-title">Not Sure Which Plan is Right for You?</h2>
       <p class="cta-desc">Our school kit specialists will help you find the perfect solution for your budget and requirements — no obligations, completely free.</p>
       <div class="cta-actions">
-        <a href="contact.html#quote" class="btn btn-champagne btn-lg">📋 Get Custom Quote</a>
-        <a href="contact.html" class="btn btn-outline btn-lg">💬 Talk to a Specialist</a>
+        <a href="contact.html#quote" class="btn btn-champagne btn-lg"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 11h6M9 15h4"/></svg> Get Custom Quote</a>
+        <a href="contact.html" class="btn btn-outline btn-lg"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-3-.4-4.2-1L3 20l1-5.3A8.5 8.5 0 1 1 21 11.5z"/></svg> Talk to a Specialist</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="../index.html" class="navbar-logo" style="margin-bottom:16px;display:inline-flex">
-          <div class="logo-icon">🏆</div>
-          <div class="logo-text"><span class="logo-name">AcademyKit</span><span class="logo-tagline">Elite Sportswear</span></div>
+          <div class="logo-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.7V17c0 .6-.5 1-1 1.2C7.9 18.8 7 20.2 7 22"/><path d="M14 14.7V17c0 .6.5 1 1 1.2 1.1.6 2 2 2 3.8"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+          <div class="logo-text">
+            <span class="logo-name">AcademyKit</span>
+            <span class="logo-tagline">Elite Sportswear</span>
+          </div>
         </a>
-        <p>Premium school sports uniforms. Trusted by 500+ schools across India.</p>
-        <div class="footer-socials"><a href="#" class="footer-social">📘</a><a href="#" class="footer-social">📸</a><a href="#" class="footer-social">🐦</a></div>
+        <p>Premium school sports uniforms and team kits. Trusted by 500+ schools across India for over 15 years of sporting excellence.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/academykit" target="_blank" rel="noopener" class="footer-social" aria-label="Facebook"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M14 8h2V5h-2c-2 0-3.5 1.5-3.5 3.5V11H8.5v3h2v7h3v-7h2l.5-3h-2.5V8.7c0-.4.3-.7.5-.7z"/></svg></a>
+          <a href="https://www.instagram.com/academykit" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://x.com/academykit" target="_blank" rel="noopener" class="footer-social" aria-label="Twitter"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M22 5.9c-.74.33-1.53.55-2.36.66.85-.5 1.5-1.3 1.8-2.26-.8.47-1.67.8-2.6 1a4.1 4.1 0 0 0-7 3.74A11.64 11.64 0 0 1 3.4 4.9a4.1 4.1 0 0 0 1.27 5.48c-.65-.02-1.27-.2-1.8-.5v.05c0 1.99 1.41 3.65 3.29 4.02-.6.17-1.23.2-1.87.08.53 1.65 2.06 2.85 3.88 2.88A8.25 8.25 0 0 1 2 18.58a11.64 11.64 0 0 0 6.3 1.85c7.56 0 11.7-6.26 11.7-11.7v-.53c.8-.58 1.5-1.3 2-2.3z"/></svg></a>
+          <a href="https://www.youtube.com/@academykit" target="_blank" rel="noopener" class="footer-social" aria-label="YouTube"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/company/academykit" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg></a>
+        </div>
       </div>
+
       <div>
-        <h3 class="footer-col-title">Pages</h3>
+        <h3 class="footer-col-title">Sports</h3>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link">Football Kits</a></li>
+          <li><a href="services.html#cricket" class="footer-link">Cricket Kits</a></li>
+          <li><a href="services.html#basketball" class="footer-link">Basketball Kits</a></li>
+          <li><a href="services.html#athletics" class="footer-link">Athletics Wear</a></li>
+          <li><a href="services.html#accessories" class="footer-link">Accessories</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Quick Links</h3>
         <ul class="footer-links">
           <li><a href="../index.html" class="footer-link">Home</a></li>
           <li><a href="about.html" class="footer-link">About</a></li>
           <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
           <li><a href="contact.html" class="footer-link">Contact</a></li>
         </ul>
       </div>
-      <div>
-        <h3 class="footer-col-title">Sports</h3>
-        <ul class="footer-links">
-          <li><a href="services.html" class="footer-link">Football</a></li>
-          <li><a href="services.html#cricket" class="footer-link">Cricket</a></li>
-          <li><a href="services.html#basketball" class="footer-link">Basketball</a></li>
-          <li><a href="services.html#athletics" class="footer-link">Athletics</a></li>
-        </ul>
-      </div>
+
       <div>
         <h3 class="footer-col-title">Contact</h3>
-        <div class="footer-contact-item"><div class="footer-contact-icon">📞</div><div class="footer-contact-text">+91 98765 43210</div></div>
-        <div class="footer-contact-item"><div class="footer-contact-icon">✉️</div><div class="footer-contact-text">hello@academykit.in</div></div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div class="footer-contact-text">
+            <a href="https://www.google.com/maps/search/?api=1&query=SportsPlex+Tower+Connaught+Place+New+Delhi+110001" target="_blank" rel="noopener" style="color:inherit">123, SportsPlex Tower, Connaught Place, New Delhi — 110001</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></div>
+          <div class="footer-contact-text">
+            <a href="tel:+919876543210" style="color:inherit"><span class="nobr">+91 98765 43210</span></a><br/><a href="tel:+911145678900" style="color:inherit"><span class="nobr">+91 11 4567 8900</span></a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6L22 7"/></svg></div>
+          <div class="footer-contact-text">
+            <a href="mailto:hello@academykit.in" style="color:inherit"><span class="nobr">hello@academykit.in</span></a><br/><a href="mailto:orders@academykit.in" style="color:inherit"><span class="nobr">orders@academykit.in</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Stay Updated</h3>
+        <p class="footer-newsletter-desc">Kit launches & bulk-order offers — join 8,000+ coordinators.</p>
+        <form class="footer-newsletter-form footer-newsletter-form--col" data-validate-form data-success-msg="You're subscribed! Welcome to the AcademyKit newsletter.">
+          <input type="email" class="footer-newsletter-input" placeholder="Your email address" aria-label="Email address" data-validate="required|email"/>
+          <button type="submit" class="btn btn-primary btn-sm footer-newsletter-btn" data-original-text="Subscribe">Subscribe</button>
+        </form>
       </div>
     </div>
-    <div class="footer-bottom"><p class="footer-bottom-text">© 2026 AcademyKit. All rights reserved.</p></div>
+
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">© 2026 AcademyKit. All rights reserved. Made with <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="#F05A5A" stroke="none" aria-hidden="true" style="vertical-align:-2px;flex-shrink:0"><path d="M12 21C7 16.5 2 12.8 2 8.5 2 5.5 4.5 3 7.5 3c1.8 0 3.4 1 4.5 2.6C13.1 4 14.7 3 16.5 3 19.5 3 22 5.5 22 8.5c0 4.3-5 8-10 12.5z"/></svg> for school sports.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html" class="footer-bottom-link">Privacy Policy</a>
+        <a href="terms.html" class="footer-bottom-link">Terms of Service</a>
+        <a href="sitemap.html" class="footer-bottom-link">Sitemap</a>
+      </div>
+    </div>
   </div>
 </footer>
 
