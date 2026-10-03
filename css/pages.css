@@ -1242,6 +1242,13 @@
 /* ══════════════════════════════════════════
    SPORT CARDS GRID (Home2)
 ══════════════════════════════════════════ */
+.sport-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
 .sport-card-large {
   position: relative;
   overflow: hidden;
@@ -1249,6 +1256,10 @@
   border: 1px solid var(--border-color);
   background: var(--bg-card);
   transition: transform var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+  height: 100%;
 }
 
 .sport-card-large:hover {
@@ -1275,7 +1286,7 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   background: linear-gradient(transparent, rgba(10,16,32,.93) 60%);
 }
 
@@ -1288,6 +1299,7 @@
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--champagne);
+  min-height: 1.2em;
 }
 
 .sport-card-large-title {
@@ -1295,12 +1307,33 @@
   font-size: 1.1rem;
   font-weight: 800;
   color: #fff;
+  line-height: 1.35;
+  min-height: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sport-card-large-price {
   font-family: var(--font-heading);
   font-weight: 800;
   color: #fff;
+  white-space: nowrap;
+}
+
+.sport-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.sport-card-large .btn-sm {
+  flex-shrink: 0;
+  min-width: 104px;
+  justify-content: center;
+  padding: 10px 16px;
 }
 
 @media(max-width:1024px) {
@@ -1308,6 +1341,35 @@
 }
 @media(max-width:640px) {
   .sport-cards-grid { grid-template-columns: 1fr !important; }
+  .sport-card-large { min-height: 240px; }
+  .sport-card-foot { flex-wrap: wrap; }
+}
+
+/* ══════════════════════════════════════════
+   CTA + NEWSLETTER PAIR (Home2)
+   Equal-height cards, even button rows.
+══════════════════════════════════════════ */
+.cta-pair { align-items: stretch; }
+
+.cta-pair .cta-section,
+.newsletter-card { height: 100%; }
+
+.newsletter-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 52px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.newsletter-card .section-tag { align-self: flex-start; }
+
+@media(max-width:640px) {
+  .cta-pair { gap: 20px !important; }
+  .cta-pair .cta-section,
+  .newsletter-card { padding: 36px 24px; }
 }
 
 /* ══════════════════════════════════════════

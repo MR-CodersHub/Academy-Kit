@@ -55,14 +55,42 @@
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
-      padding: 28px 24px;
+      padding: 28px 24px 24px;
       transition: all var(--transition-base);
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
     }
     .fabric-card:hover {
       transform: translateY(-6px);
       border-color: rgba(91,63,163,.4);
       box-shadow: var(--shadow-violet);
+    }
+    .fabric-card h4 {
+      min-height: 2.6em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.35;
+    }
+    .fabric-card p {
+      flex: 1;
+      line-height: 1.7;
+    }
+    .fabric-best {
+      margin: 16px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-color);
+      width: 100%;
+      font-size: .8rem;
+      color: var(--champagne);
+      font-weight: 700;
+      min-height: 2.8em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .fabric-swatch {
       width: 64px; height: 64px;
@@ -72,6 +100,28 @@
       align-items: center;
       justify-content: center;
       font-size: 1.8rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .athletics-img-wrap {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4 / 5;
+      max-height: 560px;
+      width: 100%;
+    }
+    .athletics-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    @media(max-width:768px){
+      .athletics-img-wrap { aspect-ratio: 16 / 10; max-height: 320px; }
     }
   </style>
 </head>
@@ -210,7 +260,7 @@
         </div>
       </div>
       <div class="service-card-hero-right">
-        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80" alt="Football team in uniform" loading="lazy"/>
+        <img src="https://i.pinimg.com/1200x/b6/8d/53/b68d533b92610e1d128b984e4b0bc016.jpg" alt="Football Kits and Training Wear" loading="lazy"/>
       </div>
     </div>
   </div>
@@ -228,7 +278,7 @@
       <!-- Cricket -->
       <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);overflow:hidden" data-reveal data-delay="1">
         <div style="position:relative;height:260px;overflow:hidden">
-          <img src="https://i.pinimg.com/1200x/7e/9c/45/7e9c451f7c26757be12e7dfafc95065d.jpg" alt="Cricket kit" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform var(--transition-slow)"/>
+          <img src="https://i.pinimg.com/1200x/cc/6f/d4/cc6fd405a7ecdc39d5795e45ffb8ff72.jpg" alt="Cricket Kits" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform var(--transition-slow)"/>
           <div style="position:absolute;top:16px;left:16px;background:var(--gradient-violet);color:white;font-family:var(--font-heading);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:6px 14px;border-radius:var(--radius-full)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 3.5c3.5 3 3.5 14 0 17"/><path d="M14.5 3.5c-3.5 3-3.5 14 0 17"/></svg> Cricket</div>
         </div>
         <div style="padding:32px">
@@ -244,7 +294,7 @@
       <!-- Basketball -->
       <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);overflow:hidden" data-reveal data-delay="2" id="basketball">
         <div style="position:relative;height:260px;overflow:hidden">
-          <img src="https://i.pinimg.com/736x/f7/75/d1/f775d1af8ec0b2efdaed6f74f557c163.jpg" alt="Basketball kit" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+          <img src="https://i.pinimg.com/1200x/30/56/31/3056315586d36b685de220d90ea18052.jpg" alt="Basketball Kits" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
           <div style="position:absolute;top:16px;left:16px;background:var(--gradient-coral);color:white;font-family:var(--font-heading);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:6px 14px;border-radius:var(--radius-full)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M5 4.5c4.5 3.5 4.5 11.5 0 15"/><path d="M19 4.5c-4.5 3.5-4.5 11.5 0 15"/></svg> Basketball</div>
         </div>
         <div style="padding:32px">
@@ -265,7 +315,9 @@
   <div class="container">
     <div class="rgrid" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div data-reveal="left">
-        <img src="https://i.pinimg.com/736x/91/b8/0e/91b80e7406465c439dceb0143954f0c8.jpg" alt="Athletics wear" loading="lazy" style="width:100%;border-radius:var(--radius-xl);box-shadow:var(--shadow-lg)"/>
+        <div class="athletics-img-wrap">
+          <img src="https://i.pinimg.com/736x/62/65/a0/6265a0cf71d577802bcf8285dc4e71cd.jpg" alt="Athletics and Track wear" loading="lazy"/>
+        </div>
       </div>
       <div data-reveal="right">
         <span class="section-tag">Athletics &amp; Track</span>
@@ -310,37 +362,37 @@
         <div class="fabric-swatch" style="background:linear-gradient(135deg,#5B3FA3,#101A33)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></div>
         <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Moisture-Wicking Polyester</h4>
         <p style="font-size:.875rem;color:var(--text-secondary)">Our most popular choice. 100% polyester, 150gsm, pulls sweat away from skin for all-day comfort. Ideal for football &amp; cricket.</p>
-        <div style="margin-top:16px;font-size:.8rem;color:var(--champagne);font-weight:700">Best For: Football, Cricket, Basketball</div>
+        <div class="fabric-best">Best For: Football, Cricket, Basketball</div>
       </div>
       <div class="fabric-card" data-reveal data-delay="2">
         <div class="fabric-swatch" style="background:linear-gradient(135deg,#F05A5A,#FF7A7A)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9a3 3 0 1 0-3-3"/><path d="M3 12h13a3 3 0 1 1-3 3"/><path d="M3 16h6"/></svg></div>
         <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Breathable Mesh</h4>
         <p style="font-size:.875rem;color:var(--text-secondary)">Open-weave mesh fabric that allows maximum airflow. Ultra-lightweight at 80gsm. Perfect for athletics and warm-weather sports.</p>
-        <div style="margin-top:16px;font-size:.8rem;color:var(--champagne);font-weight:700">Best For: Athletics, Tennis, Swimming</div>
+        <div class="fabric-best">Best For: Athletics, Tennis, Swimming</div>
       </div>
       <div class="fabric-card" data-reveal data-delay="3">
         <div class="fabric-swatch" style="background:linear-gradient(135deg,#D4B46A,#E8CC8A)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-14 16-14 0 11-5 16-16 14z"/><path d="M5 21c3-6 7-10 11-12"/></svg></div>
         <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Premium Cotton Blend</h4>
         <p style="font-size:.875rem;color:var(--text-secondary)">65% cotton, 35% polyester blend. Soft, breathable and hypoallergenic. Popular for cricket whites and school sports days.</p>
-        <div style="margin-top:16px;font-size:.8rem;color:var(--champagne);font-weight:700">Best For: Cricket, Sports Day, PE Wear</div>
+        <div class="fabric-best">Best For: Cricket, Sports Day, PE Wear</div>
       </div>
       <div class="fabric-card" data-reveal data-delay="1">
         <div class="fabric-swatch" style="background:linear-gradient(135deg,#1a472a,#2d8a50)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 19V9l-3 3"/><path d="M7 9h7"/><path d="M17 5v10l3-3"/><path d="M17 15h-7"/></svg></div>
         <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Recycled Polyester</h4>
         <p style="font-size:.875rem;color:var(--text-secondary)">Made from 100% recycled PET bottles. OEKO-TEX® certified, same performance as virgin polyester — but eco-friendly.</p>
-        <div style="margin-top:16px;font-size:.8rem;color:var(--champagne);font-weight:700">Best For: Eco-conscious schools</div>
+        <div class="fabric-best">Best For: Eco-conscious schools</div>
       </div>
       <div class="fabric-card" data-reveal data-delay="2">
         <div class="fabric-swatch" style="background:linear-gradient(135deg,#2980b9,#3498db)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.5-.7-.7-2.5z"/></svg></div>
         <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">4-Way Stretch Spandex</h4>
         <p style="font-size:.875rem;color:var(--text-secondary)">90% polyester, 10% spandex. Maximum stretch and recovery. Ideal for gymnastics, athletics and yoga/PE uniform options.</p>
-        <div style="margin-top:16px;font-size:.8rem;color:var(--champagne);font-weight:700">Best For: Gymnastics, Athletics</div>
+        <div class="fabric-best">Best For: Gymnastics, Athletics</div>
       </div>
       <div class="fabric-card" data-reveal data-delay="3">
         <div class="fabric-swatch" style="background:linear-gradient(135deg,#7f8c8d,#bdc3c7)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3 4 5.5V21h16V5.5L15 3a3 3 0 0 1-6 0z"/><path d="M12 3v18"/></svg></div>
         <h4 style="font-family:var(--font-heading);font-weight:700;margin-bottom:8px">Interlock Knit</h4>
         <p style="font-size:.875rem;color:var(--text-secondary)">Double-faced knit fabric, smooth both sides. Durable and wrinkle-resistant. Excellent for rugby, hockey &amp; contact sports.</p>
-        <div style="margin-top:16px;font-size:.8rem;color:var(--champagne);font-weight:700">Best For: Rugby, Hockey, Netball</div>
+        <div class="fabric-best">Best For: Rugby, Hockey, Netball</div>
       </div>
     </div>
   </div>
@@ -356,7 +408,7 @@
     <div class="grid-4">
       <div class="product-card" data-reveal data-delay="1">
         <div class="product-card-image">
-          <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=500&q=80" alt="Sports cap" loading="lazy"/>
+          <img src="https://i.pinimg.com/736x/27/08/32/270832d328cc2917c64f0f67368359bf.jpg" alt="Custom Team Cap" loading="lazy"/>
         </div>
         <div class="product-card-body">
           <div class="product-sport-tag"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0z"/><path d="M2 15h20"/><path d="M12 7V5"/></svg> Headwear</div>
@@ -369,7 +421,7 @@
       </div>
       <div class="product-card" data-reveal data-delay="2">
         <div class="product-card-image">
-          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80" alt="Sports shoes" loading="lazy"/>
+          <img src="https://i.pinimg.com/736x/eb/04/6b/eb046b28d3503e0f627c70bc6fa866ec.jpg" alt="Branded Sports Socks" loading="lazy"/>
         </div>
         <div class="product-card-body">
           <div class="product-sport-tag"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16V9l4.5 2.5L12 9l3 6h6v1z"/><path d="M3 16h18"/></svg> Footwear</div>
@@ -382,7 +434,7 @@
       </div>
       <div class="product-card" data-reveal data-delay="3">
         <div class="product-card-image">
-          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&q=80" alt="Sports bag" loading="lazy"/>
+          <img src="https://i.pinimg.com/1200x/80/cd/0c/80cd0cbc0b7064cfb37420654cba1125.jpg" alt="Team Duffel Bag" loading="lazy"/>
         </div>
         <div class="product-card-body">
           <div class="product-sport-tag"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="13" rx="2"/><path d="M8.5 10V6.5a3.5 3.5 0 0 1 7 0V10"/></svg> Kit Bag</div>
@@ -395,7 +447,7 @@
       </div>
       <div class="product-card" data-reveal data-delay="4">
         <div class="product-card-image">
-          <img src="https://images.unsplash.com/photo-1543357480-c60d40a7de6a?w=500&q=80" alt="Water bottle" loading="lazy"/>
+          <img src="https://i.pinimg.com/1200x/54/02/7c/54027cff187a36eb804c4c7bab76f51e.jpg" alt="Branded Bottle 1L" loading="lazy"/>
         </div>
         <div class="product-card-body">
           <div class="product-sport-tag"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2h4"/><path d="M10 5.5h4"/><path d="M9.5 5.5 8 9.5V20h8V9.5L14.5 5.5"/></svg> Hydration</div>

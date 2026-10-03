@@ -1527,6 +1527,83 @@ p {
 .stats-band .stat-kits { --accent: var(--gradient-coral); --accent-soft: rgba(240,90,90,0.28); }
 .stats-band .stat-sports { --accent: var(--gradient-champagne); --accent-soft: rgba(212,180,106,0.28); }
 .stats-band .stat-love { --accent: linear-gradient(135deg, #22c55e, #4ade80); --accent-soft: rgba(34,197,94,0.25); }
+.stats-band .stat-exp { --accent: var(--gradient-champagne); --accent-soft: rgba(212,180,106,0.30); }
+.stats-band .stat-factories { --accent: linear-gradient(135deg, #38bdf8, #818cf8); --accent-soft: rgba(56,189,248,0.28); }
+
+/* Redesigned premium stats — tighter hierarchy, tabular numbers */
+.stats-grid--premium .stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.stats-grid--premium .stat-value {
+  font-size: clamp(2.1rem, 1.5rem + 2.8vw, 3.4rem);
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.stats-grid--premium .stat-suffix {
+  font-size: 0.45em;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  background: var(--gradient-champagne);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stats-grid--premium .stat-exp .stat-value,
+.stats-grid--premium .stat-factories .stat-value {
+  background: none;
+  -webkit-text-fill-color: #fff;
+  color: #fff;
+}
+.stats-grid--premium .stat-exp .stat-value .stat-suffix {
+  background: var(--gradient-champagne);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stats-grid--premium .stat-value span {
+  font-variant-numeric: tabular-nums;
+}
+.stats-band .stat-kits .stat-value span {
+  background: var(--accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stats-grid--premium .stat-label {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.stats-grid--premium .stat-card::after {
+  opacity: 0.9;
+}
+
+/* Hero mini-stats — dividers + premium numbers */
+.hero-stats {
+  align-items: stretch;
+}
+.hero-stat {
+  position: relative;
+  padding-right: 40px;
+}
+.hero-stat:last-child { padding-right: 0; }
+.hero-stat + .hero-stat::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(255,255,255,0.22), transparent);
+}
+@media (max-width: 640px) {
+  .hero-stat { padding-right: 0; }
+  .hero-stat + .hero-stat::before { display: none; }
+}
 
 .stats-band .stat-icon {
   width: 48px;
@@ -2086,6 +2163,10 @@ p {
   text-align: center;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
 .cta-section::before {
@@ -2103,6 +2184,8 @@ p {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 900;
   margin-bottom: 16px;
+  line-height: 1.2;
+  text-wrap: balance;
 }
 
 .cta-desc {
@@ -2128,6 +2211,12 @@ p {
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.cta-actions .btn {
+  flex: 1 1 220px;
+  max-width: 320px;
+  justify-content: center;
 }
 
 /* ── 22. SIZE GUIDE ── */
