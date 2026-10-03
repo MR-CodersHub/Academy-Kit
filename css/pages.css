@@ -422,7 +422,7 @@
 .error-bg-text {
   position: absolute;
   font-family: var(--font-heading);
-  font-size: clamp(200px, 30vw, 400px);
+  font-size: clamp(120px, 22vw, 400px);
   font-weight: 900;
   color: rgba(91,63,163,0.05);
   line-height: 1;
@@ -432,7 +432,7 @@
 
 .error-number {
   font-family: var(--font-heading);
-  font-size: clamp(5rem, 15vw, 12rem);
+  font-size: clamp(3.5rem, 12vw + 1rem, 12rem);
   font-weight: 900;
   background: var(--gradient-coral);
   -webkit-background-clip: text;
@@ -443,16 +443,19 @@
 }
 
 .error-title {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(1.3rem, 1rem + 2vw, 2.5rem);
   font-weight: 800;
   margin: 16px 0 12px;
+  line-height: 1.25;
+  text-wrap: balance;
 }
 
 .error-desc {
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 0.85rem + 0.3vw, 1rem);
   color: var(--text-secondary);
   max-width: 480px;
-  margin: 0 auto 40px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
 }
 
 /* ── COMING SOON ── */
@@ -496,7 +499,7 @@
 
 .countdown-value {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(1.8rem, 1.2rem + 3vw, 4rem);
   font-weight: 900;
   background: var(--gradient-champagne);
   -webkit-background-clip: text;
@@ -606,15 +609,17 @@
 }
 
 .auth-title {
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-size: clamp(1.4rem, 1.1rem + 2vw, 2.25rem);
   font-weight: 900;
   margin-bottom: 8px;
+  line-height: 1.25;
 }
 
 .auth-subtitle {
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 0.82rem + 0.3vw, 0.95rem);
   color: var(--text-secondary);
-  margin-bottom: 36px;
+  margin-bottom: 28px;
+  line-height: 1.65;
 }
 
 .auth-tabs {
@@ -2495,26 +2500,44 @@
 }
 
 @media(max-width:480px) {
-  .section { padding: 52px 0; }
-  .page-hero { padding: 152px 0 52px; }
+  .section { padding: 48px 0; }
+  .page-hero { padding: 136px 0 48px; }
   .nav-controls > a.btn-primary { display: none; }
   .rank-row { grid-template-columns: 1fr !important; }
   .rank-row img { width: 100% !important; height: 180px !important; }
   .inline-form { flex-direction: column; }
   .inline-form .btn { width: 100%; justify-content: center; }
-  .auth-right { padding: 36px 18px; }
-  .auth-form-card { padding: 28px 20px; }
-  .quote-form-card { padding: 28px 18px; }
+  .auth-right { padding: 32px 18px; }
+  .auth-form-card { padding: 24px 18px; }
+  .auth-title { font-size: 1.45rem; }
+  .auth-subtitle { font-size: 0.85rem; margin-bottom: 24px; }
+  .quote-form-card { padding: 24px 16px; }
   .search-404 { flex-wrap: wrap; }
   .search-404 .btn { width: 100%; justify-content: center; }
-  .countdown-unit { min-width: 64px; padding: 12px; }
+  .countdown-unit { min-width: 64px; padding: 12px 10px; }
+  .countdown-value { font-size: 1.7rem; }
+  .error-number { font-size: 3.5rem; }
+  .error-title { font-size: 1.35rem; }
+  .error-desc { font-size: 0.875rem; }
   .blog-layout { gap: 28px; }
+  .blog-card-title { font-size: 0.98rem; }
+  .blog-card-desc { font-size: 0.83rem; }
+  .marquee-text-item { font-size: 0.85rem; }
+  .home2-hero-left { padding: 48px 20px; }
+  .sport-card-large-title { font-size: 1rem; }
+  .timeline-title { font-size: 0.98rem; }
+  .timeline-desc { font-size: 0.83rem; }
 }
 
 @media(max-width:360px) {
-  .auth-form-card { padding: 24px 16px; }
-  .quote-form-card { padding: 24px 14px; }
+  .auth-form-card { padding: 22px 14px; }
+  .auth-title { font-size: 1.3rem; }
+  .quote-form-card { padding: 22px 12px; }
   .footer-bottom-links { gap: 10px 14px; }
+  .error-number { font-size: 3rem; }
+  .error-title { font-size: 1.2rem; }
+  .countdown-value { font-size: 1.5rem; }
+  .countdown-unit { min-width: 60px; padding: 10px 8px; }
 }
 
 /* Anchor targets clear the fixed navbar on every page */
