@@ -929,12 +929,235 @@ const ProductActions = (() => {
     return (card && card.querySelector('.product-card-title') || {}).textContent?.trim() || 'This kit';
   }
 
+  function dataOf(card) {
+    const q = (s) => card && card.querySelector(s);
+    const title = titleOf(card);
+    const img = q('.product-card-image img');
+    const ratingBox = q('.product-rating');
+    let rating = 0;
+    if (ratingBox) {
+      const stars = ratingBox.querySelectorAll('svg');
+      stars.forEach(s => {
+        const fill = (s.getAttribute('fill') || '').toLowerCase();
+        if (fill === 'currentcolor' || fill === 'currentColor') rating++;
+      });
+      if (!rating) rating = stars.length; // fallback
+    }
+    return {
+      title,
+      img: (img && (img.currentSrc || img.src)) || '',
+      alt: (img && img.alt) || title,
+      sport: (q('.product-sport-tag') || {}).textContent?.trim().replace(/\s+/g, ' ') || '-',
+      desc: (q('.product-card-desc') || {}).textContent?.trim() || 'No description available.',
+      price: (q('.product-price') || {}).textContent?.trim() || '-',
+      oldPrice: (q('.product-price-old') || {}).textContent?.trim() || '',
+      rating
+    };
+  }
+
+  // Normalize: old installs stored plain title strings
+  function getCompare() {
+    const raw = get(CKEY);
+    return raw.map(item => {
+      if (typeof item === 'string') return { title: item, img: '', alt: item, sport: '-', desc: 'Added from an earlier visit — reopen its card to load full details.', price: '-', oldPrice: '', rating: 0 };
+      return Object.assign({ img: '', alt: item.title, sport: '-', desc: '-', price: '-', oldPrice: '', rating: 0 }, item);
+    });
+  }
+  function setCompare(list) { set(CKEY, list); }
+  function hasTitle(list, title) { return list.some(i => i.title === title); }
+
   function paint(btn, on) {
     btn.classList.toggle('is-active', on);
     btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.setAttribute('title', on ? 'Remove from compare' : 'Add to compare');
+  }
+
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function buildTray() {
+    if (document.getElementById('compareTray')) return;
+    const tray = document.createElement('div');
+    tray.id = 'compareTray';
+    tray.className = 'compare-tray';
+    tray.setAttribute('role', 'complementary');
+    tray.setAttribute('aria-label', 'Compare list');
+    tray.innerHTML =
+      '<div class="compare-tray-inner">' +
+        '<div class="compare-tray-head">' +
+          '<span class="compare-tray-title">Compare <span class="compare-tray-count" data-compare-count>(0/3)</span></span>' +
+          '<button class="compare-tray-clear" data-compare-clear type="button">Clear all</button>' +
+        '</div>' +
+        '<div class="compare-tray-chips" data-compare-chips></div>' +
+        '<div class="compare-tray-actions">' +
+          '<p class="compare-tray-hint">Tap <b>+</b> on a kit to add · tap <b>&times;</b> to remove</p>' +
+          '<button class="compare-tray-view" data-compare-open type="button">Compare Now</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(tray);
+
+    tray.addEventListener('click', (e) => {
+      const rm = e.target.closest('[data-compare-remove]');
+      if (rm) {
+        removeTitle(rm.getAttribute('data-compare-remove'));
+        return;
+      }
+      if (e.target.closest('[data-compare-clear]')) {
+        clearAll();
+        return;
+      }
+      if (e.target.closest('[data-compare-open]')) {
+        openCompare();
+      }
+    });
+  }
+
+  function renderTray() {
+    const tray = document.getElementById('compareTray');
+    if (!tray) return;
+    const list = getCompare();
+    tray.classList.toggle('visible', list.length > 0);
+    const count = tray.querySelector('[data-compare-count]');
+    if (count) count.textContent = '(' + list.length + '/' + MAX_COMPARE + ')';
+    const chips = tray.querySelector('[data-compare-chips]');
+    if (chips) {
+      chips.innerHTML = list.map((item) =>
+        '<span class="compare-chip">' +
+          '<span class="compare-chip-name">' + esc(item.title) + '</span>' +
+          '<button class="compare-chip-remove" type="button" data-compare-remove="' + esc(item.title) + '" aria-label="Remove ' + esc(item.title) + ' from compare">&times;</button>' +
+        '</span>'
+      ).join('');
+    }
+    const viewBtn = tray.querySelector('[data-compare-open]');
+    if (viewBtn) {
+      viewBtn.style.display = list.length >= 2 ? '' : 'none';
+      viewBtn.textContent = 'Compare Now (' + list.length + ')';
+    }
+    const hint = tray.querySelector('.compare-tray-hint');
+    if (hint) hint.style.display = list.length >= 2 ? 'none' : '';
+  }
+
+  function flashTray() {
+    const tray = document.getElementById('compareTray');
+    if (!tray) return;
+    tray.classList.remove('shake');
+    void tray.offsetWidth;
+    tray.classList.add('shake');
+    setTimeout(() => tray.classList.remove('shake'), 500);
+  }
+
+  function syncCardButtons() {
+    const list = getCompare();
+    document.querySelectorAll('.product-card').forEach(card => {
+      const btns = card.querySelectorAll('.product-actions-overlay .product-action-btn');
+      if (btns.length < 3) return;
+      paint(btns[2], hasTitle(list, titleOf(card)));
+    });
+  }
+
+  function removeTitle(title) {
+    const list = getCompare();
+    if (!hasTitle(list, title)) return;
+    setCompare(list.filter(t => t.title !== title));
+    syncCardButtons();
+    renderTray();
+    if (document.getElementById('compareModal')?.classList.contains('open')) renderModal();
+    Toast.show({ type: 'info', title: 'Compare', message: title + ' removed from compare.' });
+  }
+
+  function clearAll() {
+    setCompare([]);
+    syncCardButtons();
+    renderTray();
+    closeCompare();
+    Toast.show({ type: 'info', title: 'Compare cleared', message: 'All kits removed from compare.' });
+  }
+
+  function stars(r) {
+    r = Math.max(0, Math.min(5, parseInt(r) || 0));
+    let out = '';
+    for (let i = 1; i <= 5; i++) out += i <= r ? '★' : '☆';
+    return out;
+  }
+
+  function buildModal() {
+    if (document.getElementById('compareModal')) return;
+    const ov = document.createElement('div');
+    ov.id = 'compareModal';
+    ov.className = 'compare-modal';
+    ov.setAttribute('role', 'dialog');
+    ov.setAttribute('aria-modal', 'true');
+    ov.setAttribute('aria-label', 'Kit comparison');
+    ov.innerHTML =
+      '<div class="compare-modal-backdrop" data-compare-close></div>' +
+      '<div class="compare-modal-box">' +
+        '<div class="compare-modal-head">' +
+          '<h3 class="compare-modal-title">Kit Comparison</h3>' +
+          '<button class="compare-modal-close" type="button" data-compare-close aria-label="Close comparison">&times;</button>' +
+        '</div>' +
+        '<div class="compare-modal-scroll" data-compare-body></div>' +
+        '<div class="compare-modal-foot">' +
+          '<button class="btn btn-sm btn-outline" type="button" data-compare-close>Continue browsing</button>' +
+          '<button class="btn btn-sm btn-primary" type="button" data-compare-clear2>Clear all</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(ov);
+    ov.addEventListener('click', (e) => {
+      if (e.target.closest('[data-compare-close]')) { closeCompare(); return; }
+      if (e.target.closest('[data-compare-clear2]')) { clearAll(); return; }
+      const rm = e.target.closest('[data-compare-remove]');
+      if (rm) removeTitle(rm.getAttribute('data-compare-remove'));
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeCompare();
+    });
+  }
+
+  function renderModal() {
+    const body = document.querySelector('[data-compare-body]');
+    if (!body) return;
+    const list = getCompare();
+    if (!list.length) { closeCompare(); return; }
+    const cols = list.map(item =>
+      '<td>' +
+        (item.img ? '<img class="compare-modal-img" src="' + esc(item.img) + '" alt="' + esc(item.alt || item.title) + '" loading="lazy"/>' : '<div class="compare-modal-noimg">No image</div>') +
+        '<div class="compare-modal-name">' + esc(item.title) + '</div>' +
+        '<button class="compare-modal-rm" type="button" data-compare-remove="' + esc(item.title) + '">Remove</button>' +
+      '</td>'
+    ).join('');
+    body.innerHTML =
+      '<table class="compare-modal-table">' +
+        '<tr><th>Kit</th>' + cols + '</tr>' +
+        '<tr><th>Sport</th>' + list.map(i => '<td>' + esc(i.sport) + '</td>').join('') + '</tr>' +
+        '<tr><th>Price</th>' + list.map(i => '<td><span class="compare-modal-price">' + esc(i.price) + '</span>' + (i.oldPrice ? ' <span class="compare-modal-old">' + esc(i.oldPrice) + '</span>' : '') + '</td>').join('') + '</tr>' +
+        '<tr><th>Rating</th>' + list.map(i => '<td><span class="compare-modal-stars">' + stars(i.rating) + '</span> <span class="compare-modal-rate-num">' + (i.rating ? i.rating + '/5' : '-') + '</span></td>').join('') + '</tr>' +
+        '<tr><th>Details</th>' + list.map(i => '<td class="compare-modal-desc">' + esc(i.desc) + '</td>').join('') + '</tr>' +
+      '</table>';
+  }
+
+  function openCompare() {
+    buildModal();
+    const list = getCompare();
+    if (list.length < 2) {
+      flashTray();
+      Toast.show({ type: 'info', title: 'Compare', message: 'Select at least 2 kits to compare. Tap + on another kit.' });
+      return;
+    }
+    renderModal();
+    document.getElementById('compareModal').classList.add('open');
+    document.body.classList.add('no-scroll');
+  }
+
+  function closeCompare() {
+    document.getElementById('compareModal')?.classList.remove('open');
+    if (!document.querySelector('.lightbox.open')) document.body.classList.remove('no-scroll');
   }
 
   function init() {
+    buildTray();
+    buildModal();
+    renderTray();
     // Wishlist = 2nd button, Compare = 3rd button in each card overlay
     document.querySelectorAll('.product-card').forEach(card => {
       const btns = card.querySelectorAll('.product-actions-overlay .product-action-btn');
@@ -944,7 +1167,8 @@ const ProductActions = (() => {
       const cmpBtn = btns[2];
 
       if (get(WKEY).includes(title)) paint(wishBtn, true);
-      if (get(CKEY).includes(title)) paint(cmpBtn, true);
+      if (hasTitle(getCompare(), title)) paint(cmpBtn, true);
+      cmpBtn.setAttribute('title', hasTitle(getCompare(), title) ? 'Remove from compare' : 'Add to compare');
 
       wishBtn.addEventListener('click', () => {
         let list = get(WKEY);
@@ -961,26 +1185,36 @@ const ProductActions = (() => {
       });
 
       cmpBtn.addEventListener('click', () => {
-        let list = get(CKEY);
-        if (list.includes(title)) {
-          set(CKEY, list.filter(t => t !== title));
+        let list = getCompare();
+        if (hasTitle(list, title)) {
+          setCompare(list.filter(t => t.title !== title));
           paint(cmpBtn, false);
+          renderTray();
+          if (document.getElementById('compareModal')?.classList.contains('open')) renderModal();
           Toast.show({ type: 'info', title: 'Compare', message: title + ' removed from compare.' });
         } else {
           if (list.length >= MAX_COMPARE) {
-            Toast.show({ type: 'warning', title: 'Compare Full', message: 'You can compare up to ' + MAX_COMPARE + ' kits. Remove one first.' });
+            renderTray();
+            flashTray();
+            Toast.show({ type: 'warning', title: 'Compare Full (' + list.length + '/' + MAX_COMPARE + ')', message: 'Tap \u00D7 on the compare bar below to remove one: ' + list.map(i => i.title).join(', ') + '.' });
             return;
           }
-          list.push(title);
-          set(CKEY, list);
+          list.push(dataOf(card));
+          setCompare(list);
           paint(cmpBtn, true);
-          Toast.show({ type: 'success', title: 'Added to Compare (' + list.length + '/' + MAX_COMPARE + ')', message: list.join(' vs ') + '.' });
+          renderTray();
+          Toast.show({ type: 'success', title: 'Added to Compare (' + list.length + '/' + MAX_COMPARE + ')', message: list.map(i => i.title).join(' vs ') + '.' });
         }
       });
     });
+
+    // Keep tray in sync if localStorage changes in another tab
+    window.addEventListener('storage', (e) => {
+      if (e.key === CKEY) { syncCardButtons(); renderTray(); if (document.getElementById('compareModal')?.classList.contains('open')) renderModal(); }
+    });
   }
 
-  return { init };
+  return { init, removeTitle, clearAll, openCompare };
 })();
 
 // ── SMOOTH SCROLL ──
